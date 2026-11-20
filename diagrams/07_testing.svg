@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 466" width="960" height="466" font-family="'Segoe UI', Helvetica, Arial, sans-serif" role="img">
+<title>Warstwy kontroli: od testu jednostkowego do publikacji</title>
+<defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#4a4842"/></marker></defs>
+<rect width="960" height="466" fill="#ffffff"/>
+<text x="20" y="28" font-size="15" font-weight="600" fill="#1d1c1a">Warstwy kontroli: od testu jednostkowego do publikacji</text>
+<rect x="40" y="56" width="330" height="31" rx="6" fill="#e8eef6" stroke="#2f5d8a" stroke-width="1.3"/>
+<text x="48" y="76" font-size="13" font-weight="600" fill="#1d1c1a">Testy jednostkowe</text>
+<text x="400" y="70" font-size="12" text-anchor="start" fill="#6b6862">w każdym języku jego narzędziem; 1065 funkcji testowych,</text>
+<text x="400" y="87" font-size="12" text-anchor="start" fill="#6b6862">kod przy każdej zmianie, czy optymalizacja = stara ścieżka</text>
+<rect x="40" y="122" width="330" height="31" rx="6" fill="#e8eef6" stroke="#2f5d8a" stroke-width="1.3"/>
+<text x="48" y="142" font-size="13" font-weight="600" fill="#1d1c1a">Złote pliki i referencje JDK</text>
+<text x="400" y="136" font-size="12" text-anchor="start" fill="#6b6862">odpowiedzi Javy zapisane w plikach; regex, NFKC i tablice</text>
+<text x="400" y="153" font-size="12" text-anchor="start" fill="#6b6862">Unicode z JDK jako wzorzec dla portów spoza JVM</text>
+<line x1="205" y1="87" x2="205" y2="122" stroke="#4a4842" stroke-width="1.4" marker-end="url(#arr)"/>
+<rect x="40" y="188" width="330" height="31" rx="6" fill="#eef5ec" stroke="#4a7a3d" stroke-width="1.3"/>
+<text x="48" y="208" font-size="13" font-weight="600" fill="#1d1c1a">Bramki jakości (Python)</text>
+<text x="400" y="202" font-size="12" text-anchor="start" fill="#6b6862">żywy serwis: korpusy w obu językach, próbki ataków od wielu</text>
+<text x="400" y="219" font-size="12" text-anchor="start" fill="#6b6862">modeli, kontrolki fałszywych alarmów, macierz 2×2, konstytucje</text>
+<line x1="205" y1="153" x2="205" y2="188" stroke="#4a4842" stroke-width="1.4" marker-end="url(#arr)"/>
+<rect x="40" y="254" width="330" height="31" rx="6" fill="#eef5ec" stroke="#4a7a3d" stroke-width="1.3"/>
+<text x="48" y="274" font-size="13" font-weight="600" fill="#1d1c1a">Bramka równoważności (Python)</text>
+<text x="400" y="268" font-size="12" text-anchor="start" fill="#6b6862">port_dump każdej implementacji wobec Javy: 25 850 raportów,</text>
+<text x="400" y="285" font-size="12" text-anchor="start" fill="#6b6862">detektory z zimnego treningu bajt w bajt; fuzzing różnicowy</text>
+<line x1="205" y1="219" x2="205" y2="254" stroke="#4a4842" stroke-width="1.4" marker-end="url(#arr)"/>
+<rect x="40" y="320" width="330" height="31" rx="6" fill="#f3eef6" stroke="#6b4a8a" stroke-width="1.3"/>
+<text x="48" y="340" font-size="13" font-weight="600" fill="#1d1c1a">Pomiary z kontrolą wyniku (Python)</text>
+<text x="400" y="334" font-size="12" text-anchor="start" fill="#6b6862">stream_harness każdej implementacji; skrót wszystkich wyników</text>
+<text x="400" y="351" font-size="12" text-anchor="start" fill="#6b6862">musi się zgadzać, inaczej pomiar jest nieważny</text>
+<line x1="205" y1="285" x2="205" y2="320" stroke="#4a4842" stroke-width="1.4" marker-end="url(#arr)"/>
+<rect x="40" y="386" width="330" height="31" rx="6" fill="#f6f1e7" stroke="#8a6a2f" stroke-width="1.3"/>
+<text x="48" y="406" font-size="13" font-weight="600" fill="#1d1c1a">Eksport do publish/ (Python)</text>
+<text x="400" y="400" font-size="12" text-anchor="start" fill="#6b6862">dane ze snapshotów, bramka dat i plików kodu, PDF z kontrolą</text>
+<text x="400" y="417" font-size="12" text-anchor="start" fill="#6b6862">skali; dopiero wtedy materiał wychodzi na zewnątrz</text>
+<line x1="205" y1="351" x2="205" y2="386" stroke="#4a4842" stroke-width="1.4" marker-end="url(#arr)"/>
+</svg>

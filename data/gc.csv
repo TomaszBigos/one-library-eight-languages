@@ -1,0 +1,17 @@
+pipeline,gc,mode,rounds,rounds_digest_ok,docs_per_s,cpu_ms_per_doc,open_loop_p50_ms,open_loop_p99_ms,library_p99_ms,rss_mb,peak_rss_mb,start_s
+polish,Serial,open_loop_60,3,3,55.9,22.91,7.8,54.7,47.8,,,2.6
+polish,G1,open_loop_60,3,3,55.9,23.09,7.6,56.8,51.2,,,2.7
+polish,Parallel,open_loop_60,3,3,55.9,22.59,7.2,72.9,56.2,,,2.8
+polish,ZGC,open_loop_60,3,3,55.9,25.16,7.8,71.3,64.2,,,3.1
+malagasy,Serial,open_loop_60,3,3,55.8,16.86,5.3,32.8,31.2,,,2.4
+malagasy,G1,open_loop_60,3,3,55.8,20.21,5.7,36.0,30.0,,,2.5
+malagasy,Parallel,open_loop_60,3,3,55.9,19.98,5.8,50.7,35.8,,,2.5
+malagasy,ZGC,open_loop_60,3,3,55.9,21.17,5.2,44.5,36.8,,,2.5
+polish,Serial,closed_loop,3,3,110.5,14.11,,,27.6,394.0,413.0,3.0
+polish,G1,closed_loop,3,3,105.0,16.22,,,28.0,482.0,502.0,2.8
+polish,Parallel,closed_loop,3,3,111.0,16.17,,,25.2,426.0,453.0,2.8
+polish,ZGC,closed_loop,3,3,105.8,15.67,,,27.0,474.0,503.0,3.2
+malagasy,Serial,closed_loop,3,3,131.5,12.88,,,19.6,343.0,386.0,2.5
+malagasy,G1,closed_loop,3,3,127.7,13.2,,,16.6,208.0,449.0,2.3
+malagasy,Parallel,closed_loop,3,3,139.8,11.18,,,18.0,333.0,398.0,2.4
+malagasy,ZGC,closed_loop,3,3,123.7,12.6,,,20.0,464.0,494.0,2.5

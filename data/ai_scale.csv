@@ -1,0 +1,21 @@
+measure,value,unit,source
+języki programowania,8,języków,ai_work.csv
+"implementacje w macierzy (JIT, obrazy natywne, z PGO i bez)",18,implementacji,matrix.csv
+kod bibliotek we wszystkich językach,46629,linii,port_cost.csv
+kod testów bibliotek,15371,linii,port_cost.csv
+funkcje testowe,1065,testów,ai_work.csv
+raporty porównywane z Javą w jednym przebiegu bramki (na język tekstu),25850,raportów,equivalence.csv
+przebiegi bramki równoważności (zapisane wyniki),744,przebiegów,katalog wyników
+zapisane wyniki pomiarów i bramek,8360,plików,katalog wyników
+"narzędzia projektu w Pythonie (bramki, pomiary, buildery danych, eksport)",122,skryptów,katalog narzędzi
+dni z pracą AI (od pierwszego portu),28,dni,zapisy sesji
+odpowiedzi modelu (od pierwszego portu),7771,odpowiedzi,zapisy sesji
+tokeny napisane przez model (od pierwszego portu),8016947,tokenów,zapisy sesji
+tokeny kontekstu przeczytane przez model (głównie ten sam kontekst rozmowy czytany ponownie),3073781433,tokenów,zapisy sesji
+aktywny czas pracy AI (przerwa > 10 min nie liczy się),81,godzin,zapisy sesji
+"  w tym narzędzia, pomiary, dane i dokumentacja (nie kod bibliotek)",23,godzin,zapisy sesji
+edycje plików źródłowych bibliotek i programów pomiarowych,1203,edycji,ai_work.csv
+budowania i przebiegi testów,840,komend,ai_work.csv
+  odrzucone przez kompilator,55,komend,ai_work.csv
+  z niezaliczonym testem,40,komend,ai_work.csv
+przebiegi bramki uruchomione przez AI,284,przebiegów,ai_work.csv

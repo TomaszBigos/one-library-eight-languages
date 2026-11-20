@@ -1,0 +1,9 @@
+language,port_order,ported_from,unit_tests,opt_ids,own_opt_rounds,shared_jvm_rounds,opt_own_accepted,opt_own_rejected,opt_shared_accepted,opt_shared_rejected,work_days,visits,returns,edits,builds,compile_fail,test_fail,runtime_fail,tool_fail,gate_runs,gate_runs_with_diff
+Java,0,—,527,#0–#35,7,13,32,4,38,8,13,5,4,229,165,4,16,0,1,66,1
+Kotlin,1,Java,227,K1–K6,4,13,5,1,38,8,11,3,2,108,70,0,2,0,0,8,1
+Scala,2,Java,133,"S1–S7, s9",4,13,8,0,38,8,7,4,3,125,33,4,2,0,0,7,1
+Rust,3,Java,81,R1–R50,8,0,44,5,0,0,11,6,5,333,215,16,7,0,1,49,0
+C#,4,Rust,21,C1–C16,13,0,36,7,0,0,7,4,3,151,146,9,0,0,4,80,0
+Go,5,"Rust, C#",27,"G1–G19, W1",5,0,19,1,0,0,4,3,2,74,76,12,6,0,0,19,0
+C++,6,Rust,32,C1–C10,2,0,10,0,0,0,8,3,2,131,107,10,3,0,2,36,1
+TypeScript,7,C++,17,T1–T9,1,0,9,0,0,0,3,2,1,52,28,0,4,1,0,19,0

@@ -1,0 +1,650 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jedna biblioteka, osiem języków</title>
+<style>
+:root { --bg:#fbfaf7; --panel:#f3f1ec; --fg:#1d1c1a; --muted:#6b6862; --line:#e2dfd8; --accent:#2f5d8a;
+        --bar:#dce6f0; --chip:#ffffff; color-scheme:light; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg:#161615; --panel:#1e1e1c; --fg:#ecebe7;
+        --muted:#a29f98; --line:#33322f; --accent:#8db4dc; --bar:#253a4f; --chip:#1e1e1c; color-scheme:dark; } }
+:root[data-theme="dark"] { --bg:#161615; --panel:#1e1e1c; --fg:#ecebe7; --muted:#a29f98; --line:#33322f;
+        --accent:#8db4dc; --bar:#253a4f; --chip:#1e1e1c; color-scheme:dark; }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--fg); font:15px/1.55 system-ui, "Segoe UI", sans-serif;
+       padding-block:24px 48px; padding-left:max(16px, env(safe-area-inset-left, 0px));
+       padding-right:max(16px, env(safe-area-inset-right, 0px)); }
+main { max-width:1120px; margin:0 auto; display:grid; gap:20px; }
+main > * { min-width:0; }
+h1 { font-size:1.65rem; line-height:1.2; text-wrap:balance; margin:0; }
+h2 { font-size:1.25rem; line-height:1.25; text-wrap:balance; margin:0; }
+p { margin:0; max-width:72ch; }
+a { color:var(--accent); }
+code { font:0.92em ui-monospace, "Cascadia Mono", Consolas, monospace; }
+.muted { color:var(--muted); }
+.small { font-size:13px; }
+header { display:grid; gap:8px; }
+.links { display:flex; flex-wrap:wrap; gap:4px 16px; font-size:14px; }
+.docs { display:grid; gap:14px; margin-top:6px; }
+.pdfbox { display:grid; gap:4px; background:var(--panel); border:1px solid var(--line); border-left:3px solid var(--accent);
+          border-radius:8px; padding:10px 14px; }
+.pdfbox p { max-width:none; }
+.big { font-size:1.1rem; font-weight:600; }
+.kind { display:inline-block; font-size:11px; font-weight:600; letter-spacing:.06em; padding:1px 6px; border-radius:4px;
+        border:1px solid var(--line); color:var(--muted); vertical-align:2px; }
+.dgrid { display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 22rem), 1fr)); gap:14px 28px; }
+.dgrid > div { min-width:0; display:grid; gap:6px; align-content:start; }
+.dh { font-size:0.98rem; }
+.dlist { margin:0; padding:0; list-style:none; display:grid; gap:3px; font-size:14px; }
+.dlist a { font-weight:600; }
+.srcline { font-size:13px; color:var(--muted); }
+.srcline a { color:var(--muted); font-family:ui-monospace, "Cascadia Mono", Consolas, monospace; font-size:0.95em; }
+.linkbtn { all:unset; color:var(--accent); text-decoration:underline; cursor:pointer; font-size:14px; }
+.linkbtn:focus-visible { outline:2px solid var(--accent); outline-offset:2px; }
+th button.hasdesc { text-decoration:underline dotted; text-underline-offset:3px; cursor:help; }
+#cbox { background:var(--panel); border:1px solid var(--line); border-radius:8px; }
+#cbox summary { cursor:pointer; padding:8px 12px; font-size:13px; color:var(--muted); }
+#clist { display:grid; grid-template-columns:minmax(9em, max-content) minmax(0, 1fr); gap:4px 14px; margin:0;
+         padding:0 12px 12px; font-size:13.5px; }
+#clist dt { font-family:ui-monospace, "Cascadia Mono", Consolas, monospace; font-size:0.95em; overflow-wrap:anywhere; }
+#clist dd { margin:0; }
+@media (max-width: 640px) { #clist { grid-template-columns:minmax(0, 1fr); } #clist dd { margin-bottom:6px; } }
+nav { display:grid; gap:10px; border-block:1px solid var(--line); padding-block:12px; }
+.group { display:flex; flex-wrap:wrap; align-items:center; gap:6px; }
+.glabel { font-size:12px; letter-spacing:.06em; text-transform:uppercase; color:var(--muted); min-width:11.5em; }
+button { font:inherit; color:inherit; }
+.tab, .chip, .act { border:1px solid var(--line); background:var(--chip); border-radius:6px; cursor:pointer; }
+.tab { padding:5px 11px; font-size:14px; }
+.tab[aria-pressed="true"] { border-color:var(--accent); color:var(--accent); box-shadow:inset 0 0 0 1px var(--accent); }
+button:focus-visible, select:focus-visible, input:focus-visible { outline:2px solid var(--accent); outline-offset:2px; }
+#view { display:grid; gap:12px; }
+#fbox { background:var(--panel); border:1px solid var(--line); border-radius:8px; }
+#fbox summary { cursor:pointer; padding:8px 12px; font-size:13px; color:var(--muted); }
+#filters { display:grid; gap:8px; padding:0 12px 12px; }
+.chip.none { opacity:.45; }
+.frow { display:grid; grid-template-columns:11.5em minmax(0, 1fr); gap:8px; align-items:start; }
+.flabel { font-size:13px; color:var(--muted); padding-top:3px; }
+.chips { display:flex; flex-wrap:wrap; gap:5px; }
+.chip { padding:2px 9px; font-size:13px; }
+.chip[aria-pressed="true"] { background:var(--accent); border-color:var(--accent); color:var(--bg); }
+.frow select { justify-self:start; }
+select { font:inherit; font-size:13px; background:var(--chip); color:var(--fg); border:1px solid var(--line);
+         border-radius:6px; padding:3px 6px; max-width:100%; }
+.factions { display:flex; flex-wrap:wrap; gap:6px; }
+.act { padding:2px 10px; font-size:13px; background:none; }
+#meta { display:grid; gap:4px; font-size:13px; color:var(--muted); }
+#meta label { display:inline-flex; align-items:center; gap:5px; margin-left:12px; cursor:pointer; color:var(--fg); }
+.wrap { overflow:auto; max-height:78vh; border:1px solid var(--line); border-radius:8px; }
+table { border-collapse:collapse; width:100%; font-variant-numeric:tabular-nums; font-size:13.5px; }
+th, td { border-bottom:1px solid var(--line); padding:5px 10px; text-align:left; white-space:nowrap; }
+tbody tr:last-child td { border-bottom:none; }
+th { position:sticky; top:0; background:var(--panel); font-weight:600; padding:0; }
+th button { all:unset; display:block; padding:6px 10px; cursor:pointer; }
+th button:focus-visible { outline:2px solid var(--accent); outline-offset:-2px; }
+th.num button, td.num { text-align:right; }
+th[aria-sort] button { color:var(--accent); }
+td.bar { background-image:linear-gradient(to right, var(--bar) var(--w), transparent var(--w)); }
+tbody tr:hover td { background-color:var(--panel); }
+#note:empty { display:none; }
+#note { border-left:3px solid var(--accent); padding:6px 10px; background:var(--panel); }
+footer { font-size:13px; color:var(--muted); display:grid; gap:4px; }
+@media (max-width: 640px) {
+  .frow { grid-template-columns:minmax(0, 1fr); gap:4px; }
+  .glabel { min-width:0; width:100%; }
+  #meta label { margin-left:0; }
+}
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>Jedna biblioteka, osiem języków</h1>
+    <p>Ta sama biblioteka (wykrywanie języka tekstu i prób iniekcji, po polsku i po malgasku) napisana w ośmiu
+       językach programowania. Odpowiedzi są bit w bit takie same jak w Javie, koszty są różne. Ta strona pokazuje
+       same tabele: każda to jeden plik CSV z katalogu <code>data/</code>, z filtrami i sortowaniem w przeglądarce.
+       Opisy, wnioski i diagramy są w wersji opisowej (<a href="opis.html">opis.html</a>,
+       <a href="wyniki.pdf">wyniki.pdf</a>); znaczenie każdej kolumny pokazuje podpowiedź nad nagłówkiem i panel
+       „Kolumny tej tabeli”.</p>
+    <section class="docs" aria-label="Dokumenty">
+      <div class="pdfbox">
+        <p><span class="kind">Opis</span> <a class="big" href="opis.html">opis.html</a> albo
+           <a class="big" href="wyniki.pdf">wyniki.pdf</a> <strong>— wersja opisowa.</strong></p>
+        <p class="small">Ta sama treść w przeglądarce (z diagramami) i w PDF do czytania i druku (dodatkowo wykresy
+           i przekroje tabel): architektura i historia projektu, testy i narzędzia, wnioski per temat, optymalizacje
+           per język, metodologia i maszyna, opis kolumn, słownik pojęć, instrukcja dla agenta AI.</p>
+      </div>
+      <div class="dgrid">
+        <div>
+          <h2 class="dh">Wersja opisowa: rozdziały</h2>
+          <ul class="dlist">
+            <li><a href="opis.html#a-arch">Architektura i historia</a> <span class="muted">co robi biblioteka, jak powstawała, decyzje, diagramy</span></li>
+            <li><a href="opis.html#a-test">Testy i narzędzia</a> <span class="muted">testy w każdym języku, bramki jakości, skrypty</span></li>
+            <li><a href="opis.html#p-wnioski">Wnioski</a> <span class="muted">po jednym temacie; najkrótsza wersja: <a href="opis.html#f00">podsumowanie</a></span></li>
+            <li><a href="opis.html#p-optym">Optymalizacje per język</a> <span class="muted">co pomogło, a co nie, z fragmentami kodu</span></li>
+            <li><a href="opis.html#m-met">Metodologia</a> i <a href="opis.html#m-mach">maszyna</a></li>
+            <li><a href="opis.html#k-data">Opis tabel i kolumn</a> <span class="muted">to samo pod każdą tabelą niżej</span></li>
+            <li><a href="opis.html#s-glos">Słownik pojęć</a></li>
+            <li><a href="opis.html#a-ai">Instrukcja dla agenta AI</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2 class="dh">Inne strony</h2>
+          <ul class="dlist">
+            <li><a href="charts.html">Wykresy</a> <span class="muted">liczone z tabel</span></li>
+            <li><a href="index_offline.html">Ta strona w jednym pliku</a> <span class="muted">z danymi w środku; działa
+                otwarta wprost z dysku (<code>index.html</code> czyta pliki CSV, więc potrzebuje serwera plików)</span></li>
+            <li><a href="slides/example_deck.html">Przykładowe slajdy</a></li>
+          </ul>
+          <p class="srcline">Źródła (Markdown, do GitHuba i dla agentów AI):
+             <a href="README.md">README.md</a> · <a href="ARCHITECTURE.md">ARCHITECTURE.md</a> ·
+             <a href="TESTING.md">TESTING.md</a> · <a href="findings/README.md">findings/</a> ·
+             <a href="optimizations/README.md">optimizations/</a> · <a href="METHODOLOGY.md">METHODOLOGY.md</a> ·
+             <a href="MACHINE.md">MACHINE.md</a> · <a href="data/README.md">data/README.md</a> ·
+             <a href="GLOSSARY.md">GLOSSARY.md</a> · <a href="README_FOR_AI.md">README_FOR_AI.md</a></p>
+          <p class="srcline">Licencja całego materiału: CC BY 4.0, autor Tomasz Bigoś
+             (<a href="LICENSE">LICENSE</a>, tekst prawny po angielsku).</p>
+        </div>
+      </div>
+    </section>
+  </header>
+  <nav id="tabs" aria-label="Tabele"></nav>
+  <section id="view" aria-live="polite">
+    <h2 id="title"></h2>
+    <p id="desc"></p>
+    <p id="tlinks" class="links"></p>
+    <details id="fbox" open><summary id="fsum">Filtry</summary><div id="filters"></div></details>
+    <div id="meta"></div>
+    <details id="cbox" hidden><summary id="csum">Kolumny tej tabeli</summary><dl id="clist"></dl></details>
+    <p id="note"></p>
+    <div class="wrap"><table id="t"></table></div>
+  </section>
+  <footer>
+    <p>Maszyna nie jest izolowana: różnice poniżej ~10% traktować jako remis. Krotności liczyć tylko w obrębie
+       jednego pliku i jednej serii (<code>series</code>), nigdy między plikami.</p>
+    <p id="mode"></p>
+  </footer>
+</main>
+<script id="nsa-cols">window.NSA_COLS = {"ai_scale":[["measure","nazwa miary"],["value","wartość miary"],["unit","jednostka"],["source","plik danych albo „zapisy sesji”, „katalog wyników”, „katalog narzędzi” — liczone przy eksporcie"]],"ai_work":[["language","język programowania"],["port_order","kolejność powstania portu (1 = Java)"],["ported_from","port już równy Javie, z którego przepisano kod"],["unit_tests","funkcje testowe w kodzie bibliotek, policzone ze źródeł"],["opt_ids","numeracja kroków optymalizacji w dzienniku portu; Java #0–#35 = optymalizacja sprzed portów"],["own_opt_rounds","osobne rundy optymalizacji tylko tego języka; Java = dni tamtej optymalizacji"],["shared_jvm_rounds","rundy robione naraz w Javie, Kotlinie i Scali"],["opt_own_accepted","własne optymalizacje wdrożone i odrzucone pomiarem, z dzienników, ±kilka; C# w przybliżeniu"],["opt_own_rejected","własne optymalizacje wdrożone i odrzucone pomiarem, z dzienników, ±kilka; C# w przybliżeniu"],["opt_shared_accepted","to samo dla wspólnych rund JVM"],["opt_shared_rejected","to samo dla wspólnych rund JVM"],["work_days","dni z ≥ 3 edycjami plików języka albo ≥ 2 budowaniami"],["visits","ciągi takich dni; przerwa ≥ 2 dni = nowy okres pracy"],["returns","= visits − 1"],["edits","edycje plików źródłowych języka"],["builds","budowania i przebiegi testów"],["compile_fail","wynik z błędem kompilatora"],["test_fail","niezaliczony test"],["runtime_fail","TypeScript: błąd typu dopiero przy uruchomieniu"],["tool_fail","środowisko i narzędzia, nie kod: brak linkera, ścieżka zniekształcona przez powłokę, błędna flaga budowania"],["gate_runs","przebiegi bramki równoważności tej implementacji"],["gate_runs_with_diff","przebiegi z różnicami; w Javie to zamierzona zmiana porównana ze starą Javą"]],"code_metrics":[["language","język programowania"],["files","liczba plików"],["code_lines","linie kodu biblioteki"],["comment_pct","udział linii komentarzy, %"],["line_len_mean","znaki"],["long_lines_pct","> 100 znaków"],["symbol_density_pct","znaki niealfanumeryczne wśród niebiałych"],["indent_mean","poziom wcięcia, ≥ 5"],["deep_pct","poziom wcięcia, ≥ 5"],["ident_len_mean","średnia długość identyfikatora, znaki"],["funcs","proste wzorce, przybliżenie"],["lines_per_func","proste wzorce, przybliżenie"],["lines_per_file","średnio linii na plik"],["readability_rank_mean","średnia rang 4 miar: długość linii, symbole, wcięcie, długie linie"],["readability_place","średnia rang 4 miar: długość linii, symbole, wcięcie, długie linie"]],"code_tokens":[["name","implementacja, wszystkie razem albo publish/"],["part","biblioteka, testy, razem, materiał"],["files","pliki w całości, z komentarzami"],["lines","pliki w całości, z komentarzami"],["chars","pliki w całości, z komentarzami"],["chars_per_token","kalibracja na zapisach sesji: wynik Read jednego pliku, po którym od razu szło następne zapytanie; przyrost kontekstu minus tokeny poprzedniej odpowiedzi, prefiks numeru linii przyjęty jako 2,5 tokenu; kod 2,59 = mediana z 22 próbek, Markdown 1,87; CSV liczone jak kod, bez własnej kalibracji"],["tokens","przedział z kwartyli"],["tokens_min","przedział z kwartyli — najmniejsza wartość"],["tokens_max","przedział z kwartyli — największa wartość"],["pct_of_200k","część okna kontekstu"],["pct_of_1m","część okna kontekstu"],["usd_per_load_at_1","koszt jednego wczytania przy przykładowej stawce 1, 3, 15 $ za mln tokenów wejścia"],["usd_per_load_at_3","koszt jednego wczytania przy przykładowej stawce 1, 3, 15 $ za mln tokenów wejścia"],["usd_per_load_at_15","koszt jednego wczytania przy przykładowej stawce 1, 3, 15 $ za mln tokenów wejścia"]],"colocate":[["run","przebieg (1–5: osobne przebiegi w kolejności; 5 sprawdza tylko, czy kolejność startu Go i Javy zmienia wynik)"],["pipeline","język tekstu: polish (polski) albo malagasy (malgaski)"],["rate_per_instance","dok/s, każda instancja ma własny strumień Poissona"],["mix","np. rust*2+java*3 = 2 instancje Rusta i 3 Javy; X*1 z alone = True to odniesienie: jedna instancja sama"],["alone","True = instancja uruchomiona sama (odniesienie dla mieszanek)"],["round","numer rundy pomiaru"],["window_overlap_pct","jaka część okien pomiarowych instancji się pokrywa; poniżej ~85% instancje częściowo pracowały same"],["slot","miejsce instancji w mieszance"],["implementation","implementacja: język, środowisko uruchomieniowe, wariant kompilacji"],["implementation_id","identyfikator implementacji w narzędziach pomiarowych"],["status","ok, failed (instancja bez wyniku), wrong_digest"],["docs_per_s","przepustowość: dokumenty na sekundę"],["cpu_ms_per_doc","czas procesora procesu na jeden dokument, ms"],["p50_ms","opóźnienie w otwartej pętli"],["p90_ms","opóźnienie w otwartej pętli"],["p99_ms","opóźnienie w otwartej pętli"],["p999_ms","opóźnienie w otwartej pętli"],["max_ms","opóźnienie w otwartej pętli"]],"detector_lengths":[["pipeline","język tekstu: polish (polski) albo malagasy (malgaski)"],["matcher","dopasowanie detektora: hamming albo r-contiguous"],["seed","ziarno treningu detektorów"],["length","30 = 30 i więcej"],["pct","udział, %"]],"detector_letters":[["pipeline","język tekstu: polish (polski) albo malagasy (malgaski)"],["letter","litera"],["language_pct","udział litery w słowach „swoich”, %"],["detectors_pct","30 najczęstszych liter na pipeline"]],"detectors":[["pipeline","język tekstu: polish (polski) albo malagasy (malgaski)"],["matcher","hamming, r-contiguous"],["seed","ziarno treningu detektorów"],["sets","kategorie"],["detectors","liczba detektorów"],["detectors_per_set","detektorów na zbiór (kategorię)"],["self_words_median_per_set","słowa „swoje”"],["self_words_total","słowa „swoje”"],["length_min","najkrótszy detektor, znaki"],["length_median","mediana długości detektora, znaki"],["length_mean","średnia długość detektora, znaki"],["length_max","najdłuższy detektor, znaki"],["distinct","różne detektory"],["distinct_pct","udział różnych detektorów, %"],["in_2plus_sets_pct","różne detektory obecne w ≥ 2 kategoriach"],["alphabet","różne znaki"],["real_foreign_words_pct","różne detektory będące słowem z foreign_words.txt tego pipeline'u"],["equal_to_self_word","detektory równe słowu języka z INNEJ kategorii"],["cache_files_all_generations","wszystkie pokolenia na dysku"],["cache_mb_all_generations","wszystkie pokolenia na dysku"]],"doc_language":[["pipeline","język tekstu: polish (polski) albo malagasy (malgaski)"],["doc_language","kod Wikisource"],["script","pismo (łacińskie, cyrylica, CJK…)"],["implementation","implementacja: język, środowisko uruchomieniowe, wariant kompilacji"],["docs","liczba dokumentów"],["words","liczba słów"],["ms_per_pass","suma czasu dokumentów tego języka, mediana rund"],["words_per_s","słowa na sekundę"],["x_java","krotność czasu Javy JIT z tego samego przebiegu (mniej = szybciej)"],["reliable","czy jest dość tekstu w tym języku, żeby liczyć krotność wobec Javy"],["rank","1 = najszybsza implementacja dla tego języka i pipeline'u"],["tokenize_ms","etapy dla tego języka"],["patterns_ms","etapy dla tego języka"],["rounds","liczba rund"],["digest_ok","czy skrót wszystkich wyników zgadza się z referencją (poprawność przebiegu)"]],"endurance":[["pipeline","język tekstu: polish (polski) albo malagasy (malgaski)"],["implementation","implementacja: język, środowisko uruchomieniowe, wariant kompilacji"],["implementation_id","identyfikator implementacji w narzędziach pomiarowych"],["run","przebieg"],["window_start_min","początek okna, minuta przebiegu"],["passes","liczba przejść"],["pass_s_median","mediana czasu przejścia, s"],["cpu_s_per_pass","przyrost czasu CPU procesu / liczba przejść; rośnie razem z czasem przejścia = proces robi więcej, stoi przy rosnącym czasie = proces czekał na CPU"],["rss_mb","na końcu okna"],["peak_rss_mb","na końcu okna"]],"endurance_runs":[["pipeline","język tekstu: polish (polski) albo malagasy (malgaski)"],["implementation","implementacja: język, środowisko uruchomieniowe, wariant kompilacji"],["implementation_id","identyfikator implementacji w narzędziach pomiarowych"],["run","przebieg (1 = pierwszy przebieg, 2 = powtórka obrazu natywnego Javy w polskim: ta sama binarka i ten sam program pomiarowy, 1500 przejść)"],["passes","przejścia z czasem; ostatnie, zapisujące raporty na dysk, pominięte"],["minutes","czas trwania przebiegu, min"],["start_s","czas startu biblioteki z detektorami wczytanymi z dysku, s"],["pass_s_median","mediana czasu przejścia, s"],["first_tenth_s","mediana pierwszej i ostatniej dziesiątej części przejść"],["last_tenth_s","mediana pierwszej i ostatniej dziesiątej części przejść"],["last_vs_first","dryf: ~1 = brak"],["cpu_s_per_pass_median","mediana okien 5-minutowych"],["rss_first_mb","pamięć procesu w próbkach co minutę"],["rss_last_mb","pamięć procesu w próbkach co minutę"],["rss_max_mb","pamięć procesu w próbkach co minutę"],["peak_rss_mb","szczyt pamięci procesu (RSS), MB"],["digest_ok","czy skrót wszystkich wyników zgadza się z referencją (poprawność przebiegu)"]],"equivalence":[["implementation","implementacja: język, środowisko uruchomieniowe, wariant kompilacji"],["pipeline","język tekstu: polish (polski) albo malagasy (malgaski)"],["check","gate = pełna bramka (dokumenty i pojedyncze słowa, oba matchery), cold_training = ta sama bramka z detektorami wytrenowanymi od zera (pliki detektorów bajt w bajt), fuzzing = losowe teksty z ziarnem (mieszane pisma, homoglify, znaki niewidzialne, bardzo długie słowa)"],["reports","liczba porównanych raportów"],["differences","port jest poprawny tylko przy 0"],["exceptions","wyjątki po stronie portu"]],"foreign_fragment":[["pipeline","język tekstu: polish (polski) albo malagasy (malgaski)"],["fragment_language","kod Wikisource"],["script","pismo (łacińskie, cyrylica, CJK…)"],["fragment_tokens","tokeny wstawki tak, jak liczy je biblioteka: przyrost totalWords wobec bazy"],["implementation","implementacja: język, środowisko uruchomieniowe, wariant kompilacji"],["implementation_id","identyfikator implementacji w narzędziach pomiarowych"],["base_us","czas biblioteki na dokument, µs: mediana powtórzeń, potem mediana rund"],["with_fragment_us","czas biblioteki na dokument, µs: mediana powtórzeń, potem mediana rund"],["delta_us","przyrost przez wstawkę"],["delta_us_per_token","przyrost przez wstawkę"],["x_java_delta","przyrost wobec przyrostu Javy, gdy ten > 50 µs"],["new_script_spans","ile sygnałów raportu doszło wobec samej bazy — identyczne we wszystkich implementacjach"],["new_minority_spans","ile sygnałów raportu doszło wobec samej bazy — identyczne we wszystkich implementacjach"],["new_gated_injections","ile sygnałów raportu doszło wobec samej bazy — identyczne we wszystkich implementacjach"],["new_injections_ungated","ile sygnałów raportu doszło wobec samej bazy — identyczne we wszystkich implementacjach"],["foreign_document","czy raport uznał dokument za obcojęzyczny"],["detected","cokolwiek z powyższych > 0"],["rounds","liczba rund"],["digest_ok","czy skrót wszystkich wyników zgadza się z referencją (poprawność przebiegu)"]],"gc":[["pipeline","język tekstu: polish (polski) albo malagasy (malgaski)"],["gc","Serial = produkcja, G1, Parallel, ZGC"],["mode","open_loop_60 (otwarta pętla: 60 dok/s przychodzi według harmonogramu Poissona, 4 konsumentów, opóźnienie liczone od zaplanowanego przyjścia) albo closed_loop (zamknięta pętla: następny dokument, gdy poprzedni gotowy; z pomiarem pamięci)"],["rounds","3 rundy w przeplocie, w obu kolejnościach"],["rounds_digest_ok","3 rundy w przeplocie, w obu kolejnościach"],["docs_per_s","przepustowość: dokumenty na sekundę"],["cpu_ms_per_doc","czas procesora procesu na jeden dokument, ms"],["open_loop_p50_ms","tylko otwarta pętla"],["open_loop_p99_ms","tylko otwarta pętla"],["library_p99_ms","sam czas biblioteki, bez czekania w kolejce"],["rss_mb","tylko zamknięta pętla"],["peak_rss_mb","tylko zamknięta pętla"],["start_s","czas startu biblioteki z detektorami wczytanymi z dysku, s"]],"gpu":[["series","seria pomiarów (1 albo 2: dwa pełne przebiegi tych samych plików wykonywalnych)"],["measure","detection (każde słowo przeciw 261 zbiorom detektorów; GPU sprawdza każdy detektor, CPU używa indeksu: per zbiór albo produkcyjnego indeksu puli), host_language (to samo jądro GPU wołane z innych języków przez ich mechanizm wywołań natywnych), cold_start_training (zimny start biblioteki z treningiem detektorów, CPU albo GPU), cold_start_card_time (czas samej karty w tym starcie)"],["pipeline","język tekstu: polish (polski) albo malagasy (malgaski)"],["words","liczba słów"],["method","metoda (procesor albo karta graficzna, wariant)"],["value","wartość miary"],["unit","jednostka"],["rounds","powtórzenia, z których wzięto medianę"],["differences","detection: pary zbiór–słowo różne od CPU; host_language: odpowiedzi różne od hosta C++; trening: pliki detektorów z GPU identyczne bajt w bajt z CPU"],["round","numer rundy w treningu, rundy CPU i GPU w przeplocie"]],"kernels":[["series","1, 2 = dwa przebiegi"],["kernel","distance_within k=2 (odległość edycyjna z progiem 2, 200 000 par polskich słów), Hamming(4,6) any-match (czy kandydat pasuje do któregokolwiek słowa zbioru: 4000 kandydatów × 80 zbiorów malgaskich)"],["language","język programowania"],["variant","kod z kompilatora, wstawka asemblerowa, instrukcje wektorowe SSE2 / Vector128"],["ns_median","min tylko dla C++ — mediana"],["ns_min","min tylko dla C++ — najmniejsza wartość"],["unit","jednostka"],["rounds","15, w przeplocie"]],"language_summary":[["language","język programowania"],["implementation","implementacja: język, środowisko uruchomieniowe, wariant kompilacji"],["x_java","średnia geometryczna obu języków tekstu i obu serii z matrix.csv"],["peak_rss_mb","średnia geometryczna obu języków tekstu i obu serii z matrix.csv"],["start_s","średnia geometryczna obu języków tekstu i obu serii z matrix.csv"],["load90_share_pct","mediana, load_curve.csv, tłok 90%"],["stream60_p99_ms","mediany ze scenarios.csv; Kotlin i Scala nie były w scenariuszach"],["mem200_docs_per_s","mediany ze scenarios.csv; Kotlin i Scala nie były w scenariuszach"],["one_cpu_docs_per_s","mediany ze scenarios.csv; Kotlin i Scala nie były w scenariuszach"],["code_lines","linie kodu biblioteki (port_cost.csv)"],["library_tokens","code_tokens.csv"],["ai_hours","port_cost.csv"],["compile_fail_per_100_builds","własne + wspólne, ai_work.csv"],["opt_accepted","własne + wspólne, ai_work.csv"],["readability_place","code_metrics.csv"]],"latency_curve":[["pipeline","język tekstu: polish (polski) albo malagasy (malgaski)"],["implementation","implementacja: język, środowisko uruchomieniowe, wariant kompilacji"],["implementation_id","identyfikator implementacji w narzędziach pomiarowych"],["target_per_s","zadane tempo"],["offered_per_s","tempo faktycznie wygenerowane przez harmonogram; ten sam dla wszystkich implementacji"],["docs_per_s","obsłużone; mniej niż offered_per_s = implementacja nie nadąża i kolejka rośnie"],["rounds","liczba rund"],["rounds_failed","rundy nieudane"],["rounds_digest_ok","rundy z poprawnym skrótem wyników"],["cpu_ms_per_doc","czas procesora procesu na jeden dokument, ms"],["p50_ms","od zaplanowanego przyjścia do gotowego raportu"],["p90_ms","od zaplanowanego przyjścia do gotowego raportu"],["p99_ms","od zaplanowanego przyjścia do gotowego raportu"],["p999_ms","od zaplanowanego przyjścia do gotowego raportu"],["max_ms","od zaplanowanego przyjścia do gotowego raportu"],["library_p99_ms","99. percentyl czasu biblioteki na dokument, ms"]],"load_curve":[["series","seria pomiarów (1 albo 2: dwa pełne przebiegi tych samych plików wykonywalnych)"],["pipeline","język tekstu: polish (polski) albo malagasy (malgaski)"],["implementation","implementacja: język, środowisko uruchomieniowe, wariant kompilacji"],["implementation_id","identyfikator implementacji w narzędziach pomiarowych"],["run","przebieg"],["load_target_pct","ile CPU miał zająć proces obciążający: 0, 50, 90"],["load_achieved_pct","ile faktycznie zajął; przy dwóch rdzeniach fizycznych mniej, niż zadano"],["rounds","liczba rund"],["rounds_digest_ok","rundy z poprawnym skrótem wyników"],["docs_per_s","przepustowość: dokumenty na sekundę"],["share_of_own_pct","dok/s wobec wyniku tej implementacji bez obciążenia"],["cpu_ms_per_doc","czas CPU procesu na dokument"],["library_p50_ms","mediana czasu biblioteki na dokument, ms"],["library_p99_ms","99. percentyl czasu biblioteki na dokument, ms"]],"manual_estimate":[["language","język programowania"],["port_order","kolejność powstania portu (1 = Java)"],["code_lines","linie kodu biblioteki (z port_cost.csv)"],["test_lines","linie testów (z port_cost.csv)"],["code_days_min","szacunek dni pracy ręcznej nad kodem, dolna granica"],["code_days_max","szacunek dni pracy ręcznej nad kodem, górna granica"],["test_days_min","szacunek dni pracy ręcznej nad testami, dolna granica"],["test_days_max","szacunek dni pracy ręcznej nad testami, górna granica"],["optimization_days_min","szacunek dni ręcznej optymalizacji, dolna granica"],["optimization_days_max","szacunek dni ręcznej optymalizacji, górna granica"],["run_days_min","ręczne uruchamianie budowań, testów i bramki przy liczbie uruchomień z ai_work.csv — najmniejsza wartość"],["run_days_max","ręczne uruchamianie budowań, testów i bramki przy liczbie uruchomień z ai_work.csv — największa wartość"],["total_days_min","dzień = 8 h — najmniejsza wartość"],["total_days_max","dzień = 8 h — największa wartość"],["ai_active_hours","z port_cost.csv"],["x_ai_min","godziny człowieka / aktywne godziny AI — najmniejsza wartość"],["x_ai_max","godziny człowieka / aktywne godziny AI — największa wartość"]],"matrix":[["series","seria pomiarów (1 albo 2: dwa pełne przebiegi tych samych plików wykonywalnych)"],["pipeline","język tekstu: polish (polski) albo malagasy (malgaski)"],["implementation","implementacja: język, środowisko uruchomieniowe, wariant kompilacji (PGO = kompilacja z profilem; „no PGO” = ten sam kod bez profilu)"],["implementation_id","identyfikator implementacji w narzędziach pomiarowych (PGO = kompilacja z profilem; „no PGO” = ten sam kod bez profilu)"],["run","przebieg (main / separate)"],["rounds","liczba rund"],["rounds_digest_ok","rundy z poprawnym skrótem wyników"],["library_s_median","suma czasów biblioteki na 341 tekstach, s — mediana"],["library_s_min","suma czasów biblioteki na 341 tekstach, s — najmniejsza wartość"],["library_s_max","suma czasów biblioteki na 341 tekstach, s — największa wartość"],["x_java","krotność czasu Javy JIT z tego samego przebiegu (mniej = szybciej)"],["document_p50_ms","mediana czasu dokumentu"],["start_s","start biblioteki z wytrenowanymi detektorami wczytanymi z dysku"],["peak_rss_mb","szczyt pamięci procesu (RSS) w trakcie pomiaru, MB"],["rss_mb","pamięć procesu (RSS) po krótkim zestawie, MB"]],"openj9":[["pipeline","język tekstu: polish (polski) albo malagasy (malgaski)"],["jvm","maszyna wirtualna Javy"],["jvm_id","identyfikator maszyny wirtualnej"],["round","numer rundy pomiaru"],["pass","numer przejścia"],["pass_s","czas przejścia, s"]],"openj9_runs":[["pipeline","język tekstu: polish (polski) albo malagasy (malgaski)"],["jvm","maszyna wirtualna Javy"],["jvm_id","identyfikator maszyny wirtualnej"],["round","dwie rundy na JVM, kolejność ABBA"],["heap_and_gc","flagi sterty i odśmiecania; cache werdyktów wyłączony"],["start_s","czas startu biblioteki z detektorami wczytanymi z dysku, s"],["first_pass_s","czas pierwszego przejścia (z rozgrzewaniem), s"],["steady_pass_s_median","mediana przejść 13–24 z 25; przejście 25 zapisuje raporty"],["rss_last_mb","pamięć procesu na końcu przebiegu, MB"],["rss_max_mb","największa zmierzona pamięć procesu w przebiegu, MB"],["peak_rss_mb","szczyt pamięci procesu (RSS), MB"],["digest_ok","wydajność JDK 25 i 27 zmierzona wcześniej jako równa"]],"port_cost":[["language","język programowania"],["port_order","0 = oryginał, potem kolejność pisania portów"],["code_files","linie kodu bez pustych i komentarzy, tylko biblioteki: rdzeń + pl + mg"],["code_lines","linie kodu biblioteki (linie kodu bez pustych i komentarzy, tylko biblioteki: rdzeń + pl + mg)"],["test_lines","linie testów (to samo dla testów jednostkowych)"],["ai_output_tokens","tokeny wygenerowane przez AI przy pracy nad tym językiem"],["ai_active_hours","aktywny czas sesji przypisany do języka"]],"port_matrix":[["source","język źródłowy portu"],["target","język docelowy portu"],["speed_ratio","cel / źródło z language_summary.csv"],["memory_ratio","cel / źródło z language_summary.csv"],["start_ratio","cel / źródło z language_summary.csv"],["difficulty","łatwy, średni, trudny — reguła w findings/18_port_matrix.md"],["needs","co odtworzyć"],["verdict","reguła progów w findings/18"],["done_here","para wykonana w tym projekcie"],["ai_hours_here","para wykonana w tym projekcie"],["best_source","najlepsze źródło dla celu według reguły"]],"prompts":[["group","ogółem, język w prompcie, długość promptu (słowa)"],["measure","nazwa miary"],["value","wartość miary"],["unit","jednostka"]],"python_rust":[["series","seria pomiarów (1 albo 2: dwa pełne przebiegi tych samych plików wykonywalnych)"],["pipeline","język tekstu: polish (polski) albo malagasy (malgaski)"],["set","constitutions (341 tekstów) albo samples (krótkie dokumenty: próbki ataków i kontrolki danego języka plus 160 malgaskich aktów prawnych, w stałej losowej kolejności)"],["documents","liczba dokumentów"],["implementation","implementacja: język, środowisko uruchomieniowe, wariant kompilacji"],["implementation_id","identyfikator implementacji w narzędziach pomiarowych"],["consumers","wątki wywołujące; w Pythonie wątki dzielą blokadę interpretera"],["rounds","liczba rund"],["rounds_digest_ok","rundy z poprawnym skrótem wyników"],["docs_per_s","zegar przejścia"],["docs_per_s_vs_rust","wobec Rustu przy tym samym zestawie i liczbie wątków"],["caller_p50_ms","czas dokumentu po stronie wywołującego: w Pythonie wywołanie + zamiana odpowiedzi JSON na słownik, w Ruście samo wywołanie"],["caller_p99_ms","czas dokumentu po stronie wywołującego: w Pythonie wywołanie + zamiana odpowiedzi JSON na słownik, w Ruście samo wywołanie"],["library_s","suma czasów wewnątrz biblioteki, tylko konstytucje"],["cpu_ms_per_doc","czas procesora procesu na jeden dokument, ms"],["cpu_pct_machine","CPU procesu jako procent całej maszyny"]],"scenarios":[["series","seria pomiarów (1 albo 2: dwa pełne przebiegi tych samych plików wykonywalnych)"],["scenario","Strumien zadan 60/s (otwarta pętla, harmonogram przyjść Poissona wspólny dla wszystkich implementacji), 60/s+50% (to samo przy obciążeniu CPU 50%)"],["cell","Strumien zadan 60/s (otwarta pętla, harmonogram przyjść Poissona wspólny dla wszystkich implementacji), 60/s+50% (to samo przy obciążeniu CPU 50%)"],["pipeline","język tekstu: polish (polski) albo malagasy (malgaski)"],["implementation","implementacja: język, środowisko uruchomieniowe, wariant kompilacji"],["implementation_id","identyfikator implementacji w narzędziach pomiarowych"],["run","przebieg"],["rounds","liczba rund"],["rounds_failed","rundy nieudane"],["rounds_digest_ok","rundy z poprawnym skrótem wyników"],["docs_per_s","przepustowość: dokumenty na sekundę"],["cpu_ms_per_doc","czas procesora procesu na jeden dokument, ms"],["library_s","łączny czas biblioteki, s"],["pass_wall_s","czas przejścia według zegara ściennego, s"],["library_p99_ms","99. percentyl czasu biblioteki na dokument, ms"],["cpu_load_achieved_pct","obciążenie CPU, jakie faktycznie osiągnął proces obciążający, %"],["open_loop_offered_per_s","opóźnienie liczone od zaplanowanego przyjścia dokumentu, więc z czasem w kolejce"],["open_loop_p50_ms","opóźnienie liczone od zaplanowanego przyjścia dokumentu, więc z czasem w kolejce"],["open_loop_p99_ms","opóźnienie liczone od zaplanowanego przyjścia dokumentu, więc z czasem w kolejce"],["open_loop_max_ms","opóźnienie liczone od zaplanowanego przyjścia dokumentu, więc z czasem w kolejce"],["first10_max_ms","najdłuższe z 10 pierwszych opóźnień, czyli koszt pierwszych dokumentów po ciszy"]],"text_ops":[["pipeline","język tekstu: polish (polski) albo malagasy (malgaski)"],["implementation","implementacja: język, środowisko uruchomieniowe, wariant kompilacji"],["stage","punkt pomiaru jak w raporcie: tokenize, patterns, invisible, signals = reszta dokumentu, classify:… = klasyfikacja słów, …"],["kind","tekst, klasyfikacja słów, reszta"],["ms_per_pass","czas ściany etapu na przejście; etap równoległy = czas oczekiwania wołającego"],["x_java","krotność czasu Javy JIT z tego samego przebiegu (mniej = szybciej)"],["share_pct","udział w czasie dokumentu"],["rounds","liczba rund"],["digest_ok","ta sama praca we wszystkich przebiegach"]],"wasm":[["series","seria pomiarów (1 albo 2: dwa pełne przebiegi tych samych plików wykonywalnych)"],["pipeline","język tekstu: polish (polski) albo malagasy (malgaski)"],["set","zestaw dokumentów"],["documents","liczba dokumentów"],["implementation","implementacja: język, środowisko uruchomieniowe, wariant kompilacji"],["implementation_id","identyfikator implementacji w narzędziach pomiarowych"],["consumers","zawsze 1: piaskownica bez wątków"],["rounds","liczba rund"],["rounds_digest_ok","rundy z poprawnym skrótem wyników"],["docs_per_s","przepustowość: dokumenty na sekundę"],["docs_per_s_vs_rust","przepustowość wobec natywnego Rusta (krotność)"],["library_s","łączny czas biblioteki, s"],["document_p50_ms","mediana czasu dokumentu, ms"],["document_p99_ms","99. percentyl czasu dokumentu, ms"],["start_s","czas startu biblioteki z detektorami wczytanymi z dysku, s"],["cpu_ms_per_doc","puste dla WebAssembly: piaskownica nie udostępnia czasu CPU"]]};</script>
+<!--NSA_DATA-->
+<script>
+// Wersja dla serwera statycznego (np. GitHub Pages) czyta data/*.csv; wersja jednoplikowa (index_offline.html,
+// budowana skryptem eksportu) ma te same pliki CSV w window.NSA_DATA.
+const TABLES = [
+  { g: 'Wyniki główne' },
+  { n: 'matrix', t: 'Czas, start i pamięć', find: '02_speed_memory.md', sort: 'x_java',
+    f: ['pipeline', 'lang', 'implementation', 'series', 'run'], def: { pipeline: ['polish'], series: ['1'] },
+    d: '341 tekstów konstytucji, jeden klient, wolna maszyna. <code>x_java</code> = suma czasów biblioteki wobec ' +
+       'Javy JIT z tego samego przebiegu (mniej = szybciej); <code>start_s</code> = start z gotowymi detektorami; ' +
+       '<code>peak_rss_mb</code> = szczyt pamięci procesu.' },
+  { n: 'load_curve', t: 'Tłok na procesorze', find: '03_contention.md', sort: 'share_of_own_pct',
+    f: ['pipeline', 'lang', 'implementation', 'load_target_pct', 'series'],
+    def: { pipeline: ['polish'], series: ['1'], load_target_pct: ['90'] },
+    d: 'Te same teksty, gdy inny proces zajmuje zadany procent CPU. <code>share_of_own_pct</code> = dok/s wobec ' +
+       'tej samej implementacji na wolnej maszynie; <code>load_achieved_pct</code> = ile CPU proces obciążający ' +
+       'faktycznie dostał.' },
+  { n: 'scenarios', t: 'Scenariusze', find: '03_contention.md', sort: 'docs_per_s',
+    f: ['scenario', 'cell', 'pipeline', 'lang', 'implementation', 'series'],
+    def: { scenario: ['Strumien zadan'], cell: ['60/s'], pipeline: ['polish'], series: ['1'] },
+    d: 'Pięć nazwanych sytuacji: strumień żądań (otwarta pętla, opóźnienie od zaplanowanego przyjścia), zimny ' +
+       'zryw po minucie ciszy, głodny cache, ciasna pamięć, mała maszyna. Kolumny innych scenariuszy są puste.' },
+  { n: 'latency_curve', t: 'Krzywa opóźnienia', find: '03_contention.md', sort: 'p99_ms',
+    f: ['pipeline', 'target_per_s', 'lang', 'implementation'], def: { pipeline: ['polish'], target_per_s: ['120'] },
+    d: 'Otwarta pętla od 20 do 120 dok/s, 4 konsumentów, harmonogram przyjść wspólny dla wszystkich. Opóźnienie ' +
+       'od zaplanowanego przyjścia do gotowego raportu; <code>docs_per_s</code> mniejsze od ' +
+       '<code>offered_per_s</code> = implementacja nie nadąża.' },
+  { n: 'colocate', t: 'Wspólny serwer', find: '03_contention.md', sort: 'p99_ms',
+    f: ['run', 'pipeline', 'rate_per_instance', 'alone', 'mix', 'status', 'lang', 'implementation'],
+    def: { run: ['1'], pipeline: ['polish'], rate_per_instance: ['15.0'] },
+    d: 'Kilka programów naraz na jednej maszynie, każda instancja z własnym strumieniem żądań. Wiersze z ' +
+       '<code>alone</code> = tak to odniesienie: ta sama implementacja sama na maszynie.' },
+  { g: 'Poprawność i koszt' },
+  { n: 'equivalence', t: 'Równoważność z Javą', find: '01_equivalence.md', sort: null,
+    f: ['check', 'pipeline', 'lang', 'implementation'],
+    d: 'Każda implementacja wobec Javy, raport po raporcie i pole po polu: pełna bramka, zimny trening detektorów ' +
+       '(pliki bajt w bajt), fuzzing losowymi tekstami z ziarnem.' },
+  { n: 'port_cost', t: 'Koszt portów', find: '06_port_cost.md', sort: 'port_order', f: [],
+    d: 'Rozmiar każdej implementacji (linie kodu i testów samych bibliotek) i nakład pracy AI. Kolejność pisania ' +
+       '(<code>port_order</code>) wpływa na koszt — zastrzeżenia w pliku wniosków.' },
+  { g: 'Pomiary szczególne' },
+  { n: 'kernels', t: 'Asembler i SIMD', find: '04_assembler_simd.md', sort: 'ns_median',
+    f: ['kernel', 'language', 'variant', 'series'], def: { kernel: ['distance_within k=2'], series: ['1'] },
+    d: 'Dwie gorące pętle: ręczny asembler i instrukcje wektorowe wobec kodu z kompilatora. Mediana z 15 rund.' },
+  { n: 'gpu', t: 'Karta graficzna', find: '05_gpu.md', sort: 'value',
+    f: ['measure', 'pipeline', 'method', 'series'], def: { measure: ['detection'] },
+    d: 'Zintegrowana karta Intel HD 530 (OpenCL) wobec CPU: wykrywanie, to samo jądro wołane z innych języków, ' +
+       'zimny start z treningiem. Jednostka zależy od miary (<code>unit</code>).' },
+  { n: 'python_rust', t: 'Python nad Rustem', find: '08_python_wasm_long_run.md', sort: 'docs_per_s',
+    f: ['set', 'pipeline', 'implementation', 'consumers'], def: { set: ['constitutions'] },
+    d: 'Biblioteka w Ruście wołana z Pythona przez interfejs C (<code>ctypes</code>) wobec samego Rustu ' +
+       'zbudowanego tymi samymi flagami.' },
+  { n: 'wasm', t: 'WebAssembly', find: '08_python_wasm_long_run.md', sort: 'docs_per_s',
+    f: ['pipeline', 'implementation'],
+    d: 'Ten sam port Rusta jako WebAssembly (wasmtime, piaskownica bez wątków) wobec Rustu natywnego liczącego ' +
+       'każdy dokument w jednym wątku.' },
+  { n: 'endurance_runs', t: 'Godzina pracy', find: '08_python_wasm_long_run.md', sort: 'pass_s_median',
+    f: ['pipeline', 'lang', 'implementation', 'run'],
+    d: 'Jeden proces, 341 tekstów w pętli przez 38–104 minuty, cache werdyktów jak w produkcji. ' +
+       '<code>last_vs_first</code> = ostatnia dziesiąta przejść wobec pierwszej (1 = brak dryfu); ' +
+       '<code>run</code> 2 = powtórka obrazu natywnego Javy. C++ z alokatorem mimalloc 3.3.2; z wersją 2.1.7 ' +
+       'kończył się błędem po ok. 1200–1350 przejściach (<a href="opis.html#k-data">opis tabel i kolumn</a>).' },
+  { n: 'endurance', t: 'Godzina pracy, okna 5 minut', find: '08_python_wasm_long_run.md', sort: null,
+    f: ['pipeline', 'lang', 'implementation', 'run'], def: { pipeline: ['polish'] },
+    d: 'Te same przebiegi w oknach 5 minut: czas przejścia, CPU na przejście, pamięć procesu.' },
+  { n: 'openj9_runs', t: 'OpenJ9 wobec HotSpot', find: '08_python_wasm_long_run.md', sort: 'steady_pass_s_median',
+    f: ['pipeline', 'jvm', 'round'],
+    d: 'Ta sama Java na OpenJ9 (JDK 25) i na HotSpot (JDK 27): 25 przejść, dwie rundy na JVM w kolejności ABBA.' },
+  { n: 'openj9', t: 'OpenJ9, przejście po przejściu', find: '08_python_wasm_long_run.md', sort: null,
+    f: ['pipeline', 'jvm', 'round'], def: { pipeline: ['polish'], round: ['1'] },
+    d: 'Czas każdego przejścia tych przebiegów: widać, po ilu przejściach każda JVM kończy rozgrzewanie.' },
+  { n: 'gc', t: 'Odśmiecacze Javy', find: '12_gc_threads.md', sort: null, f: ['pipeline', 'mode', 'gc'],
+    def: { mode: ['open_loop_60'] },
+    d: 'Ta sama Java na czterech odśmiecaczach (zmieniona tylko flaga GC): otwarta pętla 60 dok/s (opóźnienie) ' +
+       'i zamknięta pętla (przepustowość, pamięć). Serial = produkcja.' },
+  { g: 'Praca AI' },
+  { n: 'ai_work', t: 'Praca AI per język', find: '09_ai_work.md', sort: 'port_order', f: [],
+    d: 'Z czego portowano każdy język, testy, rundy optymalizacji, powroty oraz z zapisów sesji: edycje, budowania, ' +
+       'odrzucenia przez kompilator i testy, przebiegi bramki. Liczby błędów to dolna granica. ' +
+       '<a href="opis.html#f10">Werdykt AI</a> (opinia, nie pomiar).' },
+  { n: 'ai_scale', t: 'Skala przedsięwzięcia', find: '09_ai_work.md', sort: null, f: [],
+    d: 'Ile kodu, testów, bramek, wyników i pracy AI stoi za tym porównaniem (od pierwszego portu).' },
+  { n: 'code_tokens', t: 'Tokeny kodu', find: '15_code_tokens.md', sort: null, f: ['part'],
+    d: 'Ile tokenów zajmuje kod każdej implementacji i materiał <code>publish/</code> po wczytaniu do kontekstu AI, ' +
+       'jaka to część okna 200 tys. i 1 mln tokenów i ile kosztuje jedno wczytanie przy przykładowych stawkach.' },
+  { n: 'detectors', t: 'Detektory', find: '16_detectors.md', sort: null, f: ['pipeline', 'matcher'],
+    d: 'Aktualne zbiory detektorów NSA: liczba, długości, ile różnych, ile w kilku kategoriach, alfabet, ile to ' +
+       'prawdziwe słowa obce.' },
+  { n: 'detector_letters', t: 'Litery detektorów', find: '16_detectors.md', sort: 'language_pct', f: ['pipeline'],
+    def: { pipeline: ['polish'] },
+    d: 'Udział liter w słowach języka i w detektorach Hamminga (ziarno 42), w procentach.' },
+  { n: 'detector_lengths', t: 'Długość detektorów', find: '16_detectors.md', sort: null,
+    f: ['pipeline', 'matcher', 'seed'], def: { pipeline: ['polish'], matcher: ['hamming'] },
+    d: 'Rozkład długości detektorów w procentach; dłuższe niż 30 znaków liczone przy 30.' },
+  { n: 'language_summary', t: 'Podsumowanie per język', find: '00_summary.md', sort: 'x_java', f: [],
+    d: 'Najważniejsze liczby każdego języka w jednym miejscu (najlepsza wersja języka): czas wobec Javy, pamięć, ' +
+       'start, tłok, strumień, ciasna pamięć, jeden procesor, kod, tokeny, praca AI, optymalizacje, czytelność.' },
+  { n: 'port_matrix', t: 'Porty język na język', find: '18_port_matrix.md', sort: 'speed_ratio',
+    f: ['source', 'target', 'verdict', 'difficulty'], def: { source: ['Java'] },
+    d: 'Para źródło → cel: krotność czasu, pamięci i startu, trudność portu, co trzeba odtworzyć, ocena i czy to ' +
+       'najlepsze źródło dla celu. Trudność i ocena to reguły AI opisane w pliku wniosków.' },
+  { n: 'text_ops', t: 'Operacje tekstowe', find: '20_text_ops.md', sort: 'x_java',
+    f: ['pipeline', 'kind', 'stage', 'lang', 'implementation'],
+    def: { pipeline: ['polish'], kind: ['tekst'], stage: ['tokenize'] },
+    d: 'Czas etapów dokumentu (ms na przejście 341 konstytucji, mediana rund) w każdej implementacji i krotność ' +
+       'Javy. <code>kind</code> = tekst (tokenizacja, wzorce, znaki niewidzialne), klasyfikacja słów, reszta.' },
+  { n: 'doc_language', t: 'Język dokumentu', find: '21_doc_language.md', sort: 'x_java',
+    f: ['pipeline', 'script', 'doc_language', 'lang', 'implementation', 'rank'],
+    def: { pipeline: ['polish'], doc_language: ['tr'] },
+    d: 'Czy implementacja jest wrażliwa na język dokumentu: czas, słowa na sekundę i krotność Javy osobno dla ' +
+       'konstytucji w każdym języku, przez pipeline polski i malgaski; <code>rank</code> = miejsce wśród ' +
+       'implementacji dla tego języka.' },
+  { n: 'foreign_fragment', t: 'Wstawka obcojęzyczna', find: '22_foreign_fragment.md', sort: 'delta_us_per_token',
+    f: ['pipeline', 'script', 'fragment_language', 'lang', 'implementation', 'detected'],
+    def: { pipeline: ['polish'], fragment_language: ['tr'] },
+    d: 'Około 1000 słów konstytucji pipeline\'u osobno i z akapitem ok. 200 słów w jednym z 40 języków: czas biblioteki ' +
+       'na dokument (µs), przyrost przez wstawkę i jakie sygnały raportu dodała (te same we wszystkich implementacjach).' },
+  { n: 'code_metrics', t: 'Czytelność kodu', find: '19_readability.md', sort: 'readability_place', f: [],
+    d: 'Metryki wyglądu kodu bibliotek i ranking z czterech miar (przybliżenie, nie ocena jakości).' },
+  { n: 'prompts', t: 'Prompty', find: '17_prompts.md', sort: null, f: ['group'],
+    d: 'Statystyki promptów człowieka i pracy AI po każdym z nich (bez treści promptów).' },
+  { n: 'manual_estimate', t: 'Szacunek pracy ręcznej', find: '13_manual_estimate.md', sort: 'port_order', f: [],
+    d: 'Ile dni roboczych zająłby każdy port programiście bez AI: kod, testy, rundy optymalizacji, ręczne ' +
+       'uruchamianie budowań, testów i bramki. To szacunek z jawnych założeń (przedziały), nie pomiar; ' +
+       '<code>x_ai_*</code> = godziny człowieka wobec aktywnych godzin AI.' },
+];
+const LABEL = { pipeline: 'język tekstu', lang: 'język programowania', language: 'język programowania',
+  implementation: 'implementacja', series: 'seria', run: 'przebieg', load_target_pct: 'obciążenie CPU, %',
+  scenario: 'scenariusz', cell: 'komórka', rate_per_instance: 'dok/s na instancję', mix: 'skład',
+  alone: 'instancja sama', status: 'status', check: 'sprawdzenie', kernel: 'pętla', variant: 'wariant',
+  measure: 'miara', method: 'metoda', set: 'zestaw', consumers: 'konsumenci', jvm: 'JVM', round: 'runda',
+  part: 'część', matcher: 'dopasowanie', seed: 'ziarno', source: 'źródło', target: 'cel', verdict: 'ocena',
+  difficulty: 'trudność', group: 'grupa', kind: 'rodzaj', stage: 'etap', script: 'pismo',
+  doc_language: 'język dokumentu', fragment_language: 'język wstawki', detected: 'wykryta', rank: 'miejsce', gc: 'odśmiecacz', mode: 'tryb',
+  target_per_s: 'zadane dok/s' };
+const VALUE = { pipeline: { polish: 'polski', malagasy: 'malgaski' }, alone: { True: 'tak', False: 'nie' }, detected: { True: 'tak', False: 'nie' },
+  check: { gate: 'bramka', cold_training: 'zimny trening', fuzzing: 'fuzzing' },
+  set: { constitutions: 'konstytucje', samples: 'próbki' }, run: { main: 'główny', separate: 'osobny' },
+  status: { ok: 'ok', failed: 'nieudana', wrong_digest: 'inny skrót' },
+  mode: { open_loop_60: 'otwarta pętla 60 dok/s', closed_loop: 'zamknięta pętla' } };
+const LANG_ORDER = ['Java', 'Kotlin', 'Scala', 'Rust', 'C#', 'Go', 'C++', 'TypeScript', 'Python', 'WebAssembly'];
+const CHIP_MAX = 18;            // więcej wartości = lista rozwijana
+const NUM = /^-?\d+(\.\d+)?$/;
+// kolumny porządkowe i warunki pomiaru: sortowalne, ale bez paska wielkości
+const NOBAR = new Set(['series', 'run', 'round', 'pass', 'slot', 'port_order', 'consumers', 'documents', 'words',
+                       'load_target_pct', 'rate_per_instance', 'window_start_min', 'open_loop_offered_per_s']);
+
+function langOf(s) {
+  if (/WebAssembly/.test(s)) return 'WebAssembly';
+  if (/^Python/.test(s)) return 'Python';
+  const m = s.match(/^(C\+\+|C#|[A-Za-z]+)/);
+  return m ? m[1] : s;
+}
+function show(col, v) { return (VALUE[col] && VALUE[col][v]) || v; }
+
+// CSV z polami w cudzysłowie (nazwy implementacji zawierają przecinki: "Java (GraalVM native, PGO)")
+function parseCsv(s) {
+  const rows = []; let row = [], f = '', q = false;
+  for (let i = 0; i < s.length; i++) {
+    const c = s[i];
+    if (q) { if (c === '"') { if (s[i + 1] === '"') { f += '"'; i++; } else q = false; } else f += c; }
+    else if (c === '"') q = true;
+    else if (c === ',') { row.push(f); f = ''; }
+    else if (c === '\n') { row.push(f); rows.push(row); row = []; f = ''; }
+    else if (c !== '\r') f += c;
+  }
+  if (f !== '' || row.length) { row.push(f); rows.push(row); }
+  return rows;
+}
+
+const cache = {};
+async function load(cfg) {
+  if (cache[cfg.n]) return cache[cfg.n];
+  let text;
+  if (window.NSA_DATA && window.NSA_DATA[cfg.n] !== undefined) text = window.NSA_DATA[cfg.n];
+  else {
+    const r = await fetch('data/' + cfg.n + '.csv');
+    if (!r.ok) throw new Error(String(r.status));
+    text = await r.text();
+  }
+  const all = parseCsv(text);
+  const header = all[0];
+  const rows = all.slice(1).filter(r => r.length === header.length);
+  const at = {}; header.forEach((h, i) => { at[h] = i; });
+  const impl = at.implementation;
+  const numeric = header.map((h, i) => rows.some(r => r[i] !== '') && rows.every(r => r[i] === '' || NUM.test(r[i])));
+  // jedna liczba miejsc po przecinku na kolumnę (CSV ma 1.3 obok 1.35)
+  const dec = header.map((h, i) => numeric[i] ? Math.max(0, ...rows.map(r => (r[i].split('.')[1] || '').length)) : 0);
+  const values = {};
+  for (const col of cfg.f) {
+    let vs = [];
+    for (const r of rows) {
+      const v = col === 'lang' ? langOf(r[impl]) : r[at[col]];
+      if (!vs.includes(v)) vs.push(v);
+    }
+    if (col === 'lang') vs.sort((a, b) => LANG_ORDER.indexOf(a) - LANG_ORDER.indexOf(b));
+    else if (numeric[at[col]]) vs.sort((a, b) => Number(a) - Number(b));
+    values[col] = vs;
+  }
+  return (cache[cfg.n] = { text, header, rows, at, numeric, dec, values });
+}
+
+// stan per tabela: filtry (kolumna -> zbiór wartości; pusty = wszystkie), sortowanie, wszystkie kolumny
+const state = {};
+function defaults(cfg) {
+  const f = {};
+  for (const col of cfg.f) f[col] = new Set((cfg.def && cfg.def[col]) || []);
+  return { f, sort: cfg.sort, dir: 1, all: false };
+}
+function stateOf(cfg) { return state[cfg.n] || (state[cfg.n] = defaults(cfg)); }
+
+function writeHash(cfg) {
+  const st = stateOf(cfg), p = new URLSearchParams();
+  for (const col of cfg.f) if (st.f[col].size) p.set(col, [...st.f[col]].join('|'));
+  if (st.sort) p.set('sort', st.sort);
+  if (st.dir < 0) p.set('dir', 'desc');
+  if (st.all) p.set('all', '1');
+  history.replaceState(null, '', '#' + cfg.n + (p.toString() ? '?' + p.toString() : ''));
+}
+function readHash() {
+  const h = location.hash.slice(1), q = h.indexOf('?');      // zapytanie zostaje zakodowane (wartości z + i %)
+  const name = decodeURIComponent(q < 0 ? h : h.slice(0, q)), query = q < 0 ? undefined : h.slice(q + 1);
+  const cfg = TABLES.find(c => c.n === name);
+  if (!cfg) return null;
+  if (query !== undefined) {
+    const p = new URLSearchParams(query), st = defaults(cfg);
+    for (const col of cfg.f) st.f[col] = new Set(p.has(col) ? p.get(col).split('|') : []);
+    st.sort = p.get('sort') || null;
+    st.dir = p.get('dir') === 'desc' ? -1 : 1;
+    st.all = p.get('all') === '1';
+    state[cfg.n] = st;
+  }
+  return cfg;
+}
+
+let current = null;
+function el(tag, attrs, text) {
+  const e = document.createElement(tag);
+  if (attrs) for (const k in attrs) e.setAttribute(k, attrs[k]);
+  if (text !== undefined) e.textContent = text;
+  return e;
+}
+const fmtCache = {};
+function fmt(v, d) {
+  if (!NUM.test(v)) return v;
+  if (d === undefined) d = (v.split('.')[1] || '').length;
+  const nf = fmtCache[d] || (fmtCache[d] = new Intl.NumberFormat('pl-PL',
+    { minimumFractionDigits: d, maximumFractionDigits: d }));
+  return nf.format(Number(v));
+}
+
+function cell(data, r, col) { return col === 'lang' ? langOf(r[data.at.implementation]) : r[data.at[col]]; }
+function renderFilters(cfg, data) {
+  const st = stateOf(cfg), box = document.getElementById('filters');
+  box.innerHTML = '';
+  const active = cfg.f.filter(col => st.f[col].size);
+  document.getElementById('fsum').textContent = 'Filtry' + (active.length ? ' · aktywne: ' + active.length : '');
+  for (const col of cfg.f) {
+    const vs = data.values[col];
+    if (vs.length < 2) continue;
+    // wartości, które przy pozostałych filtrach nie dają żadnego wiersza, są przygaszone (dalej klikalne)
+    const others = active.filter(c => c !== col), present = new Set();
+    for (const r of data.rows) if (others.every(c => st.f[c].has(cell(data, r, c)))) present.add(cell(data, r, col));
+    const label = v => col !== 'lang' && data.numeric[data.at[col]] ? fmt(v, data.dec[data.at[col]]) : show(col, v);
+    const row = el('div', { class: 'frow' });
+    const id = 'f_' + col;
+    row.appendChild(el('span', { class: 'flabel', id }, LABEL[col] || col));
+    const sel = st.f[col];
+    if (vs.length > CHIP_MAX) {
+      const s = el('select', { 'aria-labelledby': id });
+      s.appendChild(el('option', { value: '' }, 'wszystkie (' + vs.length + ')'));
+      for (const v of vs) {
+        const o = el('option', { value: v }, label(v) + (present.has(v) ? '' : ' (0)'));
+        if (sel.has(v)) o.selected = true;
+        s.appendChild(o);
+      }
+      s.onchange = () => { st.f[col] = new Set(s.value ? [s.value] : []); update(cfg); };
+      row.appendChild(s);
+    } else {
+      const chips = el('div', { class: 'chips', role: 'group', 'aria-labelledby': id });
+      for (const v of vs) {
+        const b = el('button', { class: 'chip' + (present.has(v) ? '' : ' none'), type: 'button',
+                                 'aria-pressed': String(sel.has(v)) }, label(v));
+        b.onclick = () => { sel.has(v) ? sel.delete(v) : sel.add(v); update(cfg); };
+        chips.appendChild(b);
+      }
+      row.appendChild(chips);
+    }
+    box.appendChild(row);
+  }
+  if (box.children.length) {
+    const acts = el('div', { class: 'factions' });
+    const a = el('button', { class: 'act', type: 'button' }, 'ustawienia początkowe');
+    a.onclick = () => { state[cfg.n] = defaults(cfg); update(cfg); };
+    const b = el('button', { class: 'act', type: 'button' }, 'bez filtrów');
+    b.onclick = () => { for (const col of cfg.f) st.f[col].clear(); update(cfg); };
+    acts.append(a, b);
+    const row = el('div', { class: 'frow' });
+    row.append(el('span'), acts);
+    box.appendChild(row);
+  }
+}
+
+function filtered(cfg, data) {
+  const st = stateOf(cfg);
+  const active = cfg.f.filter(col => st.f[col].size);
+  let rows = data.rows.filter(r => active.every(col => st.f[col].has(cell(data, r, col))));
+  const si = st.sort ? data.at[st.sort] : undefined;
+  if (si !== undefined) {
+    const num = data.numeric[si];
+    rows = rows.slice().sort((a, b) => {
+      const x = a[si], y = b[si];
+      if (x === '' || y === '') return (x === '') - (y === '');
+      return st.dir * (num ? Number(x) - Number(y) : x.localeCompare(y, 'pl'));
+    });
+  }
+  return rows;
+}
+
+function renderTable(cfg, data) {
+  const st = stateOf(cfg), rows = filtered(cfg, data), meta = document.getElementById('meta');
+  const t = document.getElementById('t');
+  t.innerHTML = '';
+  meta.innerHTML = '';
+  let cols = data.header.map((h, i) => i);
+  const common = [], empty = [], ids = [];
+  if (!st.all) {
+    cols = cols.filter(i => {
+      const h = data.header[i];
+      if (/_id$/.test(h)) { ids.push(h); return false; }
+      if (rows.length < 2) return true;
+      const v0 = rows[0][i];
+      if (rows.every(r => r[i] === v0)) { (v0 === '' ? empty : common).push(i); return false; }
+      return true;
+    });
+  }
+  const line = el('div');
+  line.appendChild(document.createTextNode(rows.length + ' z ' + data.rows.length + ' wierszy'));
+  const lab = el('label');
+  const cb = el('input', { type: 'checkbox' });
+  cb.checked = st.all;
+  cb.onchange = () => { st.all = cb.checked; update(cfg); };
+  lab.append(cb, document.createTextNode('wszystkie kolumny'));
+  line.appendChild(lab);
+  meta.appendChild(line);
+  if (common.length) meta.appendChild(el('div', null, 'Wspólne dla wszystkich wierszy: ' +
+    common.map(i => data.header[i] + ' = ' + (data.numeric[i] ? fmt(rows[0][i], data.dec[i])
+      : show(data.header[i], rows[0][i]))).join(' · ')));
+  if (empty.length || ids.length) meta.appendChild(el('div', null, 'Ukryte: ' +
+    [empty.length ? 'puste ' + empty.map(i => data.header[i]).join(', ') : '',
+     ids.length ? 'identyfikatory ' + ids.join(', ') : ''].filter(Boolean).join('; ') + '.'));
+
+  const si = st.sort ? data.at[st.sort] : undefined;
+  const barOn = si !== undefined && data.numeric[si] && cols.includes(si) && !NOBAR.has(st.sort);
+  let max = 0;
+  if (barOn) for (const r of rows) if (r[si] !== '') max = Math.max(max, Number(r[si]));
+
+  const head = t.createTHead().insertRow();
+  for (const i of cols) {
+    const h = data.header[i];
+    const th = el('th', { scope: 'col' });
+    if (data.numeric[i]) th.className = 'num';
+    if (i === si) th.setAttribute('aria-sort', st.dir > 0 ? 'ascending' : 'descending');
+    const dsc = colDesc(cfg, h);
+    const b = el('button', { type: 'button', title: (dsc ? h + ': ' + dsc + '\n' : '') + 'kliknij, aby sortować' },
+                 h + (i === si ? (st.dir > 0 ? ' ▲' : ' ▼') : ''));
+    if (dsc) b.className = 'hasdesc';
+    b.onclick = () => {
+      if (st.sort === h) { if (st.dir > 0) st.dir = -1; else { st.sort = null; st.dir = 1; } }
+      else { st.sort = h; st.dir = 1; }
+      update(cfg);
+    };
+    th.appendChild(b);
+    head.appendChild(th);
+  }
+  const body = t.createTBody();
+  for (const r of rows) {
+    const tr = body.insertRow();
+    for (const i of cols) {
+      const td = tr.insertCell();
+      const v = r[i];
+      td.textContent = data.numeric[i] ? fmt(v, data.dec[i]) : show(data.header[i], v);
+      if (data.numeric[i]) td.className = 'num';
+      if (barOn && i === si && v !== '' && max > 0) {
+        td.classList.add('bar');
+        td.style.setProperty('--w', Math.max(0, Number(v) / max * 100).toFixed(1) + '%');
+      }
+    }
+  }
+  if (!rows.length) {
+    const td = body.insertRow().insertCell();
+    td.colSpan = Math.max(1, cols.length);
+    td.textContent = 'Brak wierszy przy tych filtrach.';
+  }
+}
+
+let blobUrl = null;
+function renderHead(cfg, data) {
+  document.getElementById('title').textContent = cfg.t;
+  document.getElementById('desc').innerHTML = cfg.d;
+  const links = document.getElementById('tlinks');
+  links.innerHTML = '';
+  if (cfg.find) links.appendChild(el('a', { href: 'opis.html#f' + cfg.find.slice(0, 2) }, 'wnioski do tej tabeli'));
+  const colsBtn = el('button', { type: 'button', class: 'linkbtn' }, 'co znaczą kolumny');
+  colsBtn.onclick = () => { const c = document.getElementById('cbox'); c.open = true; c.scrollIntoView({ block: 'nearest' }); };
+  links.appendChild(colsBtn);
+  const csv = el('a', null, 'źródło: data/' + cfg.n + '.csv');
+  if (window.NSA_DATA) {
+    if (blobUrl) URL.revokeObjectURL(blobUrl);
+    blobUrl = URL.createObjectURL(new Blob([data.text], { type: 'text/csv' }));
+    csv.href = blobUrl;
+    csv.download = cfg.n + '.csv';
+  } else csv.href = 'data/' + cfg.n + '.csv';
+  links.appendChild(csv);
+  // opisy kolumn z data/README.md (blok window.NSA_COLS, publish_export.py cols)
+  const box = document.getElementById('cbox'), list = document.getElementById('clist');
+  const cols = (window.NSA_COLS || {})[cfg.n] || [];
+  list.innerHTML = '';
+  for (const [c, d] of cols) {
+    list.appendChild(el('dt', null, c));
+    list.appendChild(el('dd', null, d || '—'));
+  }
+  document.getElementById('csum').textContent = 'Kolumny tej tabeli (' + cols.length + '): co znaczą';
+  box.hidden = !cols.length;
+}
+function colDesc(cfg, h) {
+  const row = ((window.NSA_COLS || {})[cfg.n] || []).find(r => r[0] === h);
+  return row && row[1] ? row[1] : '';
+}
+
+function update(cfg) {
+  const data = cache[cfg.n];
+  renderFilters(cfg, data);
+  document.getElementById('fbox').hidden = !document.getElementById('filters').children.length;
+  renderTable(cfg, data);
+  writeHash(cfg);
+}
+
+async function openTable(cfg) {
+  current = cfg;
+  document.querySelectorAll('#tabs .tab').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.n === cfg.n)));
+  const note = document.getElementById('note');
+  try {
+    const data = await load(cfg);
+    if (current !== cfg) return;
+    note.textContent = '';
+    renderHead(cfg, data);
+    update(cfg);
+  } catch (e) {
+    document.getElementById('title').textContent = cfg.t;
+    ['desc', 'tlinks', 'filters', 'meta', 't', 'clist'].forEach(id => { document.getElementById(id).innerHTML = ''; });
+    document.getElementById('cbox').hidden = true;
+    document.getElementById('fbox').hidden = true;
+    note.textContent = 'Nie udało się wczytać data/' + cfg.n + '.csv. Strona otwarta wprost z dysku? Przeglądarka ' +
+      'nie czyta wtedy innych plików: otwórz index_offline.html (dane wbudowane w stronę) albo wyniki.pdf, ' +
+      'albo uruchom w tym katalogu dowolny serwer plików statycznych.';
+  }
+}
+
+if (window.matchMedia('(max-width: 640px)').matches) document.getElementById('fbox').open = false;
+const nav = document.getElementById('tabs');
+let group = null;
+for (const c of TABLES) {
+  if (c.g) {
+    group = el('div', { class: 'group' });
+    group.appendChild(el('span', { class: 'glabel' }, c.g));
+    nav.appendChild(group);
+    continue;
+  }
+  const b = el('button', { class: 'tab', type: 'button', 'aria-pressed': 'false', title: 'data/' + c.n + '.csv' }, c.t);
+  b.dataset.n = c.n;
+  b.onclick = () => openTable(c);
+  group.appendChild(b);
+}
+document.getElementById('mode').textContent = window.NSA_DATA
+  ? 'Wersja jednoplikowa: dane wbudowane w stronę. Odnośniki do opis.html, charts.html i wyniki.pdf działają, gdy te pliki leżą obok.'
+  : 'Dane czytane z katalogu data/. Wersja do pracy bez serwera: index_offline.html.';
+window.addEventListener('hashchange', () => { const c = readHash(); if (c) openTable(c); });
+openTable(readHash() || TABLES.find(c => c.n));
+</script>
+</body>
+</html>

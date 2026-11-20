@@ -1,0 +1,57 @@
+source,target,speed_ratio,memory_ratio,start_ratio,difficulty,needs,verdict,done_here,ai_hours_here,best_source
+Java,Kotlin,1.14,1.07,1.2,łatwy,—,tylko dla ekosystemu,tak,4.1,tak
+Java,Scala,1.24,1.14,1.43,łatwy,—,tylko dla ekosystemu,tak,5.4,tak
+Java,Rust,0.72,0.71,0.19,trudny,"odtworzenie JDK (regex, Unicode, NFKC, Random); napisy UTF-16; pamięć bez GC",warto: szybciej,tak,9.0,nie
+Java,C#,0.75,0.82,0.38,trudny,"odtworzenie JDK (regex, Unicode, NFKC, Random)",warto: szybciej,nie,,nie
+Java,Go,0.72,0.68,0.44,trudny,"odtworzenie JDK (regex, Unicode, NFKC, Random); napisy UTF-16",warto: szybciej,nie,,nie
+Java,C++,0.75,0.87,0.32,trudny,"odtworzenie JDK (regex, Unicode, NFKC, Random); napisy UTF-16; pamięć bez GC",warto: szybciej,nie,,nie
+Java,TypeScript,5.97,1.08,0.52,trudny,"odtworzenie JDK (regex, Unicode, NFKC, Random)",nie warto: wolniej,nie,,nie
+Kotlin,Java,0.88,0.94,0.83,łatwy,—,tylko dla ekosystemu,nie,,tak
+Kotlin,Scala,1.09,1.07,1.19,łatwy,—,tylko dla ekosystemu,nie,,nie
+Kotlin,Rust,0.63,0.66,0.16,trudny,"odtworzenie JDK (regex, Unicode, NFKC, Random); napisy UTF-16; pamięć bez GC",warto: szybciej,nie,,nie
+Kotlin,C#,0.66,0.77,0.32,trudny,"odtworzenie JDK (regex, Unicode, NFKC, Random)",warto: szybciej,nie,,nie
+Kotlin,Go,0.63,0.64,0.37,trudny,"odtworzenie JDK (regex, Unicode, NFKC, Random); napisy UTF-16",warto: szybciej,nie,,nie
+Kotlin,C++,0.66,0.81,0.27,trudny,"odtworzenie JDK (regex, Unicode, NFKC, Random); napisy UTF-16; pamięć bez GC",warto: szybciej,nie,,nie
+Kotlin,TypeScript,5.25,1.01,0.44,trudny,"odtworzenie JDK (regex, Unicode, NFKC, Random)",nie warto: wolniej,nie,,nie
+Scala,Java,0.81,0.88,0.7,łatwy,—,tylko dla ekosystemu,nie,,nie
+Scala,Kotlin,0.92,0.94,0.84,łatwy,—,tylko dla ekosystemu,nie,,nie
+Scala,Rust,0.58,0.62,0.14,trudny,"odtworzenie JDK (regex, Unicode, NFKC, Random); napisy UTF-16; pamięć bez GC",warto: szybciej,nie,,nie
+Scala,C#,0.6,0.72,0.27,trudny,"odtworzenie JDK (regex, Unicode, NFKC, Random)",warto: szybciej,nie,,nie
+Scala,Go,0.58,0.6,0.31,trudny,"odtworzenie JDK (regex, Unicode, NFKC, Random); napisy UTF-16",warto: szybciej,nie,,nie
+Scala,C++,0.61,0.76,0.22,trudny,"odtworzenie JDK (regex, Unicode, NFKC, Random); napisy UTF-16; pamięć bez GC",warto: szybciej,nie,,nie
+Scala,TypeScript,4.83,0.95,0.37,trudny,"odtworzenie JDK (regex, Unicode, NFKC, Random)",nie warto: wolniej,nie,,nie
+Rust,Java,1.39,1.41,5.13,łatwy,dostrojenie GC,nie warto: wolniej,nie,,nie
+Rust,Kotlin,1.59,1.5,6.16,łatwy,dostrojenie GC,nie warto: wolniej,nie,,nie
+Rust,Scala,1.73,1.61,7.35,łatwy,dostrojenie GC,nie warto: wolniej,nie,,nie
+Rust,C#,1.04,1.15,1.97,średni,przeniesienie gotowego odtworzenia JDK; dostrojenie GC,tylko dla ekosystemu,tak,7.1,nie
+Rust,Go,1.0,0.96,2.27,średni,przeniesienie gotowego odtworzenia JDK; napisy UTF-16; dostrojenie GC,tylko dla ekosystemu,tak,2.7,nie
+Rust,C++,1.05,1.22,1.64,średni,przeniesienie gotowego odtworzenia JDK; napisy UTF-16,tylko dla ekosystemu,tak,4.8,tak
+Rust,TypeScript,8.33,1.52,2.69,średni,przeniesienie gotowego odtworzenia JDK; dostrojenie GC,nie warto: wolniej,nie,,nie
+C#,Java,1.34,1.22,2.6,łatwy,—,nie warto: wolniej,nie,,nie
+C#,Kotlin,1.52,1.31,3.12,łatwy,—,nie warto: wolniej,nie,,nie
+C#,Scala,1.66,1.39,3.72,łatwy,—,nie warto: wolniej,nie,,nie
+C#,Rust,0.96,0.87,0.51,trudny,przeniesienie gotowego odtworzenia JDK; napisy UTF-16; pamięć bez GC,tylko dla ekosystemu,nie,,nie
+C#,Go,0.96,0.83,1.15,średni,przeniesienie gotowego odtworzenia JDK; napisy UTF-16,tylko dla ekosystemu,tak,2.7,tak
+C#,C++,1.01,1.06,0.83,trudny,przeniesienie gotowego odtworzenia JDK; napisy UTF-16; pamięć bez GC,tylko dla ekosystemu,nie,,nie
+C#,TypeScript,8.0,1.32,1.36,średni,przeniesienie gotowego odtworzenia JDK,nie warto: wolniej,nie,,tak
+Go,Java,1.39,1.47,2.26,łatwy,—,nie warto: wolniej,nie,,nie
+Go,Kotlin,1.58,1.57,2.71,łatwy,—,nie warto: wolniej,nie,,nie
+Go,Scala,1.72,1.68,3.23,łatwy,—,nie warto: wolniej,nie,,nie
+Go,Rust,1.0,1.04,0.44,trudny,przeniesienie gotowego odtworzenia JDK; napisy UTF-16; pamięć bez GC,warto: pamięć lub start,nie,,nie
+Go,C#,1.04,1.2,0.87,średni,przeniesienie gotowego odtworzenia JDK,tylko dla ekosystemu,nie,,tak
+Go,C++,1.05,1.27,0.72,trudny,przeniesienie gotowego odtworzenia JDK; napisy UTF-16; pamięć bez GC,tylko dla ekosystemu,nie,,nie
+Go,TypeScript,8.31,1.58,1.19,średni,przeniesienie gotowego odtworzenia JDK,nie warto: wolniej,nie,,nie
+C++,Java,1.33,1.15,3.12,łatwy,dostrojenie GC,nie warto: wolniej,nie,,nie
+C++,Kotlin,1.51,1.23,3.75,łatwy,dostrojenie GC,nie warto: wolniej,nie,,nie
+C++,Scala,1.64,1.32,4.47,łatwy,dostrojenie GC,nie warto: wolniej,nie,,nie
+C++,Rust,0.95,0.82,0.61,średni,przeniesienie gotowego odtworzenia JDK; napisy UTF-16,tylko dla ekosystemu,nie,,tak
+C++,C#,0.99,0.94,1.2,średni,przeniesienie gotowego odtworzenia JDK; dostrojenie GC,tylko dla ekosystemu,nie,,nie
+C++,Go,0.95,0.78,1.38,średni,przeniesienie gotowego odtworzenia JDK; napisy UTF-16; dostrojenie GC,tylko dla ekosystemu,nie,,nie
+C++,TypeScript,7.92,1.24,1.64,średni,przeniesienie gotowego odtworzenia JDK; dostrojenie GC,nie warto: wolniej,tak,2.7,nie
+TypeScript,Java,0.17,0.93,1.91,łatwy,—,warto: szybciej,nie,,nie
+TypeScript,Kotlin,0.19,0.99,2.29,łatwy,—,warto: szybciej,nie,,nie
+TypeScript,Scala,0.21,1.06,2.73,łatwy,—,warto: szybciej,nie,,nie
+TypeScript,Rust,0.12,0.66,0.37,trudny,przeniesienie gotowego odtworzenia JDK; napisy UTF-16; pamięć bez GC,warto: szybciej,nie,,nie
+TypeScript,C#,0.13,0.76,0.73,średni,przeniesienie gotowego odtworzenia JDK,warto: szybciej,nie,,nie
+TypeScript,Go,0.12,0.63,0.84,średni,przeniesienie gotowego odtworzenia JDK; napisy UTF-16,warto: szybciej,nie,,nie
+TypeScript,C++,0.13,0.8,0.61,trudny,przeniesienie gotowego odtworzenia JDK; napisy UTF-16; pamięć bez GC,warto: szybciej,nie,,nie

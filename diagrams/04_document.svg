@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" width="960" height="560" font-family="'Segoe UI', Helvetica, Arial, sans-serif" role="img">
+<title>Klasyfikacja dokumentu: od tekstu do raportu</title>
+<defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#4a4842"/></marker></defs>
+<rect width="960" height="560" fill="#ffffff"/>
+<text x="20" y="28" font-size="15" font-weight="600" fill="#1d1c1a">Klasyfikacja dokumentu: od tekstu do raportu</text>
+<rect x="40" y="54" width="300" height="31" rx="6" fill="#ffffff" stroke="#2f5d8a" stroke-width="1.3"/>
+<text x="48" y="74" font-size="13" font-weight="600" fill="#1d1c1a">Tekst dokumentu</text>
+<text x="370" y="71" font-size="12" text-anchor="start" fill="#6b6862">znaki niewidzialne wewnątrz słowa zapisane jako dowód,</text>
+<text x="370" y="88" font-size="12" text-anchor="start" fill="#6b6862">potem zdjęte raz, przed tokenizacją</text>
+<rect x="40" y="124" width="300" height="31" rx="6" fill="#ffffff" stroke="#2f5d8a" stroke-width="1.3"/>
+<text x="48" y="144" font-size="13" font-weight="600" fill="#1d1c1a">Tokenizacja</text>
+<text x="370" y="141" font-size="12" text-anchor="start" fill="#6b6862">słowa i ich pisma (łacińskie, cyrylica, CJK…),</text>
+<text x="370" y="158" font-size="12" text-anchor="start" fill="#6b6862">wielka litera w środku zdania</text>
+<line x1="190" y1="85" x2="190" y2="124" stroke="#4a4842" stroke-width="1.4" marker-end="url(#arr)"/>
+<rect x="40" y="194" width="300" height="31" rx="6" fill="#e8eef6" stroke="#2f5d8a" stroke-width="1.3"/>
+<text x="48" y="214" font-size="13" font-weight="600" fill="#1d1c1a">Pierwsze przejście (firstPass)</text>
+<text x="370" y="211" font-size="12" text-anchor="start" fill="#6b6862">werdykt każdego słowa (rysunek 3); każde różne słowo raz,</text>
+<text x="370" y="228" font-size="12" text-anchor="start" fill="#6b6862">od 256 słów równolegle, cache werdyktów między dokumentami</text>
+<line x1="190" y1="155" x2="190" y2="194" stroke="#4a4842" stroke-width="1.4" marker-end="url(#arr)"/>
+<rect x="40" y="264" width="300" height="31" rx="6" fill="#ffffff" stroke="#2f5d8a" stroke-width="1.3"/>
+<text x="48" y="284" font-size="13" font-weight="600" fill="#1d1c1a">Liczniki (tally)</text>
+<text x="370" y="281" font-size="12" text-anchor="start" fill="#6b6862">słowa swoje / obce / neutralne, głosy języków, pisma;</text>
+<text x="370" y="298" font-size="12" text-anchor="start" fill="#6b6862">poprawki z sąsiedztwa: CONTEXT (mg), PROPER_NOUN</text>
+<line x1="190" y1="225" x2="190" y2="264" stroke="#4a4842" stroke-width="1.4" marker-end="url(#arr)"/>
+<rect x="40" y="334" width="300" height="31" rx="6" fill="#ffffff" stroke="#2f5d8a" stroke-width="1.3"/>
+<text x="48" y="354" font-size="13" font-weight="600" fill="#1d1c1a">Progi dokumentu (documentGates)</text>
+<text x="370" y="351" font-size="12" text-anchor="start" fill="#6b6862">udział słów swoich, dokument obcy (wtedy obce słowa</text>
+<text x="370" y="368" font-size="12" text-anchor="start" fill="#6b6862">nie są wstawką), FOREIGN_DEMOTE</text>
+<line x1="190" y1="295" x2="190" y2="334" stroke="#4a4842" stroke-width="1.4" marker-end="url(#arr)"/>
+<rect x="40" y="404" width="300" height="31" rx="6" fill="#e8eef6" stroke="#2f5d8a" stroke-width="1.3"/>
+<text x="48" y="424" font-size="13" font-weight="600" fill="#1d1c1a">Sygnały (documentSignals)</text>
+<text x="370" y="421" font-size="12" text-anchor="start" fill="#6b6862">wzorce iniekcji (regex z prefiltrem), wstawki języka</text>
+<text x="370" y="438" font-size="12" text-anchor="start" fill="#6b6862">mniejszościowego, zmiana pisma, znak niewidzialny w słowie</text>
+<line x1="190" y1="365" x2="190" y2="404" stroke="#4a4842" stroke-width="1.4" marker-end="url(#arr)"/>
+<rect x="40" y="474" width="300" height="31" rx="6" fill="#ffffff" stroke="#2f5d8a" stroke-width="1.3"/>
+<text x="48" y="494" font-size="13" font-weight="600" fill="#1d1c1a">Raport JSON</text>
+<text x="370" y="491" font-size="12" text-anchor="start" fill="#6b6862">werdykt dokumentu (próg 0,8), proporcje, sygnały</text>
+<text x="370" y="508" font-size="12" text-anchor="start" fill="#6b6862">z pozycjami w tekście, czasy etapów</text>
+<line x1="190" y1="435" x2="190" y2="474" stroke="#4a4842" stroke-width="1.4" marker-end="url(#arr)"/>
+</svg>

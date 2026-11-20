@@ -1,0 +1,9 @@
+language,implementation,x_java,peak_rss_mb,start_s,load90_share_pct,stream60_p99_ms,mem200_docs_per_s,one_cpu_docs_per_s,code_lines,library_tokens,ai_hours,compile_fail_per_100_builds,opt_accepted,readability_place
+Java,Java (JVM),1.0,340,3.8,60.3,46.9,41.9,89.0,6471,213900,32.1,2.4,70,2
+Kotlin,Kotlin (JVM),1.14,363,4.5,,,,,4629,120877,4.1,0.0,43,6
+Scala,Scala (JVM),1.24,388,5.4,,,,,4227,112273,5.4,12.1,46,8
+Rust,Rust (PGO),0.72,242,0.7,50.7,36.6,152.3,143.8,7374,162237,9.0,7.4,44,3
+C#,C# (JIT),0.75,278,1.4,48.2,39.0,120.1,126.2,5861,123814,7.1,6.2,36,4
+Go,Go (PGO),0.72,232,1.7,31.3,43.8,111.3,137.6,8205,103419,2.7,15.8,19,1
+C++,C++ (PGO),0.75,295,1.2,52.2,45.6,142.2,141.3,5776,115037,4.8,9.3,10,5
+TypeScript,TypeScript (Node),5.97,367,2.0,54.0,6403.1,9.0,26.5,4086,73280,2.7,0.0,9,7

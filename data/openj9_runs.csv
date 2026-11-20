@@ -1,0 +1,9 @@
+pipeline,jvm,jvm_id,round,heap_and_gc,start_s,first_pass_s,steady_pass_s_median,rss_last_mb,rss_max_mb,peak_rss_mb,digest_ok
+polish,HotSpot (JDK 27),hs27,1,-Xmx384m -Xms384m -XX:+UseSerialGC -XX:+UseCompactObjectHeaders -XX:MinHeapFreeRatio=5 -XX:MaxHeapFreeRatio=20,3.5,4.8,2.292,367.3,380.1,390.1,True
+polish,HotSpot (JDK 27),hs27,2,-Xmx384m -Xms384m -XX:+UseSerialGC -XX:+UseCompactObjectHeaders -XX:MinHeapFreeRatio=5 -XX:MaxHeapFreeRatio=20,2.9,5.0,2.278,387.7,393.0,417.6,True
+polish,OpenJ9 (JDK 25),j9,1,-Xmx384m -Xms384m -Xgcpolicy:optthruput -Xminf0.05 -Xmaxf0.20,3.7,5.6,2.979,480.1,539.2,603.6,True
+polish,OpenJ9 (JDK 25),j9,2,-Xmx384m -Xms384m -Xgcpolicy:optthruput -Xminf0.05 -Xmaxf0.20,3.6,5.2,2.979,479.7,494.2,542.8,True
+malagasy,HotSpot (JDK 27),hs27,1,-Xmx384m -XX:+UseSerialGC -XX:+UseCompactObjectHeaders -XX:MinHeapFreeRatio=5 -XX:MaxHeapFreeRatio=20,2.5,4.3,1.844,347.3,371.4,378.2,True
+malagasy,HotSpot (JDK 27),hs27,2,-Xmx384m -XX:+UseSerialGC -XX:+UseCompactObjectHeaders -XX:MinHeapFreeRatio=5 -XX:MaxHeapFreeRatio=20,2.4,4.1,1.847,343.8,368.7,390.5,True
+malagasy,OpenJ9 (JDK 25),j9,1,-Xmx384m -Xgcpolicy:optthruput -Xminf0.05 -Xmaxf0.20,3.5,4.8,2.931,242.4,1050.4,1078.9,True
+malagasy,OpenJ9 (JDK 25),j9,2,-Xmx384m -Xgcpolicy:optthruput -Xminf0.05 -Xmaxf0.20,3.2,4.9,2.88,216.5,429.8,1083.9,True

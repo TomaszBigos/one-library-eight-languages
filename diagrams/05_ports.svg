@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 480" width="960" height="480" font-family="'Segoe UI', Helvetica, Arial, sans-serif" role="img">
+<title>Porty i bramki: jedna specyfikacja, osiem implementacji</title>
+<defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#4a4842"/></marker></defs>
+<rect width="960" height="480" fill="#ffffff"/>
+<text x="20" y="28" font-size="15" font-weight="600" fill="#1d1c1a">Porty i bramki: jedna specyfikacja, osiem implementacji</text>
+<rect x="30" y="52" width="300" height="48" rx="6" fill="#e8eef6" stroke="#2f5d8a" stroke-width="1.3"/>
+<text x="38" y="72" font-size="13" font-weight="600" fill="#1d1c1a">Java</text>
+<text x="38" y="89" font-size="12" fill="#3d3b37">odniesienie: pierwsza implementacja</text>
+<rect x="30" y="112" width="300" height="48" rx="6" fill="#fbecec" stroke="#9a4040" stroke-width="1.3"/>
+<text x="38" y="132" font-size="13" font-weight="600" fill="#1d1c1a">Kotlin, Scala</text>
+<text x="38" y="149" font-size="12" fill="#3d3b37">ta sama JVM, port idiomatyczny</text>
+<line x1="180" y1="100" x2="180" y2="112" stroke="#4a4842" stroke-width="1.4" marker-end="url(#arr)"/>
+<rect x="30" y="172" width="300" height="48" rx="6" fill="#fbecec" stroke="#9a4040" stroke-width="1.3"/>
+<text x="38" y="192" font-size="13" font-weight="600" fill="#1d1c1a">Rust</text>
+<text x="38" y="209" font-size="12" fill="#3d3b37">pierwszy port spoza JVM</text>
+<line x1="180" y1="160" x2="180" y2="172" stroke="#4a4842" stroke-width="1.4" marker-end="url(#arr)"/>
+<rect x="30" y="232" width="300" height="48" rx="6" fill="#fbecec" stroke="#9a4040" stroke-width="1.3"/>
+<text x="38" y="252" font-size="13" font-weight="600" fill="#1d1c1a">C#</text>
+<text x="38" y="269" font-size="12" fill="#3d3b37">.NET: JIT i NativeAOT</text>
+<line x1="180" y1="220" x2="180" y2="232" stroke="#4a4842" stroke-width="1.4" marker-end="url(#arr)"/>
+<rect x="30" y="292" width="300" height="48" rx="6" fill="#fbecec" stroke="#9a4040" stroke-width="1.3"/>
+<text x="38" y="312" font-size="13" font-weight="600" fill="#1d1c1a">Go</text>
+<text x="38" y="329" font-size="12" fill="#3d3b37">bez zależności zewnętrznych</text>
+<line x1="180" y1="280" x2="180" y2="292" stroke="#4a4842" stroke-width="1.4" marker-end="url(#arr)"/>
+<rect x="30" y="352" width="300" height="48" rx="6" fill="#fbecec" stroke="#9a4040" stroke-width="1.3"/>
+<text x="38" y="372" font-size="13" font-weight="600" fill="#1d1c1a">C++, TypeScript</text>
+<text x="38" y="389" font-size="12" fill="#3d3b37">biblioteka nagłówków; Node i Bun</text>
+<line x1="180" y1="340" x2="180" y2="352" stroke="#4a4842" stroke-width="1.4" marker-end="url(#arr)"/>
+<text x="30" y="426" font-size="12" text-anchor="start" fill="#6b6862">kolejność powstawania (z góry na dół);</text>
+<text x="30" y="443" font-size="12" text-anchor="start" fill="#6b6862">obrazy natywne: GraalVM (JVM), NativeAOT (C#);</text>
+<text x="30" y="460" font-size="12" text-anchor="start" fill="#6b6862">Rust także jako WebAssembly i z Pythona (interfejs C)</text>
+<rect x="420" y="60" width="240" height="65" rx="6" fill="#f3f2ef" stroke="#6b6862" stroke-width="1.3"/>
+<text x="428" y="80" font-size="13" font-weight="600" fill="#1d1c1a">port_dump</text>
+<text x="428" y="97" font-size="12" fill="#3d3b37">w każdej implementacji: raport</text>
+<text x="428" y="114" font-size="12" fill="#3d3b37">każdego dokumentu i słowa</text>
+<rect x="700" y="60" width="230" height="65" rx="6" fill="#eef5ec" stroke="#4a7a3d" stroke-width="1.3"/>
+<text x="708" y="80" font-size="13" font-weight="600" fill="#1d1c1a">Bramka równoważności</text>
+<text x="708" y="97" font-size="12" fill="#3d3b37">raporty porównane z Javą pole</text>
+<text x="708" y="114" font-size="12" fill="#3d3b37">po polu: ma być 0 różnic</text>
+<rect x="700" y="175" width="230" height="65" rx="6" fill="#eef5ec" stroke="#4a7a3d" stroke-width="1.3"/>
+<text x="708" y="195" font-size="13" font-weight="600" fill="#1d1c1a">Zimny trening</text>
+<text x="708" y="212" font-size="12" fill="#3d3b37">pliki detektorów z treningu</text>
+<text x="708" y="229" font-size="12" fill="#3d3b37">od zera: bajt w bajt</text>
+<rect x="420" y="290" width="240" height="65" rx="6" fill="#f3f2ef" stroke="#6b6862" stroke-width="1.3"/>
+<text x="428" y="310" font-size="13" font-weight="600" fill="#1d1c1a">stream_harness</text>
+<text x="428" y="327" font-size="12" fill="#3d3b37">w każdej implementacji: te same</text>
+<text x="428" y="344" font-size="12" fill="#3d3b37">dokumenty, kolejka, wątki</text>
+<rect x="700" y="290" width="230" height="65" rx="6" fill="#f3eef6" stroke="#6b4a8a" stroke-width="1.3"/>
+<text x="708" y="310" font-size="13" font-weight="600" fill="#1d1c1a">Pomiary</text>
+<text x="708" y="327" font-size="12" fill="#3d3b37">macierz, tłok, scenariusze,</text>
+<text x="708" y="344" font-size="12" fill="#3d3b37">godzina pracy, pamięć</text>
+<line x1="330" y1="76" x2="420" y2="92" stroke="#4a4842" stroke-width="1.4" marker-end="url(#arr)"/>
+<line x1="660" y1="92" x2="700" y2="92" stroke="#4a4842" stroke-width="1.4" marker-end="url(#arr)"/>
+<line x1="540" y1="125" x2="815" y2="175" stroke="#4a4842" stroke-width="1.4" marker-end="url(#arr)"/>
+<line x1="660" y1="322" x2="700" y2="322" stroke="#4a4842" stroke-width="1.4" marker-end="url(#arr)"/>
+<text x="420" y="410" font-size="12" text-anchor="start" fill="#6b6862">Każda optymalizacja w każdej implementacji przechodzi</text>
+<text x="420" y="427" font-size="12" text-anchor="start" fill="#6b6862">bramkę równoważności, zanim zostanie zmierzona.</text>
+</svg>

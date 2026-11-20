@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 490" width="960" height="490" font-family="'Segoe UI', Helvetica, Arial, sans-serif" role="img">
+<title>Algorytm selekcji negatywnej (NSA): trening i detekcja</title>
+<defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#4a4842"/></marker></defs>
+<rect width="960" height="490" fill="#ffffff"/>
+<text x="20" y="28" font-size="15" font-weight="600" fill="#1d1c1a">Algorytm selekcji negatywnej (NSA): trening i detekcja</text>
+<rect x="15" y="48" width="930" height="196" rx="10" fill="none" stroke="#2f5d8a" stroke-dasharray="5 4" stroke-opacity="0.7"/>
+<text x="27" y="66" font-size="12" font-weight="600" fill="#2f5d8a">Trening: raz na kategorię i ziarno, wynik zapisany w cache na dysku</text>
+<rect x="30" y="84" width="230" height="65" rx="6" fill="#e8eef6" stroke="#2f5d8a" stroke-width="1.3"/>
+<text x="38" y="104" font-size="13" font-weight="600" fill="#1d1c1a">Generator kandydatów</text>
+<text x="38" y="121" font-size="12" fill="#3d3b37">łańcuch Markowa na słowach</text>
+<text x="38" y="138" font-size="12" fill="#3d3b37">obcych → ciągi „jak słowa”</text>
+<rect x="330" y="84" width="260" height="65" rx="6" fill="#ffffff" stroke="#2f5d8a" stroke-width="1.3"/>
+<text x="338" y="104" font-size="13" font-weight="600" fill="#1d1c1a">Sprawdzenie kandydata</text>
+<text x="338" y="121" font-size="12" fill="#3d3b37">pasuje do któregoś „swojego” słowa?</text>
+<text x="338" y="138" font-size="12" fill="#3d3b37">(Hamming 4/6 albo r-contiguous r=3)</text>
+<rect x="670" y="84" width="260" height="65" rx="6" fill="#e8eef6" stroke="#2f5d8a" stroke-width="1.3"/>
+<text x="678" y="104" font-size="13" font-weight="600" fill="#1d1c1a">Detektor</text>
+<text x="678" y="121" font-size="12" fill="#3d3b37">3000 na kategorię; cache: klucz =</text>
+<text x="678" y="138" font-size="12" fill="#3d3b37">dane, parametry, ziarno, generator</text>
+<rect x="330" y="180" width="260" height="48" rx="6" fill="#f3eef6" stroke="#6b4a8a" stroke-width="1.3"/>
+<text x="338" y="200" font-size="13" font-weight="600" fill="#1d1c1a">Słowa jednej kategorii</text>
+<text x="338" y="217" font-size="12" fill="#3d3b37">ok. 150 „swoich” słów jednego tematu</text>
+<line x1="260" y1="116" x2="330" y2="116" stroke="#4a4842" stroke-width="1.4" marker-end="url(#arr)"/>
+<line x1="590" y1="116" x2="670" y2="116" stroke="#4a4842" stroke-width="1.4" marker-end="url(#arr)"/>
+<rect x="616" y="106" width="27" height="18" rx="3" fill="#ffffff"/>
+<text x="630" y="120" font-size="12" text-anchor="middle" fill="#4a4842">nie</text>
+<line x1="460" y1="180" x2="460" y2="149" stroke="#4a4842" stroke-width="1.4" marker-end="url(#arr)"/>
+<text x="600" y="200" font-size="12" text-anchor="start" fill="#6b6862">tak → kandydat odrzucony</text>
+<rect x="15" y="262" width="930" height="168" rx="10" fill="none" stroke="#4a7a3d" stroke-dasharray="5 4" stroke-opacity="0.7"/>
+<text x="27" y="280" font-size="12" font-weight="600" fill="#4a7a3d">Detekcja: każde słowo, którego nie rozstrzygnęły wcześniejsze etapy</text>
+<rect x="30" y="318" width="200" height="48" rx="6" fill="#ffffff" stroke="#2f5d8a" stroke-width="1.3"/>
+<text x="38" y="338" font-size="13" font-weight="600" fill="#1d1c1a">Słowo</text>
+<text x="38" y="355" font-size="12" fill="#3d3b37">małymi literami</text>
+<rect x="280" y="302" width="280" height="82" rx="6" fill="#ffffff" stroke="#2f5d8a" stroke-width="1.3"/>
+<text x="288" y="322" font-size="13" font-weight="600" fill="#1d1c1a">Zapytanie do detektorów</text>
+<text x="288" y="339" font-size="12" fill="#3d3b37">czy w kategorii pasuje do któregoś</text>
+<text x="288" y="356" font-size="12" fill="#3d3b37">detektora? jedno zapytanie indeksu</text>
+<text x="288" y="373" font-size="12" fill="#3d3b37">na wszystkie zbiory</text>
+<rect x="630" y="290" width="300" height="48" rx="6" fill="#eef5ec" stroke="#4a7a3d" stroke-width="1.3"/>
+<text x="638" y="310" font-size="12" fill="#3d3b37">nie w co najmniej jednej kategorii</text>
+<text x="638" y="327" font-size="12" fill="#3d3b37">→ słowo „swoje” (polskie / malgaskie)</text>
+<rect x="630" y="360" width="300" height="48" rx="6" fill="#fdf3f1" stroke="#a0442f" stroke-width="1.3"/>
+<text x="638" y="380" font-size="12" fill="#3d3b37">tak we wszystkich kategoriach</text>
+<text x="638" y="397" font-size="12" fill="#3d3b37">→ słowo obce</text>
+<line x1="230" y1="342" x2="280" y2="343" stroke="#4a4842" stroke-width="1.4" marker-end="url(#arr)"/>
+<line x1="560" y1="343" x2="630" y2="314" stroke="#4a4842" stroke-width="1.4" marker-end="url(#arr)"/>
+<line x1="560" y1="343" x2="630" y2="384" stroke="#4a4842" stroke-width="1.4" marker-end="url(#arr)"/>
+<text x="20" y="455" font-size="12" text-anchor="start" fill="#6b6862">Słowo ze zbioru „swoich” jest zawsze „swoje”; pismo niełacińskie zawsze obce.</text>
+<text x="20" y="472" font-size="12" text-anchor="start" fill="#6b6862">Pule: pl 256 kategorii × 1 ziarno, mg 261 kategorii × 2 ziarna = 522 zbiory detektorów.</text>
+</svg>

@@ -1,0 +1,35 @@
+group,measure,value,unit
+ogółem,prompty,427,promptów
+ogółem,słowa w promptach razem,5310,słów
+ogółem,mediana długości promptu,9,słów
+ogółem,90. percentyl długości,24,słów
+ogółem,prompty do 5 słów,26,%
+ogółem,prompty od 50 słów,2,%
+ogółem,prompty z pytajnikiem,48,%
+ogółem,odpowiedzi AI razem,7901,odpowiedzi
+ogółem,wywołania narzędzi razem,8569,wywołań
+ogółem,wywołania narzędzi na prompt: mediana,2,wywołań
+ogółem,wywołania narzędzi na prompt: 90. percentyl,51,wywołań
+ogółem,wywołania narzędzi na prompt: najwięcej,318,wywołań
+ogółem,tokeny wyjścia na prompt: mediana,2310,tokenów
+ogółem,tokeny wyjścia na prompt: 90. percentyl,54582,tokenów
+ogółem,tokeny wyjścia na jedno słowo promptu,1555,tokenów
+ogółem,aktywna praca AI po prompcie: mediana,36,s
+ogółem,aktywna praca AI po prompcie: 90. percentyl,34,min
+ogółem,aktywna praca AI po prompcie: najwięcej,157,min
+język w prompcie,Java,32,promptów
+język w prompcie,Kotlin,18,promptów
+język w prompcie,Scala,18,promptów
+język w prompcie,Rust,28,promptów
+język w prompcie,C#,32,promptów
+język w prompcie,Go,20,promptów
+język w prompcie,C++,9,promptów
+język w prompcie,TypeScript,7,promptów
+język w prompcie,Python,4,promptów
+długość promptu (słowa),1–2,26,promptów
+długość promptu (słowa),3–5,83,promptów
+długość promptu (słowa),6–10,154,promptów
+długość promptu (słowa),11–20,102,promptów
+długość promptu (słowa),21–50,52,promptów
+długość promptu (słowa),51–100,10,promptów
+długość promptu (słowa),ponad 100,0,promptów

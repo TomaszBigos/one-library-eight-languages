@@ -1,0 +1,721 @@
+pipeline,doc_language,script,implementation,docs,words,ms_per_pass,words_per_s,x_java,reliable,rank,tokenize_ms,patterns_ms,rounds,digest_ok
+polish,ar,ARABIC,Java (JVM),11,74294,47,1580723,1.0,True,5,10.73,6.17,3,True
+polish,ar,ARABIC,Kotlin (JVM),11,74294,73,1017726,1.55,True,8,13.72,5.18,3,True
+polish,ar,ARABIC,Scala (JVM),11,74294,60,1238233,1.28,True,7,13.67,5.83,3,True
+polish,ar,ARABIC,"Java (GraalVM native, PGO)",11,74294,47,1580723,1.0,True,6,8.15,6.59,3,True
+polish,ar,ARABIC,Rust (PGO),11,74294,30,2476467,0.64,True,1,4.68,3.82,3,True
+polish,ar,ARABIC,C# (JIT),11,74294,37,2007946,0.79,True,2,7.01,6.33,3,True
+polish,ar,ARABIC,Go (PGO),11,74294,38,1955105,0.81,True,3,5.8,3.0,3,True
+polish,ar,ARABIC,C++ (PGO),11,74294,40,1857350,0.85,True,4,6.58,4.7,3,True
+polish,ar,ARABIC,TypeScript (Node),11,74294,377,197066,8.02,True,9,39.47,47.1,3,True
+polish,be,CYRILLIC,Java (JVM),6,36629,29,,,False,,5.61,5.07,3,True
+polish,be,CYRILLIC,Kotlin (JVM),6,36629,38,,,False,,9.71,6.15,3,True
+polish,be,CYRILLIC,Scala (JVM),6,36629,31,,,False,,7.05,5.15,3,True
+polish,be,CYRILLIC,"Java (GraalVM native, PGO)",6,36629,32,,,False,,5.21,6.25,3,True
+polish,be,CYRILLIC,Rust (PGO),6,36629,19,,,False,,2.7,3.39,3,True
+polish,be,CYRILLIC,C# (JIT),6,36629,29,,,False,,4.48,5.1,3,True
+polish,be,CYRILLIC,Go (PGO),6,36629,27,,,False,,5.0,4.99,3,True
+polish,be,CYRILLIC,C++ (PGO),6,36629,25,,,False,,3.19,5.17,3,True
+polish,be,CYRILLIC,TypeScript (Node),6,36629,217,,,False,,21.99,26.9,3,True
+polish,bg,CYRILLIC,Java (JVM),12,106213,71,1495958,1.0,True,4,15.32,12.95,3,True
+polish,bg,CYRILLIC,Kotlin (JVM),12,106213,80,1327662,1.13,True,6,19.09,13.24,3,True
+polish,bg,CYRILLIC,Scala (JVM),12,106213,84,1264440,1.18,True,8,18.21,13.21,3,True
+polish,bg,CYRILLIC,"Java (GraalVM native, PGO)",12,106213,82,1295280,1.15,True,7,13.46,21.03,3,True
+polish,bg,CYRILLIC,Rust (PGO),12,106213,43,2470070,0.61,True,1,7.32,7.67,3,True
+polish,bg,CYRILLIC,C# (JIT),12,106213,72,1475181,1.01,True,5,10.99,13.57,3,True
+polish,bg,CYRILLIC,Go (PGO),12,106213,55,1931145,0.77,True,2,8.01,13.97,3,True
+polish,bg,CYRILLIC,C++ (PGO),12,106213,56,1896661,0.79,True,3,8.7,12.73,3,True
+polish,bg,CYRILLIC,TypeScript (Node),12,106213,714,148758,10.06,True,9,67.12,119.07,3,True
+polish,bs,LATIN,Java (JVM),9,118383,102,1160618,1.0,True,6,11.48,20.06,3,True
+polish,bs,LATIN,Kotlin (JVM),9,118383,110,1076209,1.08,True,7,12.82,20.25,3,True
+polish,bs,LATIN,Scala (JVM),9,118383,118,1003246,1.16,True,8,14.81,19.51,3,True
+polish,bs,LATIN,"Java (GraalVM native, PGO)",9,118383,99,1195788,0.97,True,5,10.69,20.93,3,True
+polish,bs,LATIN,Rust (PGO),9,118383,72,1644208,0.71,True,1,7.35,14.28,3,True
+polish,bs,LATIN,C# (JIT),9,118383,75,1578440,0.74,True,3,8.38,11.6,3,True
+polish,bs,LATIN,Go (PGO),9,118383,80,1479788,0.78,True,4,6.08,21.96,3,True
+polish,bs,LATIN,C++ (PGO),9,118383,74,1599770,0.73,True,2,9.35,12.77,3,True
+polish,bs,LATIN,TypeScript (Node),9,118383,706,167681,6.92,True,9,59.38,114.35,3,True
+polish,ca,LATIN,Java (JVM),5,39880,33,1208485,1.0,True,6,4.5,5.96,3,True
+polish,ca,LATIN,Kotlin (JVM),5,39880,42,949524,1.27,True,8,5.3,6.74,3,True
+polish,ca,LATIN,Scala (JVM),5,39880,36,1107778,1.09,True,7,4.46,6.29,3,True
+polish,ca,LATIN,"Java (GraalVM native, PGO)",5,39880,32,1246250,0.97,True,5,3.02,6.13,3,True
+polish,ca,LATIN,Rust (PGO),5,39880,22,1812727,0.67,True,1,2.41,3.46,3,True
+polish,ca,LATIN,C# (JIT),5,39880,22,1812727,0.67,True,2,2.54,2.62,3,True
+polish,ca,LATIN,Go (PGO),5,39880,26,1533846,0.79,True,4,2.0,4.99,3,True
+polish,ca,LATIN,C++ (PGO),5,39880,24,1661667,0.73,True,3,3.06,3.27,3,True
+polish,ca,LATIN,TypeScript (Node),5,39880,177,225311,5.36,True,9,15.06,20.35,3,True
+polish,cs,LATIN,Java (JVM),10,43698,48,910375,1.0,True,5,5.4,4.52,3,True
+polish,cs,LATIN,Kotlin (JVM),10,43698,54,809222,1.12,True,6,5.63,5.01,3,True
+polish,cs,LATIN,Scala (JVM),10,43698,59,740644,1.23,True,8,7.06,4.87,3,True
+polish,cs,LATIN,"Java (GraalVM native, PGO)",10,43698,57,766632,1.19,True,7,4.8,5.35,3,True
+polish,cs,LATIN,Rust (PGO),10,43698,34,1285235,0.71,True,1,3.04,4.56,3,True
+polish,cs,LATIN,C# (JIT),10,43698,39,1120462,0.81,True,3,3.66,3.63,3,True
+polish,cs,LATIN,Go (PGO),10,43698,39,1120462,0.81,True,4,1.0,5.98,3,True
+polish,cs,LATIN,C++ (PGO),10,43698,36,1213833,0.75,True,2,3.65,4.22,3,True
+polish,cs,LATIN,TypeScript (Node),10,43698,364,120049,7.58,True,9,29.35,34.55,3,True
+polish,da,LATIN,Java (JVM),8,30335,29,,,False,,3.31,3.68,3,True
+polish,da,LATIN,Kotlin (JVM),8,30335,36,,,False,,3.48,3.81,3,True
+polish,da,LATIN,Scala (JVM),8,30335,33,,,False,,3.82,3.6,3,True
+polish,da,LATIN,"Java (GraalVM native, PGO)",8,30335,29,,,False,,2.5,3.7,3,True
+polish,da,LATIN,Rust (PGO),8,30335,20,,,False,,1.86,2.81,3,True
+polish,da,LATIN,C# (JIT),8,30335,22,,,False,,2.46,1.89,3,True
+polish,da,LATIN,Go (PGO),8,30335,22,,,False,,2.0,3.0,3,True
+polish,da,LATIN,C++ (PGO),8,30335,23,,,False,,2.41,2.56,3,True
+polish,da,LATIN,TypeScript (Node),8,30335,173,,,False,,12.28,16.46,3,True
+polish,de,LATIN,Java (JVM),15,88930,91,977253,1.0,True,5,9.52,24.59,3,True
+polish,de,LATIN,Kotlin (JVM),15,88930,96,926354,1.05,True,7,10.31,22.34,3,True
+polish,de,LATIN,Scala (JVM),15,88930,98,907449,1.08,True,8,11.79,20.25,3,True
+polish,de,LATIN,"Java (GraalVM native, PGO)",15,88930,91,977253,1.0,True,6,9.24,21.7,3,True
+polish,de,LATIN,Rust (PGO),15,88930,63,1411587,0.69,True,1,5.91,12.07,3,True
+polish,de,LATIN,C# (JIT),15,88930,64,1389531,0.7,True,2,8.04,11.01,3,True
+polish,de,LATIN,Go (PGO),15,88930,68,1307794,0.75,True,4,6.01,17.84,3,True
+polish,de,LATIN,C++ (PGO),15,88930,64,1389531,0.7,True,3,7.15,10.82,3,True
+polish,de,LATIN,TypeScript (Node),15,88930,586,151758,6.44,True,9,45.07,73.67,3,True
+polish,el,GREEK,Java (JVM),13,108841,81,1343716,1.0,True,6,20.25,13.29,3,True
+polish,el,GREEK,Kotlin (JVM),13,108841,85,1280482,1.05,True,7,20.22,12.41,3,True
+polish,el,GREEK,Scala (JVM),13,108841,90,1209344,1.11,True,8,22.89,13.71,3,True
+polish,el,GREEK,"Java (GraalVM native, PGO)",13,108841,80,1360512,0.99,True,5,14.62,17.12,3,True
+polish,el,GREEK,Rust (PGO),13,108841,47,2315766,0.58,True,1,7.66,7.86,3,True
+polish,el,GREEK,C# (JIT),13,108841,54,2015574,0.67,True,2,9.59,11.11,3,True
+polish,el,GREEK,Go (PGO),13,108841,60,1814017,0.74,True,4,9.99,15.98,3,True
+polish,el,GREEK,C++ (PGO),13,108841,58,1876569,0.72,True,3,8.94,12.23,3,True
+polish,el,GREEK,TypeScript (Node),13,108841,586,185735,7.23,True,9,58.95,121.9,3,True
+polish,en,LATIN,Java (JVM),12,55381,39,1420026,1.0,True,6,6.17,8.16,3,True
+polish,en,LATIN,Kotlin (JVM),12,55381,39,1420026,1.0,True,7,5.34,8.37,3,True
+polish,en,LATIN,Scala (JVM),12,55381,45,1230689,1.15,True,8,6.02,11.43,3,True
+polish,en,LATIN,"Java (GraalVM native, PGO)",12,55381,34,1628853,0.87,True,5,4.32,7.7,3,True
+polish,en,LATIN,Rust (PGO),12,55381,24,2307542,0.62,True,3,3.35,4.54,3,True
+polish,en,LATIN,C# (JIT),12,55381,23,2407870,0.59,True,2,3.07,3.3,3,True
+polish,en,LATIN,Go (PGO),12,55381,20,2769050,0.51,True,1,2.0,3.98,3,True
+polish,en,LATIN,C++ (PGO),12,55381,26,2130038,0.67,True,4,4.05,3.49,3,True
+polish,en,LATIN,TypeScript (Node),12,55381,156,355006,4.0,True,9,17.29,25.91,3,True
+polish,es,LATIN,Java (JVM),12,154458,152,1016171,1.0,True,6,17.1,36.93,3,True
+polish,es,LATIN,Kotlin (JVM),12,154458,223,692637,1.47,True,8,33.25,51.79,3,True
+polish,es,LATIN,Scala (JVM),12,154458,207,746174,1.36,True,7,29.89,37.51,3,True
+polish,es,LATIN,"Java (GraalVM native, PGO)",12,154458,126,1225857,0.83,True,5,12.05,29.53,3,True
+polish,es,LATIN,Rust (PGO),12,154458,86,1796023,0.57,True,1,9.51,20.41,3,True
+polish,es,LATIN,C# (JIT),12,154458,86,1796023,0.57,True,2,9.4,20.45,3,True
+polish,es,LATIN,Go (PGO),12,154458,92,1678891,0.61,True,4,8.0,27.97,3,True
+polish,es,LATIN,C++ (PGO),12,154458,91,1697341,0.6,True,3,11.94,21.3,3,True
+polish,es,LATIN,TypeScript (Node),12,154458,686,225157,4.51,True,9,61.25,138.64,3,True
+polish,et,LATIN,Java (JVM),4,15536,26,,,False,,2.81,2.78,3,True
+polish,et,LATIN,Kotlin (JVM),4,15536,32,,,False,,2.85,2.49,3,True
+polish,et,LATIN,Scala (JVM),4,15536,25,,,False,,2.73,2.13,3,True
+polish,et,LATIN,"Java (GraalVM native, PGO)",4,15536,16,,,False,,1.46,1.9,3,True
+polish,et,LATIN,Rust (PGO),4,15536,13,,,False,,1.26,1.85,3,True
+polish,et,LATIN,C# (JIT),4,15536,12,,,False,,1.48,1.35,3,True
+polish,et,LATIN,Go (PGO),4,15536,16,,,False,,1.97,2.0,3,True
+polish,et,LATIN,C++ (PGO),4,15536,12,,,False,,1.31,1.58,3,True
+polish,et,LATIN,TypeScript (Node),4,15536,106,,,False,,6.2,18.0,3,True
+polish,fa,ARABIC,Java (JVM),5,39093,37,1056568,1.0,True,8,10.11,5.12,3,True
+polish,fa,ARABIC,Kotlin (JVM),5,39093,21,1861571,0.57,True,6,4.71,2.75,3,True
+polish,fa,ARABIC,Scala (JVM),5,39093,36,1085917,0.97,True,7,8.79,3.99,3,True
+polish,fa,ARABIC,"Java (GraalVM native, PGO)",5,39093,17,2299588,0.46,True,5,3.68,2.97,3,True
+polish,fa,ARABIC,Rust (PGO),5,39093,14,2792357,0.38,True,2,2.24,1.86,3,True
+polish,fa,ARABIC,C# (JIT),5,39093,13,3007154,0.35,True,1,2.49,2.44,3,True
+polish,fa,ARABIC,Go (PGO),5,39093,14,2792357,0.38,True,3,3.0,1.02,3,True
+polish,fa,ARABIC,C++ (PGO),5,39093,15,2606200,0.41,True,4,2.88,2.18,3,True
+polish,fa,ARABIC,TypeScript (Node),5,39093,167,234090,4.51,True,9,18.11,30.08,3,True
+polish,fi,LATIN,Java (JVM),1,3706,9,,,False,,0.72,1.08,3,True
+polish,fi,LATIN,Kotlin (JVM),1,3706,4,,,False,,0.41,0.67,3,True
+polish,fi,LATIN,Scala (JVM),1,3706,5,,,False,,0.49,0.61,3,True
+polish,fi,LATIN,"Java (GraalVM native, PGO)",1,3706,4,,,False,,0.33,0.64,3,True
+polish,fi,LATIN,Rust (PGO),1,3706,3,,,False,,0.25,0.49,3,True
+polish,fi,LATIN,C# (JIT),1,3706,3,,,False,,0.32,0.43,3,True
+polish,fi,LATIN,Go (PGO),1,3706,4,,,False,,0.0,0.99,3,True
+polish,fi,LATIN,C++ (PGO),1,3706,3,,,False,,0.33,0.44,3,True
+polish,fi,LATIN,TypeScript (Node),1,3706,32,,,False,,2.27,3.06,3,True
+polish,fr,LATIN,Java (JVM),12,128342,192,668448,1.0,True,8,21.97,50.7,3,True
+polish,fr,LATIN,Kotlin (JVM),12,128342,108,1188352,0.56,True,6,12.7,24.91,3,True
+polish,fr,LATIN,Scala (JVM),12,128342,124,1035016,0.65,True,7,16.8,24.54,3,True
+polish,fr,LATIN,"Java (GraalVM native, PGO)",12,128342,93,1380022,0.48,True,5,10.21,25.17,3,True
+polish,fr,LATIN,Rust (PGO),12,128342,62,2070032,0.32,True,2,7.74,13.08,3,True
+polish,fr,LATIN,C# (JIT),12,128342,61,2103967,0.32,True,1,7.73,12.7,3,True
+polish,fr,LATIN,Go (PGO),12,128342,68,1887382,0.35,True,3,8.01,19.98,3,True
+polish,fr,LATIN,C++ (PGO),12,128342,70,1833457,0.36,True,4,9.97,13.64,3,True
+polish,fr,LATIN,TypeScript (Node),12,128342,476,269626,2.48,True,9,46.26,96.3,3,True
+polish,he,HEBREW,Java (JVM),1,545,1,,,False,,0.09,0.08,3,True
+polish,he,HEBREW,Kotlin (JVM),1,545,0,,,False,,0.12,0.04,3,True
+polish,he,HEBREW,Scala (JVM),1,545,1,,,False,,0.07,0.07,3,True
+polish,he,HEBREW,"Java (GraalVM native, PGO)",1,545,0,,,False,,0.04,0.03,3,True
+polish,he,HEBREW,Rust (PGO),1,545,0,,,False,,0.03,0.04,3,True
+polish,he,HEBREW,C# (JIT),1,545,1,,,False,,0.03,0.06,3,True
+polish,he,HEBREW,Go (PGO),1,545,0,,,False,,0.0,0.0,3,True
+polish,he,HEBREW,C++ (PGO),1,545,0,,,False,,0.03,0.05,3,True
+polish,he,HEBREW,TypeScript (Node),1,545,1,,,False,,0.16,0.27,3,True
+polish,hi,DEVANAGARI,Java (JVM),1,9581,4,,,False,,1.62,0.4,3,True
+polish,hi,DEVANAGARI,Kotlin (JVM),1,9581,4,,,False,,1.84,0.47,3,True
+polish,hi,DEVANAGARI,Scala (JVM),1,9581,4,,,False,,1.2,0.42,3,True
+polish,hi,DEVANAGARI,"Java (GraalVM native, PGO)",1,9581,3,,,False,,0.74,0.44,3,True
+polish,hi,DEVANAGARI,Rust (PGO),1,9581,2,,,False,,0.46,0.32,3,True
+polish,hi,DEVANAGARI,C# (JIT),1,9581,2,,,False,,0.38,0.42,3,True
+polish,hi,DEVANAGARI,Go (PGO),1,9581,2,,,False,,1.0,1.0,3,True
+polish,hi,DEVANAGARI,C++ (PGO),1,9581,2,,,False,,0.58,0.4,3,True
+polish,hi,DEVANAGARI,TypeScript (Node),1,9581,20,,,False,,4.58,3.36,3,True
+polish,hr,LATIN,Java (JVM),9,47453,58,818155,1.0,True,7,6.06,7.3,3,True
+polish,hr,LATIN,Kotlin (JVM),9,47453,52,912558,0.9,True,6,5.72,7.06,3,True
+polish,hr,LATIN,Scala (JVM),9,47453,61,777918,1.05,True,8,6.56,6.38,3,True
+polish,hr,LATIN,"Java (GraalVM native, PGO)",9,47453,50,949060,0.86,True,5,4.72,7.19,3,True
+polish,hr,LATIN,Rust (PGO),9,47453,32,1482906,0.55,True,1,3.16,5.11,3,True
+polish,hr,LATIN,C# (JIT),9,47453,35,1355800,0.6,True,3,3.33,3.98,3,True
+polish,hr,LATIN,Go (PGO),9,47453,37,1282514,0.64,True,4,2.04,7.97,3,True
+polish,hr,LATIN,C++ (PGO),9,47453,34,1395676,0.59,True,2,3.73,4.6,3,True
+polish,hr,LATIN,TypeScript (Node),9,47453,288,164767,4.97,True,9,20.96,37.03,3,True
+polish,hu,LATIN,Java (JVM),3,21517,40,537925,1.0,True,5,4.4,1.98,3,True
+polish,hu,LATIN,Kotlin (JVM),3,21517,41,524805,1.02,True,6,3.03,2.09,3,True
+polish,hu,LATIN,Scala (JVM),3,21517,43,500395,1.07,True,7,3.44,2.02,3,True
+polish,hu,LATIN,"Java (GraalVM native, PGO)",3,21517,44,489023,1.1,True,8,2.71,4.35,3,True
+polish,hu,LATIN,Rust (PGO),3,21517,25,860680,0.62,True,3,1.48,1.85,3,True
+polish,hu,LATIN,C# (JIT),3,21517,26,827577,0.65,True,4,1.97,1.51,3,True
+polish,hu,LATIN,Go (PGO),3,21517,24,896542,0.6,True,2,1.0,2.0,3,True
+polish,hu,LATIN,C++ (PGO),3,21517,22,978045,0.55,True,1,1.78,1.68,3,True
+polish,hu,LATIN,TypeScript (Node),3,21517,215,100079,5.38,True,9,10.0,12.11,3,True
+polish,id,LATIN,Java (JVM),4,35715,25,,,False,,3.38,4.13,3,True
+polish,id,LATIN,Kotlin (JVM),4,35715,25,,,False,,3.74,4.27,3,True
+polish,id,LATIN,Scala (JVM),4,35715,26,,,False,,4.4,4.13,3,True
+polish,id,LATIN,"Java (GraalVM native, PGO)",4,35715,47,,,False,,4.27,8.18,3,True
+polish,id,LATIN,Rust (PGO),4,35715,20,,,False,,2.54,4.0,3,True
+polish,id,LATIN,C# (JIT),4,35715,20,,,False,,2.6,3.5,3,True
+polish,id,LATIN,Go (PGO),4,35715,20,,,False,,3.0,5.98,3,True
+polish,id,LATIN,C++ (PGO),4,35715,19,,,False,,2.84,3.65,3,True
+polish,id,LATIN,TypeScript (Node),4,35715,155,,,False,,15.93,33.49,3,True
+polish,it,LATIN,Java (JVM),8,54344,48,1132167,1.0,True,5,4.7,10.34,3,True
+polish,it,LATIN,Kotlin (JVM),8,54344,51,1065569,1.06,True,6,5.14,10.49,3,True
+polish,it,LATIN,Scala (JVM),8,54344,53,1025358,1.1,True,7,6.21,9.42,3,True
+polish,it,LATIN,"Java (GraalVM native, PGO)",8,54344,62,876516,1.29,True,8,5.06,19.08,3,True
+polish,it,LATIN,Rust (PGO),8,54344,38,1430105,0.79,True,4,3.52,7.92,3,True
+polish,it,LATIN,C# (JIT),8,54344,33,1646788,0.69,True,1,3.37,7.28,3,True
+polish,it,LATIN,Go (PGO),8,54344,36,1509556,0.75,True,3,3.0,7.99,3,True
+polish,it,LATIN,C++ (PGO),8,54344,35,1552686,0.73,True,2,4.13,7.32,3,True
+polish,it,LATIN,TypeScript (Node),8,54344,229,237310,4.77,True,9,20.89,43.66,3,True
+polish,ja,CJK,Java (JVM),10,13434,17,,,False,,3.77,2.07,3,True
+polish,ja,CJK,Kotlin (JVM),10,13434,18,,,False,,3.21,1.74,3,True
+polish,ja,CJK,Scala (JVM),10,13434,33,,,False,,5.34,2.81,3,True
+polish,ja,CJK,"Java (GraalVM native, PGO)",10,13434,23,,,False,,2.29,2.11,3,True
+polish,ja,CJK,Rust (PGO),10,13434,14,,,False,,1.4,1.65,3,True
+polish,ja,CJK,C# (JIT),10,13434,34,,,False,,3.93,4.29,3,True
+polish,ja,CJK,Go (PGO),10,13434,14,,,False,,4.0,0.0,3,True
+polish,ja,CJK,C++ (PGO),10,13434,13,,,False,,1.43,1.83,3,True
+polish,ja,CJK,TypeScript (Node),10,13434,168,,,False,,12.95,17.9,3,True
+polish,ko,HANGUL,Java (JVM),14,66232,38,1742947,1.0,True,4,8.19,4.24,3,True
+polish,ko,HANGUL,Kotlin (JVM),14,66232,42,1576952,1.11,True,6,8.62,3.83,3,True
+polish,ko,HANGUL,Scala (JVM),14,66232,65,1018954,1.71,True,8,12.3,4.74,3,True
+polish,ko,HANGUL,"Java (GraalVM native, PGO)",14,66232,37,1790054,0.97,True,3,6.3,4.66,3,True
+polish,ko,HANGUL,Rust (PGO),14,66232,39,1698256,1.03,True,5,5.26,4.0,3,True
+polish,ko,HANGUL,C# (JIT),14,66232,63,1051302,1.66,True,7,15.69,5.62,3,True
+polish,ko,HANGUL,Go (PGO),14,66232,29,2283862,0.76,True,1,4.97,1.73,3,True
+polish,ko,HANGUL,C++ (PGO),14,66232,31,2136516,0.82,True,2,4.77,3.37,3,True
+polish,ko,HANGUL,TypeScript (Node),14,66232,221,299692,5.82,True,9,25.91,24.24,3,True
+polish,la,LATIN,Java (JVM),7,3554,8,,,False,,0.37,0.45,3,True
+polish,la,LATIN,Kotlin (JVM),7,3554,8,,,False,,0.51,0.48,3,True
+polish,la,LATIN,Scala (JVM),7,3554,12,,,False,,0.53,0.56,3,True
+polish,la,LATIN,"Java (GraalVM native, PGO)",7,3554,7,,,False,,0.34,0.41,3,True
+polish,la,LATIN,Rust (PGO),7,3554,14,,,False,,0.43,0.44,3,True
+polish,la,LATIN,C# (JIT),7,3554,14,,,False,,0.46,0.28,3,True
+polish,la,LATIN,Go (PGO),7,3554,6,,,False,,0.0,0.0,3,True
+polish,la,LATIN,C++ (PGO),7,3554,4,,,False,,0.3,0.28,3,True
+polish,la,LATIN,TypeScript (Node),7,3554,41,,,False,,1.26,2.12,3,True
+polish,lt,LATIN,Java (JVM),9,37364,50,747280,1.0,True,5,5.05,3.93,3,True
+polish,lt,LATIN,Kotlin (JVM),9,37364,53,704981,1.06,True,6,4.96,4.01,3,True
+polish,lt,LATIN,Scala (JVM),9,37364,69,541507,1.38,True,8,7.09,4.13,3,True
+polish,lt,LATIN,"Java (GraalVM native, PGO)",9,37364,47,794979,0.94,True,4,4.14,4.68,3,True
+polish,lt,LATIN,Rust (PGO),9,37364,62,602645,1.24,True,7,5.26,5.43,3,True
+polish,lt,LATIN,C# (JIT),9,37364,43,868930,0.86,True,3,3.31,2.44,3,True
+polish,lt,LATIN,Go (PGO),9,37364,37,1009838,0.74,True,2,3.0,3.4,3,True
+polish,lt,LATIN,C++ (PGO),9,37364,36,1037889,0.72,True,1,3.08,2.95,3,True
+polish,lt,LATIN,TypeScript (Node),9,37364,340,109894,6.8,True,9,21.02,21.88,3,True
+polish,mk,CYRILLIC,Java (JVM),9,70371,40,1759275,1.0,True,4,9.54,8.01,3,True
+polish,mk,CYRILLIC,Kotlin (JVM),9,70371,40,1759275,1.0,True,5,10.3,7.84,3,True
+polish,mk,CYRILLIC,Scala (JVM),9,70371,62,1135016,1.55,True,7,11.77,8.36,3,True
+polish,mk,CYRILLIC,"Java (GraalVM native, PGO)",9,70371,44,1599341,1.1,True,6,8.41,10.2,3,True
+polish,mk,CYRILLIC,Rust (PGO),9,70371,62,1135016,1.55,True,8,9.08,8.95,3,True
+polish,mk,CYRILLIC,C# (JIT),9,70371,31,2270032,0.78,True,2,5.76,7.17,3,True
+polish,mk,CYRILLIC,Go (PGO),9,70371,30,2345700,0.75,True,1,6.0,7.99,3,True
+polish,mk,CYRILLIC,C++ (PGO),9,70371,31,2270032,0.78,True,3,5.58,7.11,3,True
+polish,mk,CYRILLIC,TypeScript (Node),9,70371,316,222693,7.9,True,9,37.7,53.89,3,True
+polish,nl,LATIN,Java (JVM),9,9340,10,,,False,,1.01,0.92,3,True
+polish,nl,LATIN,Kotlin (JVM),9,9340,10,,,False,,1.11,1.07,3,True
+polish,nl,LATIN,Scala (JVM),9,9340,15,,,False,,1.61,1.16,3,True
+polish,nl,LATIN,"Java (GraalVM native, PGO)",9,9340,9,,,False,,0.86,1.09,3,True
+polish,nl,LATIN,Rust (PGO),9,9340,8,,,False,,0.73,1.25,3,True
+polish,nl,LATIN,C# (JIT),9,9340,8,,,False,,0.71,0.64,3,True
+polish,nl,LATIN,Go (PGO),9,9340,8,,,False,,0.0,1.0,3,True
+polish,nl,LATIN,C++ (PGO),9,9340,7,,,False,,0.79,0.78,3,True
+polish,nl,LATIN,TypeScript (Node),9,9340,52,,,False,,4.0,5.91,3,True
+polish,no,LATIN,Java (JVM),2,10967,11,,,False,,1.21,1.72,3,True
+polish,no,LATIN,Kotlin (JVM),2,10967,12,,,False,,1.22,1.89,3,True
+polish,no,LATIN,Scala (JVM),2,10967,17,,,False,,1.45,1.81,3,True
+polish,no,LATIN,"Java (GraalVM native, PGO)",2,10967,12,,,False,,0.98,1.79,3,True
+polish,no,LATIN,Rust (PGO),2,10967,9,,,False,,0.77,1.54,3,True
+polish,no,LATIN,C# (JIT),2,10967,8,,,False,,0.87,0.71,3,True
+polish,no,LATIN,Go (PGO),2,10967,9,,,False,,0.0,2.0,3,True
+polish,no,LATIN,C++ (PGO),2,10967,8,,,False,,0.87,0.98,3,True
+polish,no,LATIN,TypeScript (Node),2,10967,63,,,False,,3.72,9.84,3,True
+polish,pl,LATIN,Java (JVM),11,49249,80,615612,1.0,True,5,5.64,33.39,3,True
+polish,pl,LATIN,Kotlin (JVM),11,49249,97,507722,1.21,True,6,6.73,33.08,3,True
+polish,pl,LATIN,Scala (JVM),11,49249,105,469038,1.31,True,7,7.91,28.12,3,True
+polish,pl,LATIN,"Java (GraalVM native, PGO)",11,49249,76,648013,0.95,True,4,5.28,27.95,3,True
+polish,pl,LATIN,Rust (PGO),11,49249,54,912019,0.68,True,3,4.54,18.57,3,True
+polish,pl,LATIN,C# (JIT),11,49249,44,1119295,0.55,True,1,4.04,18.64,3,True
+polish,pl,LATIN,Go (PGO),11,49249,135,364807,1.69,True,8,5.01,65.8,3,True
+polish,pl,LATIN,C++ (PGO),11,49249,45,1094422,0.56,True,2,4.0,16.34,3,True
+polish,pl,LATIN,TypeScript (Node),11,49249,262,187973,3.27,True,9,22.64,96.17,3,True
+polish,pt,LATIN,Java (JVM),14,190268,134,1419910,1.0,True,4,17.32,24.15,3,True
+polish,pt,LATIN,Kotlin (JVM),14,190268,150,1268453,1.12,True,5,18.99,22.5,3,True
+polish,pt,LATIN,Scala (JVM),14,190268,159,1196654,1.19,True,7,23.12,20.18,3,True
+polish,pt,LATIN,"Java (GraalVM native, PGO)",14,190268,151,1260053,1.13,True,6,15.22,24.2,3,True
+polish,pt,LATIN,Rust (PGO),14,190268,100,1902680,0.75,True,1,11.98,16.22,3,True
+polish,pt,LATIN,C# (JIT),14,190268,110,1729709,0.82,True,2,13.7,18.28,3,True
+polish,pt,LATIN,Go (PGO),14,190268,180,1057044,1.34,True,8,12.01,25.96,3,True
+polish,pt,LATIN,C++ (PGO),14,190268,111,1714126,0.83,True,3,14.96,19.47,3,True
+polish,pt,LATIN,TypeScript (Node),14,190268,883,215479,6.59,True,9,78.52,150.11,3,True
+polish,ro,LATIN,Java (JVM),12,71518,77,928805,1.0,True,6,7.52,17.11,3,True
+polish,ro,LATIN,Kotlin (JVM),12,71518,78,916897,1.01,True,8,8.49,15.28,3,True
+polish,ro,LATIN,Scala (JVM),12,71518,76,941026,0.99,True,5,9.69,13.02,3,True
+polish,ro,LATIN,"Java (GraalVM native, PGO)",12,71518,77,928805,1.0,True,7,7.14,14.41,3,True
+polish,ro,LATIN,Rust (PGO),12,71518,49,1459551,0.64,True,1,4.83,8.73,3,True
+polish,ro,LATIN,C# (JIT),12,71518,55,1300327,0.71,True,3,6.99,7.55,3,True
+polish,ro,LATIN,Go (PGO),12,71518,55,1300327,0.71,True,4,3.99,10.98,3,True
+polish,ro,LATIN,C++ (PGO),12,71518,51,1402314,0.66,True,2,5.65,7.56,3,True
+polish,ro,LATIN,TypeScript (Node),12,71518,430,166321,5.58,True,9,33.61,52.69,3,True
+polish,ru,CYRILLIC,Java (JVM),13,115470,92,1255109,1.0,True,8,22.14,19.31,3,True
+polish,ru,CYRILLIC,Kotlin (JVM),13,115470,83,1391205,0.9,True,6,20.73,16.49,3,True
+polish,ru,CYRILLIC,Scala (JVM),13,115470,85,1358471,0.92,True,7,22.69,17.18,3,True
+polish,ru,CYRILLIC,"Java (GraalVM native, PGO)",13,115470,82,1408171,0.89,True,5,16.92,24.21,3,True
+polish,ru,CYRILLIC,Rust (PGO),13,115470,51,2264118,0.55,True,1,8.93,10.4,3,True
+polish,ru,CYRILLIC,C# (JIT),13,115470,60,1924500,0.65,True,2,13.56,16.0,3,True
+polish,ru,CYRILLIC,Go (PGO),13,115470,67,1723433,0.73,True,3,13.94,17.98,3,True
+polish,ru,CYRILLIC,C++ (PGO),13,115470,80,1443375,0.87,True,4,12.13,19.93,3,True
+polish,ru,CYRILLIC,TypeScript (Node),13,115470,658,175486,7.15,True,9,66.0,140.53,3,True
+polish,sk,LATIN,Java (JVM),2,23863,26,,,False,,3.36,3.17,3,True
+polish,sk,LATIN,Kotlin (JVM),2,23863,23,,,False,,2.77,2.88,3,True
+polish,sk,LATIN,Scala (JVM),2,23863,23,,,False,,3.35,2.59,3,True
+polish,sk,LATIN,"Java (GraalVM native, PGO)",2,23863,22,,,False,,2.37,3.22,3,True
+polish,sk,LATIN,Rust (PGO),2,23863,17,,,False,,1.68,2.66,3,True
+polish,sk,LATIN,C# (JIT),2,23863,17,,,False,,1.76,2.18,3,True
+polish,sk,LATIN,Go (PGO),2,23863,18,,,False,,2.0,3.99,3,True
+polish,sk,LATIN,C++ (PGO),2,23863,21,,,False,,2.07,3.05,3,True
+polish,sk,LATIN,TypeScript (Node),2,23863,143,,,False,,10.85,23.52,3,True
+polish,sl,LATIN,Java (JVM),4,51644,42,1229619,1.0,True,5,4.69,4.5,3,True
+polish,sl,LATIN,Kotlin (JVM),4,51644,43,1201023,1.02,True,7,5.31,4.87,3,True
+polish,sl,LATIN,Scala (JVM),4,51644,42,1229619,1.0,True,6,6.48,4.59,3,True
+polish,sl,LATIN,"Java (GraalVM native, PGO)",4,51644,41,1259610,0.98,True,4,4.48,6.06,3,True
+polish,sl,LATIN,Rust (PGO),4,51644,29,1780828,0.69,True,2,3.39,5.23,3,True
+polish,sl,LATIN,C# (JIT),4,51644,28,1844429,0.67,True,1,3.12,3.27,3,True
+polish,sl,LATIN,Go (PGO),4,51644,29,1780828,0.69,True,3,2.0,4.99,3,True
+polish,sl,LATIN,C++ (PGO),4,51644,44,1173727,1.05,True,8,5.07,5.08,3,True
+polish,sl,LATIN,TypeScript (Node),4,51644,291,177471,6.93,True,9,28.93,33.67,3,True
+polish,sr,CYRILLIC,Java (JVM),11,68667,49,1401367,1.0,True,5,9.54,8.41,3,True
+polish,sr,CYRILLIC,Kotlin (JVM),11,68667,51,1346412,1.04,True,6,10.78,8.5,3,True
+polish,sr,CYRILLIC,Scala (JVM),11,68667,53,1295604,1.08,True,7,11.15,8.34,3,True
+polish,sr,CYRILLIC,"Java (GraalVM native, PGO)",11,68667,48,1430562,0.98,True,4,9.21,9.8,3,True
+polish,sr,CYRILLIC,Rust (PGO),11,68667,30,2288900,0.61,True,1,4.78,5.14,3,True
+polish,sr,CYRILLIC,C# (JIT),11,68667,36,1907417,0.73,True,2,7.16,7.07,3,True
+polish,sr,CYRILLIC,Go (PGO),11,68667,38,1807026,0.78,True,3,7.01,7.99,3,True
+polish,sr,CYRILLIC,C++ (PGO),11,68667,61,1125689,1.24,True,8,8.25,10.23,3,True
+polish,sr,CYRILLIC,TypeScript (Node),11,68667,368,186595,7.51,True,9,32.53,47.78,3,True
+polish,sv,LATIN,Java (JVM),10,73672,69,1067710,1.0,True,5,6.82,7.36,3,True
+polish,sv,LATIN,Kotlin (JVM),10,73672,71,1037634,1.03,True,7,7.5,7.81,3,True
+polish,sv,LATIN,Scala (JVM),10,73672,76,969368,1.1,True,8,9.39,7.18,3,True
+polish,sv,LATIN,"Java (GraalVM native, PGO)",10,73672,69,1067710,1.0,True,6,5.74,8.04,3,True
+polish,sv,LATIN,Rust (PGO),10,73672,48,1534833,0.7,True,1,4.75,6.67,3,True
+polish,sv,LATIN,C# (JIT),10,73672,51,1444549,0.74,True,2,5.3,5.14,3,True
+polish,sv,LATIN,Go (PGO),10,73672,58,1270207,0.84,True,4,3.01,10.99,3,True
+polish,sv,LATIN,C++ (PGO),10,73672,53,1390038,0.77,True,3,5.86,6.54,3,True
+polish,sv,LATIN,TypeScript (Node),10,73672,425,173346,6.16,True,9,33.69,48.47,3,True
+polish,tr,LATIN,Java (JVM),7,32662,43,759581,1.0,True,6,5.08,7.43,3,True
+polish,tr,LATIN,Kotlin (JVM),7,32662,46,710043,1.07,True,7,5.0,6.89,3,True
+polish,tr,LATIN,Scala (JVM),7,32662,52,628115,1.21,True,8,6.67,7.43,3,True
+polish,tr,LATIN,"Java (GraalVM native, PGO)",7,32662,42,777667,0.98,True,5,3.98,6.04,3,True
+polish,tr,LATIN,Rust (PGO),7,32662,28,1166500,0.65,True,1,2.37,4.14,3,True
+polish,tr,LATIN,C# (JIT),7,32662,30,1088733,0.7,True,3,2.97,4.54,3,True
+polish,tr,LATIN,Go (PGO),7,32662,33,989758,0.77,True,4,1.0,4.97,3,True
+polish,tr,LATIN,C++ (PGO),7,32662,29,1126276,0.67,True,2,3.04,4.67,3,True
+polish,tr,LATIN,TypeScript (Node),7,32662,239,136661,5.56,True,9,17.06,28.23,3,True
+polish,uk,CYRILLIC,Java (JVM),10,68495,57,1201667,1.0,True,4,10.56,10.2,3,True
+polish,uk,CYRILLIC,Kotlin (JVM),10,68495,76,901250,1.33,True,8,14.16,13.0,3,True
+polish,uk,CYRILLIC,Scala (JVM),10,68495,69,992681,1.21,True,7,13.17,11.21,3,True
+polish,uk,CYRILLIC,"Java (GraalVM native, PGO)",10,68495,57,1201667,1.0,True,5,9.09,13.32,3,True
+polish,uk,CYRILLIC,Rust (PGO),10,68495,35,1957000,0.61,True,1,5.13,5.53,3,True
+polish,uk,CYRILLIC,C# (JIT),10,68495,46,1489022,0.81,True,2,7.43,10.23,3,True
+polish,uk,CYRILLIC,Go (PGO),10,68495,48,1426979,0.84,True,3,7.98,12.98,3,True
+polish,uk,CYRILLIC,C++ (PGO),10,68495,59,1160932,1.04,True,6,6.74,9.72,3,True
+polish,uk,CYRILLIC,TypeScript (Node),10,68495,430,159291,7.54,True,9,37.05,71.15,3,True
+polish,vi,LATIN,Java (JVM),11,95407,37,2578568,1.0,True,5,9.21,5.48,3,True
+polish,vi,LATIN,Kotlin (JVM),11,95407,39,2446333,1.05,True,7,11.04,6.13,3,True
+polish,vi,LATIN,Scala (JVM),11,95407,47,2029936,1.27,True,8,12.12,5.56,3,True
+polish,vi,LATIN,"Java (GraalVM native, PGO)",11,95407,38,2510711,1.03,True,6,8.13,7.31,3,True
+polish,vi,LATIN,Rust (PGO),11,95407,25,3816280,0.68,True,1,5.25,4.23,3,True
+polish,vi,LATIN,C# (JIT),11,95407,26,3669500,0.7,True,2,5.32,4.07,3,True
+polish,vi,LATIN,Go (PGO),11,95407,26,3669500,0.7,True,3,5.0,4.0,3,True
+polish,vi,LATIN,C++ (PGO),11,95407,29,3289897,0.78,True,4,6.78,4.38,3,True
+polish,vi,LATIN,TypeScript (Node),11,95407,215,443753,5.81,True,9,50.9,32.13,3,True
+polish,zh,CJK,Java (JVM),15,12133,18,,,False,,2.69,2.39,3,True
+polish,zh,CJK,Kotlin (JVM),15,12133,17,,,False,,2.84,2.23,3,True
+polish,zh,CJK,Scala (JVM),15,12133,24,,,False,,3.02,2.62,3,True
+polish,zh,CJK,"Java (GraalVM native, PGO)",15,12133,15,,,False,,2.16,2.46,3,True
+polish,zh,CJK,Rust (PGO),15,12133,14,,,False,,1.35,2.01,3,True
+polish,zh,CJK,C# (JIT),15,12133,16,,,False,,1.91,3.0,3,True
+polish,zh,CJK,Go (PGO),15,12133,18,,,False,,1.0,2.0,3,True
+polish,zh,CJK,C++ (PGO),15,12133,20,,,False,,1.76,2.77,3,True
+polish,zh,CJK,TypeScript (Node),15,12133,180,,,False,,9.63,16.95,3,True
+malagasy,ar,ARABIC,Java (JVM),11,74294,50,1485880,1.0,True,6,12.25,7.13,3,True
+malagasy,ar,ARABIC,Kotlin (JVM),11,74294,58,1280931,1.16,True,7,13.02,7.58,3,True
+malagasy,ar,ARABIC,Scala (JVM),11,74294,64,1160844,1.28,True,8,15.46,7.59,3,True
+malagasy,ar,ARABIC,"Java (GraalVM native, PGO)",11,74294,37,2007946,0.74,True,4,7.93,6.25,3,True
+malagasy,ar,ARABIC,Rust (PGO),11,74294,34,2185118,0.68,True,3,8.54,6.17,3,True
+malagasy,ar,ARABIC,C# (JIT),11,74294,32,2321688,0.64,True,2,7.38,5.2,3,True
+malagasy,ar,ARABIC,Go (PGO),11,74294,31,2396581,0.62,True,1,7.0,5.0,3,True
+malagasy,ar,ARABIC,C++ (PGO),11,74294,39,1904974,0.78,True,5,6.66,7.29,3,True
+malagasy,ar,ARABIC,TypeScript (Node),11,74294,297,250148,5.94,True,9,40.92,47.94,3,True
+malagasy,be,CYRILLIC,Java (JVM),6,36629,24,,,False,,6.04,4.66,3,True
+malagasy,be,CYRILLIC,Kotlin (JVM),6,36629,33,,,False,,9.19,5.28,3,True
+malagasy,be,CYRILLIC,Scala (JVM),6,36629,28,,,False,,8.07,4.65,3,True
+malagasy,be,CYRILLIC,"Java (GraalVM native, PGO)",6,36629,23,,,False,,5.0,5.34,3,True
+malagasy,be,CYRILLIC,Rust (PGO),6,36629,18,,,False,,4.21,5.63,3,True
+malagasy,be,CYRILLIC,C# (JIT),6,36629,22,,,False,,4.21,4.92,3,True
+malagasy,be,CYRILLIC,Go (PGO),6,36629,22,,,False,,4.99,5.99,3,True
+malagasy,be,CYRILLIC,C++ (PGO),6,36629,20,,,False,,3.1,5.34,3,True
+malagasy,be,CYRILLIC,TypeScript (Node),6,36629,166,,,False,,22.54,29.64,3,True
+malagasy,bg,CYRILLIC,Java (JVM),12,106213,57,1863386,1.0,True,2,13.76,11.7,3,True
+malagasy,bg,CYRILLIC,Kotlin (JVM),12,106213,72,1475181,1.26,True,7,21.06,12.72,3,True
+malagasy,bg,CYRILLIC,Scala (JVM),12,106213,76,1397539,1.33,True,8,21.27,13.16,3,True
+malagasy,bg,CYRILLIC,"Java (GraalVM native, PGO)",12,106213,59,1800220,1.04,True,4,12.69,15.1,3,True
+malagasy,bg,CYRILLIC,Rust (PGO),12,106213,70,1517329,1.23,True,6,12.88,19.12,3,True
+malagasy,bg,CYRILLIC,C# (JIT),12,106213,50,2124260,0.88,True,1,12.63,13.8,3,True
+malagasy,bg,CYRILLIC,Go (PGO),12,106213,58,1831259,1.02,True,3,11.01,15.99,3,True
+malagasy,bg,CYRILLIC,C++ (PGO),12,106213,62,1713113,1.09,True,5,9.41,17.8,3,True
+malagasy,bg,CYRILLIC,TypeScript (Node),12,106213,439,241943,7.7,True,9,63.76,101.56,3,True
+malagasy,bs,LATIN,Java (JVM),9,118383,65,1821277,1.0,True,4,11.16,8.39,3,True
+malagasy,bs,LATIN,Kotlin (JVM),9,118383,93,1272935,1.43,True,7,18.25,10.78,3,True
+malagasy,bs,LATIN,Scala (JVM),9,118383,96,1233156,1.48,True,8,20.82,8.14,3,True
+malagasy,bs,LATIN,"Java (GraalVM native, PGO)",9,118383,67,1766910,1.03,True,5,10.49,10.25,3,True
+malagasy,bs,LATIN,Rust (PGO),9,118383,69,1715696,1.06,True,6,14.36,13.33,3,True
+malagasy,bs,LATIN,C# (JIT),9,118383,52,2276596,0.8,True,2,8.92,6.05,3,True
+malagasy,bs,LATIN,Go (PGO),9,118383,45,2630733,0.69,True,1,10.02,6.99,3,True
+malagasy,bs,LATIN,C++ (PGO),9,118383,58,2041086,0.89,True,3,9.24,10.63,3,True
+malagasy,bs,LATIN,TypeScript (Node),9,118383,512,231217,7.88,True,9,78.0,66.31,3,True
+malagasy,ca,LATIN,Java (JVM),5,39880,22,,,False,,3.38,2.55,3,True
+malagasy,ca,LATIN,Kotlin (JVM),5,39880,28,,,False,,5.95,2.66,3,True
+malagasy,ca,LATIN,Scala (JVM),5,39880,31,,,False,,7.31,2.79,3,True
+malagasy,ca,LATIN,"Java (GraalVM native, PGO)",5,39880,22,,,False,,2.93,2.74,3,True
+malagasy,ca,LATIN,Rust (PGO),5,39880,18,,,False,,3.49,3.44,3,True
+malagasy,ca,LATIN,C# (JIT),5,39880,19,,,False,,2.63,2.04,3,True
+malagasy,ca,LATIN,Go (PGO),5,39880,15,,,False,,2.99,1.01,3,True
+malagasy,ca,LATIN,C++ (PGO),5,39880,18,,,False,,3.03,3.26,3,True
+malagasy,ca,LATIN,TypeScript (Node),5,39880,121,,,False,,15.91,18.18,3,True
+malagasy,cs,LATIN,Java (JVM),10,43698,36,1213833,1.0,True,6,5.45,3.92,3,True
+malagasy,cs,LATIN,Kotlin (JVM),10,43698,39,1120462,1.08,True,7,6.18,4.15,3,True
+malagasy,cs,LATIN,Scala (JVM),10,43698,45,971067,1.25,True,8,9.37,3.71,3,True
+malagasy,cs,LATIN,"Java (GraalVM native, PGO)",10,43698,31,1409613,0.86,True,5,4.77,3.8,3,True
+malagasy,cs,LATIN,Rust (PGO),10,43698,23,1899913,0.64,True,1,4.69,4.69,3,True
+malagasy,cs,LATIN,C# (JIT),10,43698,24,1820750,0.67,True,2,3.71,2.61,3,True
+malagasy,cs,LATIN,Go (PGO),10,43698,24,1820750,0.67,True,3,4.03,3.71,3,True
+malagasy,cs,LATIN,C++ (PGO),10,43698,27,1618444,0.75,True,4,3.65,4.46,3,True
+malagasy,cs,LATIN,TypeScript (Node),10,43698,224,195080,6.22,True,9,25.98,22.02,3,True
+malagasy,da,LATIN,Java (JVM),8,30335,19,,,False,,3.06,2.1,3,True
+malagasy,da,LATIN,Kotlin (JVM),8,30335,26,,,False,,3.86,2.34,3,True
+malagasy,da,LATIN,Scala (JVM),8,30335,29,,,False,,5.17,2.41,3,True
+malagasy,da,LATIN,"Java (GraalVM native, PGO)",8,30335,20,,,False,,2.51,2.15,3,True
+malagasy,da,LATIN,Rust (PGO),8,30335,17,,,False,,4.65,3.07,3,True
+malagasy,da,LATIN,C# (JIT),8,30335,17,,,False,,3.04,1.96,3,True
+malagasy,da,LATIN,Go (PGO),8,30335,15,,,False,,2.0,2.0,3,True
+malagasy,da,LATIN,C++ (PGO),8,30335,18,,,False,,2.4,3.09,3,True
+malagasy,da,LATIN,TypeScript (Node),8,30335,123,,,False,,16.77,17.1,3,True
+malagasy,de,LATIN,Java (JVM),15,88930,61,1457869,1.0,True,5,9.22,6.72,3,True
+malagasy,de,LATIN,Kotlin (JVM),15,88930,72,1235139,1.18,True,7,12.42,7.39,3,True
+malagasy,de,LATIN,Scala (JVM),15,88930,80,1111625,1.31,True,8,16.91,6.55,3,True
+malagasy,de,LATIN,"Java (GraalVM native, PGO)",15,88930,61,1457869,1.0,True,6,7.97,7.4,3,True
+malagasy,de,LATIN,Rust (PGO),15,88930,51,1743725,0.84,True,4,9.27,9.77,3,True
+malagasy,de,LATIN,C# (JIT),15,88930,42,2117381,0.69,True,1,7.27,4.66,3,True
+malagasy,de,LATIN,Go (PGO),15,88930,48,1852708,0.79,True,2,7.0,5.99,3,True
+malagasy,de,LATIN,C++ (PGO),15,88930,50,1778600,0.82,True,3,7.18,8.78,3,True
+malagasy,de,LATIN,TypeScript (Node),15,88930,361,246343,5.92,True,9,42.99,44.74,3,True
+malagasy,el,GREEK,Java (JVM),13,108841,60,1814017,1.0,True,5,17.17,11.29,3,True
+malagasy,el,GREEK,Kotlin (JVM),13,108841,66,1649106,1.1,True,6,19.82,11.87,3,True
+malagasy,el,GREEK,Scala (JVM),13,108841,79,1377734,1.32,True,8,23.89,12.07,3,True
+malagasy,el,GREEK,"Java (GraalVM native, PGO)",13,108841,78,1395397,1.3,True,7,17.51,16.8,3,True
+malagasy,el,GREEK,Rust (PGO),13,108841,48,2267521,0.8,True,1,11.24,15.69,3,True
+malagasy,el,GREEK,C# (JIT),13,108841,51,2134137,0.85,True,2,9.08,13.95,3,True
+malagasy,el,GREEK,Go (PGO),13,108841,53,2053604,0.88,True,3,11.99,18.99,3,True
+malagasy,el,GREEK,C++ (PGO),13,108841,55,1978927,0.92,True,4,8.96,14.85,3,True
+malagasy,el,GREEK,TypeScript (Node),13,108841,444,245137,7.4,True,9,63.64,92.5,3,True
+malagasy,en,LATIN,Java (JVM),12,55381,28,,,False,,5.65,3.8,3,True
+malagasy,en,LATIN,Kotlin (JVM),12,55381,36,,,False,,7.74,4.25,3,True
+malagasy,en,LATIN,Scala (JVM),12,55381,34,,,False,,7.79,3.63,3,True
+malagasy,en,LATIN,"Java (GraalVM native, PGO)",12,55381,53,,,False,,7.81,7.35,3,True
+malagasy,en,LATIN,Rust (PGO),12,55381,25,,,False,,4.7,5.01,3,True
+malagasy,en,LATIN,C# (JIT),12,55381,21,,,False,,3.16,2.66,3,True
+malagasy,en,LATIN,Go (PGO),12,55381,19,,,False,,3.99,3.0,3,True
+malagasy,en,LATIN,C++ (PGO),12,55381,27,,,False,,4.7,5.36,3,True
+malagasy,en,LATIN,TypeScript (Node),12,55381,111,,,False,,20.5,22.39,3,True
+malagasy,es,LATIN,Java (JVM),12,154458,79,1955165,1.0,True,5,14.21,10.54,3,True
+malagasy,es,LATIN,Kotlin (JVM),12,154458,119,1297966,1.51,True,8,23.27,12.43,3,True
+malagasy,es,LATIN,Scala (JVM),12,154458,106,1457151,1.34,True,7,23.95,9.42,3,True
+malagasy,es,LATIN,"Java (GraalVM native, PGO)",12,154458,77,2005948,0.97,True,4,11.88,12.64,3,True
+malagasy,es,LATIN,Rust (PGO),12,154458,66,2340273,0.84,True,3,14.1,14.27,3,True
+malagasy,es,LATIN,C# (JIT),12,154458,59,2617932,0.75,True,1,10.61,10.81,3,True
+malagasy,es,LATIN,Go (PGO),12,154458,60,2574300,0.76,True,2,13.08,12.97,3,True
+malagasy,es,LATIN,C++ (PGO),12,154458,83,1860940,1.05,True,6,13.04,16.51,3,True
+malagasy,es,LATIN,TypeScript (Node),12,154458,479,322459,6.06,True,9,67.04,98.8,3,True
+malagasy,et,LATIN,Java (JVM),4,15536,10,,,False,,1.53,1.34,3,True
+malagasy,et,LATIN,Kotlin (JVM),4,15536,12,,,False,,2.04,1.49,3,True
+malagasy,et,LATIN,Scala (JVM),4,15536,26,,,False,,5.02,1.91,3,True
+malagasy,et,LATIN,"Java (GraalVM native, PGO)",4,15536,10,,,False,,1.5,1.4,3,True
+malagasy,et,LATIN,Rust (PGO),4,15536,9,,,False,,1.81,1.84,3,True
+malagasy,et,LATIN,C# (JIT),4,15536,10,,,False,,1.74,1.4,3,True
+malagasy,et,LATIN,Go (PGO),4,15536,10,,,False,,2.0,1.01,3,True
+malagasy,et,LATIN,C++ (PGO),4,15536,12,,,False,,1.45,1.94,3,True
+malagasy,et,LATIN,TypeScript (Node),4,15536,68,,,False,,7.3,9.38,3,True
+malagasy,fa,ARABIC,Java (JVM),5,39093,17,,,False,,4.06,3.1,3,True
+malagasy,fa,ARABIC,Kotlin (JVM),5,39093,29,,,False,,7.89,4.41,3,True
+malagasy,fa,ARABIC,Scala (JVM),5,39093,43,,,False,,12.82,7.84,3,True
+malagasy,fa,ARABIC,"Java (GraalVM native, PGO)",5,39093,17,,,False,,3.71,3.38,3,True
+malagasy,fa,ARABIC,Rust (PGO),5,39093,13,,,False,,3.53,2.74,3,True
+malagasy,fa,ARABIC,C# (JIT),5,39093,16,,,False,,3.13,2.75,3,True
+malagasy,fa,ARABIC,Go (PGO),5,39093,13,,,False,,4.0,2.99,3,True
+malagasy,fa,ARABIC,C++ (PGO),5,39093,15,,,False,,2.92,3.85,3,True
+malagasy,fa,ARABIC,TypeScript (Node),5,39093,114,,,False,,19.43,24.01,3,True
+malagasy,fi,LATIN,Java (JVM),1,3706,3,,,False,,0.37,0.29,3,True
+malagasy,fi,LATIN,Kotlin (JVM),1,3706,6,,,False,,0.82,0.42,3,True
+malagasy,fi,LATIN,Scala (JVM),1,3706,4,,,False,,0.59,0.28,3,True
+malagasy,fi,LATIN,"Java (GraalVM native, PGO)",1,3706,3,,,False,,0.32,0.31,3,True
+malagasy,fi,LATIN,Rust (PGO),1,3706,2,,,False,,0.43,0.48,3,True
+malagasy,fi,LATIN,C# (JIT),1,3706,2,,,False,,0.32,0.24,3,True
+malagasy,fi,LATIN,Go (PGO),1,3706,3,,,False,,0.0,1.0,3,True
+malagasy,fi,LATIN,C++ (PGO),1,3706,3,,,False,,0.33,0.45,3,True
+malagasy,fi,LATIN,TypeScript (Node),1,3706,22,,,False,,1.86,2.09,3,True
+malagasy,fr,LATIN,Java (JVM),12,128342,75,1711227,1.0,True,6,13.33,10.26,3,True
+malagasy,fr,LATIN,Kotlin (JVM),12,128342,140,916729,1.87,True,8,29.38,12.56,3,True
+malagasy,fr,LATIN,Scala (JVM),12,128342,102,1258255,1.36,True,7,25.46,9.73,3,True
+malagasy,fr,LATIN,"Java (GraalVM native, PGO)",12,128342,71,1807634,0.95,True,5,12.88,10.7,3,True
+malagasy,fr,LATIN,Rust (PGO),12,128342,49,2619224,0.65,True,2,10.9,10.86,3,True
+malagasy,fr,LATIN,C# (JIT),12,128342,44,2916864,0.59,True,1,7.74,6.84,3,True
+malagasy,fr,LATIN,Go (PGO),12,128342,49,2619224,0.65,True,3,10.99,8.4,3,True
+malagasy,fr,LATIN,C++ (PGO),12,128342,57,2251614,0.76,True,4,10.22,11.39,3,True
+malagasy,fr,LATIN,TypeScript (Node),12,128342,330,388915,4.4,True,9,60.92,67.79,3,True
+malagasy,he,HEBREW,Java (JVM),1,545,1,,,False,,0.1,0.06,3,True
+malagasy,he,HEBREW,Kotlin (JVM),1,545,0,,,False,,0.07,0.07,3,True
+malagasy,he,HEBREW,Scala (JVM),1,545,0,,,False,,0.1,0.06,3,True
+malagasy,he,HEBREW,"Java (GraalVM native, PGO)",1,545,0,,,False,,0.04,0.04,3,True
+malagasy,he,HEBREW,Rust (PGO),1,545,0,,,False,,0.04,0.06,3,True
+malagasy,he,HEBREW,C# (JIT),1,545,0,,,False,,0.03,0.06,3,True
+malagasy,he,HEBREW,Go (PGO),1,545,0,,,False,,0.0,0.0,3,True
+malagasy,he,HEBREW,C++ (PGO),1,545,0,,,False,,0.03,0.07,3,True
+malagasy,he,HEBREW,TypeScript (Node),1,545,1,,,False,,0.14,0.32,3,True
+malagasy,hi,DEVANAGARI,Java (JVM),1,9581,6,,,False,,1.85,0.97,3,True
+malagasy,hi,DEVANAGARI,Kotlin (JVM),1,9581,6,,,False,,2.01,0.65,3,True
+malagasy,hi,DEVANAGARI,Scala (JVM),1,9581,4,,,False,,1.37,0.46,3,True
+malagasy,hi,DEVANAGARI,"Java (GraalVM native, PGO)",1,9581,2,,,False,,0.71,0.42,3,True
+malagasy,hi,DEVANAGARI,Rust (PGO),1,9581,2,,,False,,0.53,0.48,3,True
+malagasy,hi,DEVANAGARI,C# (JIT),1,9581,2,,,False,,0.38,0.38,3,True
+malagasy,hi,DEVANAGARI,Go (PGO),1,9581,2,,,False,,0.0,1.0,3,True
+malagasy,hi,DEVANAGARI,C++ (PGO),1,9581,3,,,False,,0.58,0.56,3,True
+malagasy,hi,DEVANAGARI,TypeScript (Node),1,9581,12,,,False,,2.68,3.61,3,True
+malagasy,hr,LATIN,Java (JVM),9,47453,66,718985,1.0,True,8,10.78,6.71,3,True
+malagasy,hr,LATIN,Kotlin (JVM),9,47453,39,1216744,0.59,True,6,7.25,4.2,3,True
+malagasy,hr,LATIN,Scala (JVM),9,47453,41,1157390,0.62,True,7,7.81,3.25,3,True
+malagasy,hr,LATIN,"Java (GraalVM native, PGO)",9,47453,29,1636310,0.44,True,5,4.26,4.13,3,True
+malagasy,hr,LATIN,Rust (PGO),9,47453,24,1977208,0.36,True,2,4.57,4.79,3,True
+malagasy,hr,LATIN,C# (JIT),9,47453,20,2372650,0.3,True,1,3.23,2.38,3,True
+malagasy,hr,LATIN,Go (PGO),9,47453,27,1757519,0.41,True,3,5.0,2.98,3,True
+malagasy,hr,LATIN,C++ (PGO),9,47453,27,1757519,0.41,True,4,3.72,4.34,3,True
+malagasy,hr,LATIN,TypeScript (Node),9,47453,185,256503,2.8,True,9,23.74,22.52,3,True
+malagasy,hu,LATIN,Java (JVM),3,21517,34,632853,1.0,True,8,4.52,2.48,3,True
+malagasy,hu,LATIN,Kotlin (JVM),3,21517,20,1075850,0.59,True,5,2.71,1.77,3,True
+malagasy,hu,LATIN,Scala (JVM),3,21517,22,978045,0.65,True,7,4.1,1.69,3,True
+malagasy,hu,LATIN,"Java (GraalVM native, PGO)",3,21517,21,1024619,0.62,True,6,2.11,3.3,3,True
+malagasy,hu,LATIN,Rust (PGO),3,21517,14,1536929,0.41,True,2,2.83,2.25,3,True
+malagasy,hu,LATIN,C# (JIT),3,21517,13,1655154,0.38,True,1,1.9,1.35,3,True
+malagasy,hu,LATIN,Go (PGO),3,21517,15,1434467,0.44,True,3,2.0,1.99,3,True
+malagasy,hu,LATIN,C++ (PGO),3,21517,15,1434467,0.44,True,4,1.78,2.18,3,True
+malagasy,hu,LATIN,TypeScript (Node),3,21517,123,174935,3.62,True,9,9.82,10.09,3,True
+malagasy,id,LATIN,Java (JVM),4,35715,40,892875,1.0,True,8,8.47,3.8,3,True
+malagasy,id,LATIN,Kotlin (JVM),4,35715,27,1322778,0.68,True,6,5.18,3.55,3,True
+malagasy,id,LATIN,Scala (JVM),4,35715,28,1275536,0.7,True,7,5.15,5.98,3,True
+malagasy,id,LATIN,"Java (GraalVM native, PGO)",4,35715,21,1700714,0.53,True,5,2.95,3.95,3,True
+malagasy,id,LATIN,Rust (PGO),4,35715,16,2232188,0.4,True,2,3.08,3.54,3,True
+malagasy,id,LATIN,C# (JIT),4,35715,16,2232188,0.4,True,3,2.52,3.56,3,True
+malagasy,id,LATIN,Go (PGO),4,35715,14,2551071,0.35,True,1,4.0,3.0,3,True
+malagasy,id,LATIN,C++ (PGO),4,35715,18,1984167,0.45,True,4,2.8,4.14,3,True
+malagasy,id,LATIN,TypeScript (Node),4,35715,104,343413,2.6,True,9,15.02,23.73,3,True
+malagasy,it,LATIN,Java (JVM),8,54344,38,1430105,1.0,True,6,5.67,5.65,3,True
+malagasy,it,LATIN,Kotlin (JVM),8,54344,45,1207644,1.18,True,7,7.79,5.09,3,True
+malagasy,it,LATIN,Scala (JVM),8,54344,46,1181391,1.21,True,8,8.7,5.01,3,True
+malagasy,it,LATIN,"Java (GraalVM native, PGO)",8,54344,31,1753032,0.82,True,5,4.18,4.28,3,True
+malagasy,it,LATIN,Rust (PGO),8,54344,22,2470182,0.58,True,2,4.86,5.07,3,True
+malagasy,it,LATIN,C# (JIT),8,54344,22,2470182,0.58,True,3,3.55,3.0,3,True
+malagasy,it,LATIN,Go (PGO),8,54344,21,2587810,0.55,True,1,3.98,4.0,3,True
+malagasy,it,LATIN,C++ (PGO),8,54344,27,2012741,0.71,True,4,4.14,5.02,3,True
+malagasy,it,LATIN,TypeScript (Node),8,54344,160,339650,4.21,True,9,26.2,26.68,3,True
+malagasy,ja,CJK,Java (JVM),10,13434,15,,,False,,3.22,2.44,3,True
+malagasy,ja,CJK,Kotlin (JVM),10,13434,20,,,False,,4.4,2.89,3,True
+malagasy,ja,CJK,Scala (JVM),10,13434,25,,,False,,7.17,3.01,3,True
+malagasy,ja,CJK,"Java (GraalVM native, PGO)",10,13434,14,,,False,,2.54,2.2,3,True
+malagasy,ja,CJK,Rust (PGO),10,13434,12,,,False,,2.55,2.28,3,True
+malagasy,ja,CJK,C# (JIT),10,13434,13,,,False,,1.86,2.12,3,True
+malagasy,ja,CJK,Go (PGO),10,13434,15,,,False,,3.0,3.0,3,True
+malagasy,ja,CJK,C++ (PGO),10,13434,14,,,False,,1.38,2.77,3,True
+malagasy,ja,CJK,TypeScript (Node),10,13434,131,,,False,,11.7,18.41,3,True
+malagasy,ko,HANGUL,Java (JVM),14,66232,32,2069750,1.0,True,6,8.13,5.08,3,True
+malagasy,ko,HANGUL,Kotlin (JVM),14,66232,46,1439826,1.44,True,7,10.71,5.85,3,True
+malagasy,ko,HANGUL,Scala (JVM),14,66232,55,1204218,1.72,True,8,20.45,5.15,3,True
+malagasy,ko,HANGUL,"Java (GraalVM native, PGO)",14,66232,28,2365429,0.88,True,5,5.9,4.89,3,True
+malagasy,ko,HANGUL,Rust (PGO),14,66232,26,2547385,0.81,True,3,6.94,4.73,3,True
+malagasy,ko,HANGUL,C# (JIT),14,66232,24,2759667,0.75,True,1,4.73,3.24,3,True
+malagasy,ko,HANGUL,Go (PGO),14,66232,25,2649280,0.78,True,2,5.99,5.0,3,True
+malagasy,ko,HANGUL,C++ (PGO),14,66232,27,2453037,0.84,True,4,4.74,5.44,3,True
+malagasy,ko,HANGUL,TypeScript (Node),14,66232,177,374192,5.53,True,9,28.2,32.27,3,True
+malagasy,la,LATIN,Java (JVM),7,3554,3,,,False,,0.35,0.53,3,True
+malagasy,la,LATIN,Kotlin (JVM),7,3554,7,,,False,,0.51,0.5,3,True
+malagasy,la,LATIN,Scala (JVM),7,3554,7,,,False,,0.73,0.45,3,True
+malagasy,la,LATIN,"Java (GraalVM native, PGO)",7,3554,4,,,False,,0.54,0.39,3,True
+malagasy,la,LATIN,Rust (PGO),7,3554,3,,,False,,0.5,0.42,3,True
+malagasy,la,LATIN,C# (JIT),7,3554,4,,,False,,0.35,0.25,3,True
+malagasy,la,LATIN,Go (PGO),7,3554,3,,,False,,1.0,0.0,3,True
+malagasy,la,LATIN,C++ (PGO),7,3554,2,,,False,,0.3,0.45,3,True
+malagasy,la,LATIN,TypeScript (Node),7,3554,25,,,False,,1.47,2.19,3,True
+malagasy,lt,LATIN,Java (JVM),9,37364,29,,,False,,4.33,3.38,3,True
+malagasy,lt,LATIN,Kotlin (JVM),9,37364,31,,,False,,5.08,3.24,3,True
+malagasy,lt,LATIN,Scala (JVM),9,37364,40,,,False,,7.75,3.37,3,True
+malagasy,lt,LATIN,"Java (GraalVM native, PGO)",9,37364,30,,,False,,4.38,3.78,3,True
+malagasy,lt,LATIN,Rust (PGO),9,37364,23,,,False,,4.08,4.17,3,True
+malagasy,lt,LATIN,C# (JIT),9,37364,20,,,False,,3.12,2.37,3,True
+malagasy,lt,LATIN,Go (PGO),9,37364,22,,,False,,4.0,2.99,3,True
+malagasy,lt,LATIN,C++ (PGO),9,37364,22,,,False,,3.1,4.12,3,True
+malagasy,lt,LATIN,TypeScript (Node),9,37364,180,,,False,,20.71,23.82,3,True
+malagasy,mk,CYRILLIC,Java (JVM),9,70371,33,2132455,1.0,True,5,9.19,7.03,3,True
+malagasy,mk,CYRILLIC,Kotlin (JVM),9,70371,37,1901919,1.12,True,6,9.89,7.01,3,True
+malagasy,mk,CYRILLIC,Scala (JVM),9,70371,45,1563800,1.36,True,8,13.95,7.51,3,True
+malagasy,mk,CYRILLIC,"Java (GraalVM native, PGO)",9,70371,37,1901919,1.12,True,7,9.27,8.76,3,True
+malagasy,mk,CYRILLIC,Rust (PGO),9,70371,26,2706577,0.79,True,1,6.46,9.11,3,True
+malagasy,mk,CYRILLIC,C# (JIT),9,70371,27,2606333,0.82,True,2,5.56,7.89,3,True
+malagasy,mk,CYRILLIC,Go (PGO),9,70371,29,2426586,0.88,True,3,7.99,8.99,3,True
+malagasy,mk,CYRILLIC,C++ (PGO),9,70371,31,2270032,0.94,True,4,5.8,9.25,3,True
+malagasy,mk,CYRILLIC,TypeScript (Node),9,70371,242,290789,7.33,True,9,41.23,60.23,3,True
+malagasy,nl,LATIN,Java (JVM),9,9340,9,,,False,,0.88,0.99,3,True
+malagasy,nl,LATIN,Kotlin (JVM),9,9340,7,,,False,,1.39,0.95,3,True
+malagasy,nl,LATIN,Scala (JVM),9,9340,11,,,False,,1.55,0.94,3,True
+malagasy,nl,LATIN,"Java (GraalVM native, PGO)",9,9340,8,,,False,,0.81,0.8,3,True
+malagasy,nl,LATIN,Rust (PGO),9,9340,7,,,False,,0.95,1.01,3,True
+malagasy,nl,LATIN,C# (JIT),9,9340,6,,,False,,0.75,0.6,3,True
+malagasy,nl,LATIN,Go (PGO),9,9340,6,,,False,,1.0,0.0,3,True
+malagasy,nl,LATIN,C++ (PGO),9,9340,6,,,False,,0.74,1.08,3,True
+malagasy,nl,LATIN,TypeScript (Node),9,9340,36,,,False,,4.0,6.0,3,True
+malagasy,no,LATIN,Java (JVM),2,10967,7,,,False,,1.04,0.85,3,True
+malagasy,no,LATIN,Kotlin (JVM),2,10967,8,,,False,,1.31,0.8,3,True
+malagasy,no,LATIN,Scala (JVM),2,10967,9,,,False,,1.67,0.74,3,True
+malagasy,no,LATIN,"Java (GraalVM native, PGO)",2,10967,7,,,False,,0.93,0.82,3,True
+malagasy,no,LATIN,Rust (PGO),2,10967,5,,,False,,1.05,1.05,3,True
+malagasy,no,LATIN,C# (JIT),2,10967,6,,,False,,0.91,0.6,3,True
+malagasy,no,LATIN,Go (PGO),2,10967,5,,,False,,1.0,0.0,3,True
+malagasy,no,LATIN,C++ (PGO),2,10967,6,,,False,,0.86,1.05,3,True
+malagasy,no,LATIN,TypeScript (Node),2,10967,41,,,False,,4.42,5.38,3,True
+malagasy,pl,LATIN,Java (JVM),11,49249,48,1026021,1.0,True,7,6.69,4.73,3,True
+malagasy,pl,LATIN,Kotlin (JVM),11,49249,46,1070630,0.96,True,6,6.99,4.12,3,True
+malagasy,pl,LATIN,Scala (JVM),11,49249,53,929226,1.1,True,8,9.3,4.0,3,True
+malagasy,pl,LATIN,"Java (GraalVM native, PGO)",11,49249,37,1331054,0.77,True,5,5.02,5.01,3,True
+malagasy,pl,LATIN,Rust (PGO),11,49249,32,1539031,0.67,True,4,5.93,5.5,3,True
+malagasy,pl,LATIN,C# (JIT),11,49249,30,1641633,0.62,True,3,5.07,4.21,3,True
+malagasy,pl,LATIN,Go (PGO),11,49249,26,1894192,0.54,True,1,4.03,3.99,3,True
+malagasy,pl,LATIN,C++ (PGO),11,49249,29,1698241,0.6,True,2,4.03,5.38,3,True
+malagasy,pl,LATIN,TypeScript (Node),11,49249,226,217916,4.71,True,9,28.57,36.84,3,True
+malagasy,pt,LATIN,Java (JVM),14,190268,97,1961526,1.0,True,3,16.37,13.66,3,True
+malagasy,pt,LATIN,Kotlin (JVM),14,190268,123,1546894,1.27,True,6,25.12,15.07,3,True
+malagasy,pt,LATIN,Scala (JVM),14,190268,126,1510063,1.3,True,7,31.7,11.93,3,True
+malagasy,pt,LATIN,"Java (GraalVM native, PGO)",14,190268,100,1902680,1.03,True,4,15.02,15.62,3,True
+malagasy,pt,LATIN,Rust (PGO),14,190268,162,1174494,1.67,True,8,35.88,29.31,3,True
+malagasy,pt,LATIN,C# (JIT),14,190268,109,1745578,1.12,True,5,16.82,20.06,3,True
+malagasy,pt,LATIN,Go (PGO),14,190268,77,2471013,0.79,True,1,14.96,14.99,3,True
+malagasy,pt,LATIN,C++ (PGO),14,190268,93,2045892,0.96,True,2,15.06,21.49,3,True
+malagasy,pt,LATIN,TypeScript (Node),14,190268,636,299164,6.56,True,9,86.39,150.01,3,True
+malagasy,ro,LATIN,Java (JVM),12,71518,47,1521660,1.0,True,5,7.24,5.72,3,True
+malagasy,ro,LATIN,Kotlin (JVM),12,71518,54,1324407,1.15,True,6,10.39,5.99,3,True
+malagasy,ro,LATIN,Scala (JVM),12,71518,61,1172426,1.3,True,7,13.98,5.59,3,True
+malagasy,ro,LATIN,"Java (GraalVM native, PGO)",12,71518,41,1744341,0.87,True,4,6.65,6.04,3,True
+malagasy,ro,LATIN,Rust (PGO),12,71518,40,1787950,0.85,True,3,8.55,7.56,3,True
+malagasy,ro,LATIN,C# (JIT),12,71518,75,953573,1.6,True,8,11.42,6.92,3,True
+malagasy,ro,LATIN,Go (PGO),12,71518,33,2167212,0.7,True,1,7.0,4.04,3,True
+malagasy,ro,LATIN,C++ (PGO),12,71518,37,1932919,0.79,True,2,5.7,7.01,3,True
+malagasy,ro,LATIN,TypeScript (Node),12,71518,266,268865,5.66,True,9,33.17,39.4,3,True
+malagasy,ru,CYRILLIC,Java (JVM),13,115470,69,1673478,1.0,True,4,19.67,15.36,3,True
+malagasy,ru,CYRILLIC,Kotlin (JVM),13,115470,89,1297416,1.29,True,7,24.25,23.71,3,True
+malagasy,ru,CYRILLIC,Scala (JVM),13,115470,80,1443375,1.16,True,6,27.27,15.19,3,True
+malagasy,ru,CYRILLIC,"Java (GraalVM native, PGO)",13,115470,70,1649571,1.01,True,5,16.73,21.11,3,True
+malagasy,ru,CYRILLIC,Rust (PGO),13,115470,55,2099455,0.8,True,1,13.07,18.48,3,True
+malagasy,ru,CYRILLIC,C# (JIT),13,115470,98,1178265,1.42,True,8,18.54,23.38,3,True
+malagasy,ru,CYRILLIC,Go (PGO),13,115470,61,1892951,0.88,True,3,14.99,22.98,3,True
+malagasy,ru,CYRILLIC,C++ (PGO),13,115470,57,2025789,0.83,True,2,10.43,18.67,3,True
+malagasy,ru,CYRILLIC,TypeScript (Node),13,115470,555,208054,8.04,True,9,81.82,148.67,3,True
+malagasy,sk,LATIN,Java (JVM),2,23863,16,,,False,,2.53,1.93,3,True
+malagasy,sk,LATIN,Kotlin (JVM),2,23863,16,,,False,,3.03,1.84,3,True
+malagasy,sk,LATIN,Scala (JVM),2,23863,18,,,False,,3.95,1.7,3,True
+malagasy,sk,LATIN,"Java (GraalVM native, PGO)",2,23863,13,,,False,,2.33,2.21,3,True
+malagasy,sk,LATIN,Rust (PGO),2,23863,11,,,False,,2.4,2.46,3,True
+malagasy,sk,LATIN,C# (JIT),2,23863,10,,,False,,1.82,1.38,3,True
+malagasy,sk,LATIN,Go (PGO),2,23863,10,,,False,,2.98,1.99,3,True
+malagasy,sk,LATIN,C++ (PGO),2,23863,12,,,False,,1.96,2.35,3,True
+malagasy,sk,LATIN,TypeScript (Node),2,23863,124,,,False,,14.41,16.75,3,True
+malagasy,sl,LATIN,Java (JVM),4,51644,29,,,False,,4.58,3.66,3,True
+malagasy,sl,LATIN,Kotlin (JVM),4,51644,35,,,False,,7.75,4.15,3,True
+malagasy,sl,LATIN,Scala (JVM),4,51644,36,,,False,,7.89,3.83,3,True
+malagasy,sl,LATIN,"Java (GraalVM native, PGO)",4,51644,26,,,False,,4.32,4.36,3,True
+malagasy,sl,LATIN,Rust (PGO),4,51644,22,,,False,,4.79,4.93,3,True
+malagasy,sl,LATIN,C# (JIT),4,51644,22,,,False,,3.06,2.54,3,True
+malagasy,sl,LATIN,Go (PGO),4,51644,19,,,False,,4.99,2.99,3,True
+malagasy,sl,LATIN,C++ (PGO),4,51644,24,,,False,,4.05,4.64,3,True
+malagasy,sl,LATIN,TypeScript (Node),4,51644,166,,,False,,24.1,28.51,3,True
+malagasy,sr,CYRILLIC,Java (JVM),11,68667,45,1525933,1.0,True,6,9.53,9.25,3,True
+malagasy,sr,CYRILLIC,Kotlin (JVM),11,68667,45,1525933,1.0,True,7,11.24,7.54,3,True
+malagasy,sr,CYRILLIC,Scala (JVM),11,68667,50,1373340,1.11,True,8,13.65,8.05,3,True
+malagasy,sr,CYRILLIC,"Java (GraalVM native, PGO)",11,68667,39,1760692,0.87,True,5,8.21,8.09,3,True
+malagasy,sr,CYRILLIC,Rust (PGO),11,68667,31,2215065,0.69,True,1,7.34,9.53,3,True
+malagasy,sr,CYRILLIC,C# (JIT),11,68667,33,2080818,0.73,True,2,7.45,7.72,3,True
+malagasy,sr,CYRILLIC,Go (PGO),11,68667,33,2080818,0.73,True,3,6.99,10.99,3,True
+malagasy,sr,CYRILLIC,C++ (PGO),11,68667,33,2080818,0.73,True,4,5.57,8.62,3,True
+malagasy,sr,CYRILLIC,TypeScript (Node),11,68667,301,228130,6.69,True,9,41.99,58.65,3,True
+malagasy,sv,LATIN,Java (JVM),10,73672,51,1444549,1.0,True,6,7.78,6.07,3,True
+malagasy,sv,LATIN,Kotlin (JVM),10,73672,53,1390038,1.04,True,7,9.0,5.74,3,True
+malagasy,sv,LATIN,Scala (JVM),10,73672,55,1339491,1.08,True,8,10.98,4.8,3,True
+malagasy,sv,LATIN,"Java (GraalVM native, PGO)",10,73672,43,1713302,0.84,True,5,5.99,5.7,3,True
+malagasy,sv,LATIN,Rust (PGO),10,73672,37,1991135,0.73,True,2,7.53,7.41,3,True
+malagasy,sv,LATIN,C# (JIT),10,73672,39,1889026,0.76,True,3,5.65,4.49,3,True
+malagasy,sv,LATIN,Go (PGO),10,73672,34,2166824,0.67,True,1,6.01,5.07,3,True
+malagasy,sv,LATIN,C++ (PGO),10,73672,39,1889026,0.76,True,4,5.87,7.6,3,True
+malagasy,sv,LATIN,TypeScript (Node),10,73672,328,224610,6.43,True,9,41.9,42.98,3,True
+malagasy,tr,LATIN,Java (JVM),7,32662,33,989758,1.0,True,7,4.88,3.32,3,True
+malagasy,tr,LATIN,Kotlin (JVM),7,32662,31,1053613,0.94,True,6,5.01,3.14,3,True
+malagasy,tr,LATIN,Scala (JVM),7,32662,41,796634,1.24,True,8,7.68,3.11,3,True
+malagasy,tr,LATIN,"Java (GraalVM native, PGO)",7,32662,26,1256231,0.79,True,5,4.11,3.55,3,True
+malagasy,tr,LATIN,Rust (PGO),7,32662,20,1633100,0.61,True,2,3.86,3.69,3,True
+malagasy,tr,LATIN,C# (JIT),7,32662,20,1633100,0.61,True,3,2.9,2.48,3,True
+malagasy,tr,LATIN,Go (PGO),7,32662,18,1814556,0.55,True,1,3.0,2.0,3,True
+malagasy,tr,LATIN,C++ (PGO),7,32662,22,1484636,0.67,True,4,2.81,3.91,3,True
+malagasy,tr,LATIN,TypeScript (Node),7,32662,364,89731,11.03,True,9,47.45,34.09,3,True
+malagasy,uk,CYRILLIC,Java (JVM),10,68495,50,1369900,1.0,True,6,10.27,8.51,3,True
+malagasy,uk,CYRILLIC,Kotlin (JVM),10,68495,55,1245364,1.1,True,7,12.12,8.72,3,True
+malagasy,uk,CYRILLIC,Scala (JVM),10,68495,68,1007279,1.36,True,8,17.56,8.75,3,True
+malagasy,uk,CYRILLIC,"Java (GraalVM native, PGO)",10,68495,40,1712375,0.8,True,4,8.88,10.28,3,True
+malagasy,uk,CYRILLIC,Rust (PGO),10,68495,37,1851216,0.74,True,1,8.32,9.94,3,True
+malagasy,uk,CYRILLIC,C# (JIT),10,68495,40,1712375,0.8,True,5,6.74,9.72,3,True
+malagasy,uk,CYRILLIC,Go (PGO),10,68495,39,1756282,0.78,True,2,9.02,11.99,3,True
+malagasy,uk,CYRILLIC,C++ (PGO),10,68495,39,1756282,0.78,True,3,5.78,10.08,3,True
+malagasy,uk,CYRILLIC,TypeScript (Node),10,68495,376,182168,7.52,True,9,47.17,70.36,3,True
+malagasy,vi,LATIN,Java (JVM),11,95407,35,2725914,1.0,True,6,8.71,6.54,3,True
+malagasy,vi,LATIN,Kotlin (JVM),11,95407,38,2510711,1.09,True,7,11.75,6.71,3,True
+malagasy,vi,LATIN,Scala (JVM),11,95407,46,2074065,1.31,True,8,15.87,6.11,3,True
+malagasy,vi,LATIN,"Java (GraalVM native, PGO)",11,95407,34,2806088,0.97,True,5,8.03,6.7,3,True
+malagasy,vi,LATIN,Rust (PGO),11,95407,27,3533593,0.77,True,3,7.16,7.11,3,True
+malagasy,vi,LATIN,C# (JIT),11,95407,24,3975292,0.69,True,1,5.54,4.65,3,True
+malagasy,vi,LATIN,Go (PGO),11,95407,26,3669500,0.74,True,2,6.93,6.0,3,True
+malagasy,vi,LATIN,C++ (PGO),11,95407,29,3289897,0.83,True,4,6.61,8.02,3,True
+malagasy,vi,LATIN,TypeScript (Node),11,95407,182,524214,5.2,True,9,43.88,42.51,3,True
+malagasy,zh,CJK,Java (JVM),15,12133,19,,,False,,2.73,2.99,3,True
+malagasy,zh,CJK,Kotlin (JVM),15,12133,17,,,False,,2.75,2.72,3,True
+malagasy,zh,CJK,Scala (JVM),15,12133,21,,,False,,3.32,2.8,3,True
+malagasy,zh,CJK,"Java (GraalVM native, PGO)",15,12133,16,,,False,,2.21,2.44,3,True
+malagasy,zh,CJK,Rust (PGO),15,12133,13,,,False,,2.57,2.72,3,True
+malagasy,zh,CJK,C# (JIT),15,12133,12,,,False,,1.95,2.81,3,True
+malagasy,zh,CJK,Go (PGO),15,12133,12,,,False,,0.0,2.97,3,True
+malagasy,zh,CJK,C++ (PGO),15,12133,14,,,False,,1.37,3.17,3,True
+malagasy,zh,CJK,TypeScript (Node),15,12133,145,,,False,,11.57,19.75,3,True

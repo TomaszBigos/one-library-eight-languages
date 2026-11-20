@@ -1,0 +1,7 @@
+pipeline,matcher,seed,sets,detectors,detectors_per_set,self_words_median_per_set,self_words_total,length_min,length_median,length_mean,length_max,distinct,distinct_pct,in_2plus_sets_pct,alphabet,real_foreign_words_pct,equal_to_self_word,cache_files_all_generations,cache_mb_all_generations
+polish,hamming,42,256,768000,3000.0,128.0,32768,2,12.0,12.85,58,470426,61.25,25.13,296,0.52,512,1536,59.8
+polish,r-contiguous,42,256,768000,3000.0,128.0,32768,1,8.0,9.22,58,356818,46.46,39.08,270,1.23,614,1536,59.8
+malagasy,hamming,42,261,783000,3000,104,30874,2,13.0,16.25,481,527412,67.36,22.42,178,0.47,473,7308,328.8
+malagasy,hamming,43,261,783000,3000,104,30874,2,13.0,16.27,481,526537,67.25,22.58,175,0.48,459,7308,328.8
+malagasy,r-contiguous,42,261,783000,3000,104,30874,1,8.0,9.91,476,429675,54.88,32.45,174,1.12,635,7308,328.8
+malagasy,r-contiguous,43,261,783000,3000,104,30874,1,8.0,9.93,480,430586,54.99,32.38,174,1.15,619,7308,328.8

@@ -1,0 +1,41 @@
+series,measure,pipeline,words,method,value,unit,rounds,differences,round
+1,detection,malagasy,4096,GPU brute force (every detector),368.5,us per word (261 sets),5,0,
+1,detection,malagasy,4096,CPU per-set index (is_self),1120.4,us per word (261 sets),5,0,
+1,detection,malagasy,4096,"CPU PoolIndex (production, C1)",225.7,us per word (261 sets),5,0,
+1,detection,malagasy,16384,GPU brute force (every detector),366.4,us per word (261 sets),5,0,
+1,detection,malagasy,16384,CPU per-set index (is_self),1106.4,us per word (261 sets),5,0,
+1,detection,malagasy,16384,"CPU PoolIndex (production, C1)",225.3,us per word (261 sets),5,0,
+1,host_language,malagasy,16384,Java Panama,366.3,us per word (261 sets),5,0,
+1,host_language,malagasy,16384,"Go (syscall, no cgo)",366.3,us per word (261 sets),5,0,
+1,host_language,malagasy,16384,Bun (bun:ffi),366.3,us per word (261 sets),5,0,
+1,host_language,malagasy,16384,C# (P/Invoke),366.3,us per word (261 sets),5,0,
+1,host_language,malagasy,16384,"Rust (LoadLibrary, no crate)",366.3,us per word (261 sets),5,0,
+2,detection,malagasy,4096,GPU brute force (every detector),367.3,us per word (261 sets),5,0,
+2,detection,malagasy,4096,CPU per-set index (is_self),1075.3,us per word (261 sets),5,0,
+2,detection,malagasy,4096,"CPU PoolIndex (production, C1)",221.7,us per word (261 sets),5,0,
+2,detection,malagasy,16384,GPU brute force (every detector),371.8,us per word (261 sets),5,0,
+2,detection,malagasy,16384,CPU per-set index (is_self),1069.5,us per word (261 sets),5,0,
+2,detection,malagasy,16384,"CPU PoolIndex (production, C1)",220.0,us per word (261 sets),5,0,
+2,host_language,malagasy,16384,Java Panama,365.1,us per word (261 sets),5,0,
+2,host_language,malagasy,16384,"Go (syscall, no cgo)",365.1,us per word (261 sets),5,0,
+2,host_language,malagasy,16384,Bun (bun:ffi),365.1,us per word (261 sets),5,0,
+2,host_language,malagasy,16384,C# (P/Invoke),365.1,us per word (261 sets),5,0,
+2,host_language,malagasy,16384,"Rust (LoadLibrary, no crate)",365.1,us per word (261 sets),5,0,
+1,cold_start_training,malagasy,,cpu,18663,ms,1,0,1
+1,cold_start_training,malagasy,,gpu,17971,ms,1,0,1
+1,cold_start_card_time,malagasy,,gpu,11286,ms,1,0,1
+1,cold_start_training,malagasy,,gpu,17878,ms,1,0,2
+1,cold_start_card_time,malagasy,,gpu,10767,ms,1,0,2
+1,cold_start_training,malagasy,,cpu,16633,ms,1,0,2
+1,cold_start_training,malagasy,,cpu,16400,ms,1,0,3
+1,cold_start_training,malagasy,,gpu,18029,ms,1,0,3
+1,cold_start_card_time,malagasy,,gpu,11404,ms,1,0,3
+1,cold_start_training,polish,,cpu,8827,ms,1,0,1
+1,cold_start_training,polish,,gpu,9908,ms,1,0,1
+1,cold_start_card_time,polish,,gpu,6350,ms,1,0,1
+1,cold_start_training,polish,,gpu,9917,ms,1,0,2
+1,cold_start_card_time,polish,,gpu,6358,ms,1,0,2
+1,cold_start_training,polish,,cpu,8711,ms,1,0,2
+1,cold_start_training,polish,,cpu,8864,ms,1,0,3
+1,cold_start_training,polish,,gpu,9956,ms,1,0,3
+1,cold_start_card_time,polish,,gpu,6593,ms,1,0,3
