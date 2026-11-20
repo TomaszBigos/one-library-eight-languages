@@ -6,6 +6,10 @@ implementacja daje bit w bit te same odpowiedzi co Java; różnią się czasem, 
 obciążeniem. Porty, narzędzia i pomiary napisał agent AI (Claude), a autor wyznaczał cel, podejmował decyzje
 i sprawdzał wyniki. To repozytorium zawiera wyniki, opisy i dane; nie zawiera kodu bibliotek.
 
+Repozytorium: <https://github.com/TomaszBigos/one-library-eight-languages>. Strony HTML na stronie repozytorium widać
+jako kod; do czytania w przeglądarce służy wersja przez GitHub Pages:
+<https://tomaszbigos.github.io/one-library-eight-languages/> (albo pobrane pliki otwarte z dysku).
+
 ## Od czego zacząć
 
 | plik | dla kogo |
@@ -61,5 +65,5 @@ Tekst, dane, diagramy i fragmenty kodu w tym repozytorium: **Creative Commons At
 (CC BY 4.0)**, pełny tekst w [`LICENSE`](LICENSE). Wolno kopiować, rozpowszechniać, zmieniać i wykorzystywać, także
 komercyjnie, pod warunkiem podania autora, licencji i informacji o zmianach.
 
-Proponowane oznaczenie: *Tomasz Bigoś, „Jedna biblioteka, osiem języków”, licencja CC BY 4.0*, z odnośnikiem do tego
-repozytorium.
+Proponowane oznaczenie: *Tomasz Bigoś, „Jedna biblioteka, osiem języków”, licencja CC BY 4.0,
+https://github.com/TomaszBigos/one-library-eight-languages*.

@@ -78,7 +78,8 @@ Pełny opis z diagramami: `ARCHITECTURE.md`. Najważniejsze, żeby wyjaśnić cz
    cytowaniu przedstawiaj ją jako opinię, nie jako wynik pomiaru.
 8. **Licencja CC BY 4.0:** materiał wolno wykorzystywać, także komercyjnie. Przytaczając go albo robiąc z niego
    coś nowego (artykuł, slajdy, streszczenie do publikacji), podaj autora (Tomasz Bigoś), tytuł „Jedna biblioteka,
-   osiem języków”, licencję CC BY 4.0 i zaznacz, że materiał został zmieniony lub skrócony.
+   osiem języków”, licencję CC BY 4.0, adres https://github.com/TomaszBigos/one-library-eight-languages i zaznacz,
+   że materiał został zmieniony lub skrócony.
 
 ## Przykładowe pytania, na które materiał odpowiada
 
